@@ -3,7 +3,7 @@ Based on 'AutoFit 2.0: Virtual display library' (by James Boyd 'Hitoro/DruggedBu
 
 See also http://www.monkeycoder.co.nz/Community/posts.php?topic=1500 for more information.  
 
-The autofit code not generate monkeydoc documentation.
+The autofit code does not generate monkeydoc documentation.
 
 The code is compatible with Congo retina options and the HD image resource loader. Any changes I make for Congo will be noted by '[BRS]' in the source files.
 
