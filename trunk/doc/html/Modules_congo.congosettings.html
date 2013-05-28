@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">congo.congosettings</span></h1>
+
+
+	<p>General Congo module settings.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Globals:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CONGO_AUDIO_FOLDER'>CONGO_AUDIO_FOLDER</a> : String</li>
+					
+						<li><a href='#CONGO_AUTOFIT_NOBORDERS'>CONGO_AUTOFIT_NOBORDERS</a> : Bool</li>
+					
+						<li><a href='#CONGO_ENABLE_HD_IMAGES'>CONGO_ENABLE_HD_IMAGES</a> : Bool</li>
+					
+						<li><a href='#CONGO_ENABLE_XHD_IMAGES'>CONGO_ENABLE_XHD_IMAGES</a> : Bool</li>
+					
+						<li><a href='#CONGO_ERROR_STRING'>CONGO_ERROR_STRING</a> : String</li>
+					
+						<li><a href='#CONGO_HD_DEVICE_WIDTHREQ'>CONGO_HD_DEVICE_WIDTHREQ</a> : Int</li>
+					
+						<li><a href='#CONGO_HD_FOLDER'>CONGO_HD_FOLDER</a> : String</li>
+					
+						<li><a href='#CONGO_HD_SUFFIX'>CONGO_HD_SUFFIX</a> : String</li>
+					
+						<li><a href='#CONGO_MAX_AUDIO_CHANNEL'>CONGO_MAX_AUDIO_CHANNEL</a> : Int</li>
+					
+						<li><a href='#CONGO_MAX_MULTITOUCH'>CONGO_MAX_MULTITOUCH</a> : Int</li>
+					
+						<li><a href='#CONGO_NAME_STRING'>CONGO_NAME_STRING</a> : String</li>
+					
+						<li><a href='#CONGO_PHYSICS_DEBUGDRAW'>CONGO_PHYSICS_DEBUGDRAW</a> : Bool</li>
+					
+						<li><a href='#CONGO_SD_FOLDER'>CONGO_SD_FOLDER</a> : String</li>
+					
+						<li><a href='#CONGO_SD_SUFFIX'>CONGO_SD_SUFFIX</a> : String</li>
+					
+						<li><a href='#CONGO_VERSION_STRING'>CONGO_VERSION_STRING</a> : String</li>
+					
+						<li><a href='#CONGO_WARNING_STRING'>CONGO_WARNING_STRING</a> : String</li>
+					
+						<li><a href='#CONGO_XHD_DEVICE_WIDTHREQ'>CONGO_XHD_DEVICE_WIDTHREQ</a> : Int</li>
+					
+						<li><a href='#CONGO_XHD_FOLDER'>CONGO_XHD_FOLDER</a> : String</li>
+					
+						<li><a href='#CONGO_XHD_SUFFIX'>CONGO_XHD_SUFFIX</a> : String</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	General Congo module settings. Some are user-definable, see individual comments below. 
+Entries can be edited here or overridden in code, e.g. at the start of your main app file.
+	
+	
+	<hr>
+
+
+
+
+
+	<h2>Global Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CONGO_AUDIO_FOLDER'></a>
+				<div class="well well-small name"><b>Global CONGO_AUDIO_FOLDER : String</b></div>
+				<div class="description">
+					<p>Folder name for all audio files, leave blank for top-level.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_AUTOFIT_NOBORDERS'></a>
+				<div class="well well-small name"><b>Global CONGO_AUTOFIT_NOBORDERS : Bool</b></div>
+				<div class="description">
+					<p>Set this to prevent autofit from drawing any border clip region. This lets you fill the entire device 
+screen, e.g. showing a background image outside of the autofit game region. Useful for supporting 
+different mobile aspect ratios whilst retaining consistent autofit  virtual coordinates.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_ENABLE_HD_IMAGES'></a>
+				<div class="well well-small name"><b>Global CONGO_ENABLE_HD_IMAGES : Bool</b></div>
+				<div class="description">
+					<p>Congo has the concept of sd, hd and xhd resources. It loads the specific resource based on device width (in pixels) and 
+these user options. i.e. enable CONGO_ENABLE_HD_IMAGES to load hd resources on supported devices. Use CongoImageLoader() to 
+perform this automatically.
+<p>
+See also CONGO_HD_DEVICE_WIDTHREQ and CONGO_XHD_DEVICE_WIDTHREQ.
+<p>
+Note - on iOS you can use this <b>instead</b> of the @2x' filename convention. This also means you can use hd resources on a non-retina iPad.
+<p>
+Note - you should not mix sd and hd (or xhd) resources -- keep a consistent set.
+<p>
+Note - for browser targets you might want to disable hd for performance, these are really intended for mobile targets.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_ENABLE_XHD_IMAGES'></a>
+				<div class="well well-small name"><b>Global CONGO_ENABLE_XHD_IMAGES : Bool</b></div>
+				<div class="description">
+					<p>Extra-high def setting. See entry for CONGO_ENABLE_HD_IMAGES.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_ERROR_STRING'></a>
+				<div class="well well-small name"><b>Global CONGO_ERROR_STRING : String</b></div>
+				<div class="description">
+					<p>(Internal) Error message string.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_HD_DEVICE_WIDTHREQ'></a>
+				<div class="well well-small name"><b>Global CONGO_HD_DEVICE_WIDTHREQ : Int</b></div>
+				<div class="description">
+					<p>Change this to determine the threshold screen width where hd images will be used (if enabled above). 
+Default of 640 pixels means that devices with 320x480 displays (e.g. iPhone3G, basic Android) will not use HD images,
+whilst iPhone4 and all iPads will, since they have widths of 640 and 768 pixels respectively.
+<p>
+Note - for browser targets >640 wide you might want to disable hd, these are really intended for mobile targets.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_HD_FOLDER'></a>
+				<div class="well well-small name"><b>Global CONGO_HD_FOLDER : String</b></div>
+				<div class="description">
+					<p>Resource folder name for hd resources.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_HD_SUFFIX'></a>
+				<div class="well well-small name"><b>Global CONGO_HD_SUFFIX : String</b></div>
+				<div class="description">
+					<p>Resource suffix for hd.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_MAX_AUDIO_CHANNEL'></a>
+				<div class="well well-small name"><b>Global CONGO_MAX_AUDIO_CHANNEL : Int</b></div>
+				<div class="description">
+					<p>Maximum number of simultaneous sound channels supported by AudioPlayer.
+8 is a good conservative number for general use, but up to 32 are available, depending on target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_MAX_MULTITOUCH'></a>
+				<div class="well well-small name"><b>Global CONGO_MAX_MULTITOUCH : Int</b></div>
+				<div class="description">
+					<p>Maximum number of simultaneous touches handled by TouchManager. For single touch only, set to 1.
+Must be set before TouchManager init is called.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_NAME_STRING'></a>
+				<div class="well well-small name"><b>Global CONGO_NAME_STRING : String</b></div>
+				<div class="description">
+					<p>(Internal) Module name string.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_PHYSICS_DEBUGDRAW'></a>
+				<div class="well well-small name"><b>Global CONGO_PHYSICS_DEBUGDRAW : Bool</b></div>
+				<div class="description">
+					<p>[Used?] Enable Box2d physics debug draw mode. 
+Note, you may need to make your bg/main layer transparant to see it.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_SD_FOLDER'></a>
+				<div class="well well-small name"><b>Global CONGO_SD_FOLDER : String</b></div>
+				<div class="description">
+					<p>Resource folder name for sd resources.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_SD_SUFFIX'></a>
+				<div class="well well-small name"><b>Global CONGO_SD_SUFFIX : String</b></div>
+				<div class="description">
+					<p>Resource suffix for sd. Case sensitive (best to use lower-case throughout). 
+<p>
+Note - folder names do not require forward slashes.
+<p>
+Note - Flash can not use file names containing hyphens or dashes. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_VERSION_STRING'></a>
+				<div class="well well-small name"><b>Global CONGO_VERSION_STRING : String</b></div>
+				<div class="description">
+					<p>(Internal) Module version number string.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_WARNING_STRING'></a>
+				<div class="well well-small name"><b>Global CONGO_WARNING_STRING : String</b></div>
+				<div class="description">
+					<p>(Internal) Warning message string.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_XHD_DEVICE_WIDTHREQ'></a>
+				<div class="well well-small name"><b>Global CONGO_XHD_DEVICE_WIDTHREQ : Int</b></div>
+				<div class="description">
+					<p>As for CONGO_HD_DEVICE_WIDTHREQ, but for xhd resources. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_XHD_FOLDER'></a>
+				<div class="well well-small name"><b>Global CONGO_XHD_FOLDER : String</b></div>
+				<div class="description">
+					<p>Resource folder name for xhd resources.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CONGO_XHD_SUFFIX'></a>
+				<div class="well well-small name"><b>Global CONGO_XHD_SUFFIX : String</b></div>
+				<div class="description">
+					<p>Resource suffix for hd.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+
+
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

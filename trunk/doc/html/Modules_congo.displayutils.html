@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">congo.displayutils</span></h1>
+
+
+	<p>Various standalone functions relating to display and image handling.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Imports:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href=''>congo.angelfont</a></li>
+					
+						<li><a href='Modules_congo.congoapp.html'>congo.congoapp</a></li>
+					
+						<li><a href='Modules_congo.congosettings.html'>congo.congosettings</a></li>
+					
+						<li><a href='Modules_congo.point.html'>congo.point</a></li>
+					
+						<li><a href='Modules_congo.rect.html'>congo.rect</a></li>
+					
+						<li><a href='Modules_congo.sprite.html'>congo.sprite</a></li>
+					
+						<li><a href='Modules_congo.texturecache.html'>congo.texturecache</a></li>
+					
+						<li><a href='Modules_congo.textutils.html'>congo.textutils</a></li>
+					
+						<li><a href='Modules_mojo.html'>mojo</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Globals:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CONGO_DEVICE_CONTENT_SCALE'>CONGO_DEVICE_CONTENT_SCALE</a> : Float</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CongoFontLoader'>CongoFontLoader</a> : AngelFont ( fontname:String )</li>
+					
+						<li><a href='#CongoResourceLoader'>CongoResourceLoader</a> : Image ( imagename:String, flags:Int=image.defaultflags )</li>
+					
+						<li><a href='#DrawBox'>DrawBox</a> : Void ( r:Rect )</li>
+					
+						<li><a href='#EnableCongoRetina'>EnableCongoRetina</a> : Void ()</li>
+					
+						<li><a href='#GetContentScaleFactor'>GetContentScaleFactor</a> : Float ()</li>
+					
+						<li><a href='#GetContentScaleFactor(2)'>GetContentScaleFactor</a> : Float ()</li>
+					
+						<li><a href='#GetFullResourceName'>GetFullResourceName</a> : String ( file:String )</li>
+					
+						<li><a href='#GrabScreenShot'>GrabScreenShot</a> : Image ()</li>
+					
+						<li><a href='#HideMouseCursor'>HideMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#HideMouseCursor(2)'>HideMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#HideMouseCursor(3)'>HideMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#HideMouseCursor(4)'>HideMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#ImageFromTP'>ImageFromTP</a> : Image ( tpimg:Image, dataName:String, imageName:String )</li>
+					
+						<li><a href='#IsUsingHDResources'>IsUsingHDResources</a> : Bool ()</li>
+					
+						<li><a href='#IsUsingXHDResources'>IsUsingXHDResources</a> : Bool ()</li>
+					
+						<li><a href='#RestoreMouseCursor'>RestoreMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#RestoreMouseCursor(2)'>RestoreMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#RestoreMouseCursor(3)'>RestoreMouseCursor</a> : Void ()</li>
+					
+						<li><a href='#RestoreMouseCursor(4)'>RestoreMouseCursor</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Various standalone functions relating to display and image handling. Includes resource handling (with Texture Packer support), display resolution checks, cursor hide/show, screen capture, and so on. Some have platform-specific native code.
+	
+	
+	<hr>
+
+
+
+
+
+	<h2>Global Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CONGO_DEVICE_CONTENT_SCALE'></a>
+				<div class="well well-small name"><b>Global CONGO_DEVICE_CONTENT_SCALE : Float</b></div>
+				<div class="description">
+					<p>Internal. Stores the current device scale factor. Don't set this manually, use EnableCongoRetina()</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CongoFontLoader'></a>
+				<div class="well well-small name"><b>Function CongoFontLoader : AngelFont ( fontname:String )</b></div>
+				<div class="description">
+					<p>Similar to CongoResourceLoader, this function loads an sd/hd/xhd Angelfont font resource. 
+<p>
+Data files for the hd font should have the hd extension, and so on. 
+The fontname argument should be the regular (sd) font name without extension. 
+<p>
+Texturecache is not used since AngelFont caches images itself.
+<p>
+If using bmGlyph, export in 'Sparrow' xml format.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CongoResourceLoader'></a>
+				<div class="well well-small name"><b>Function CongoResourceLoader : <a href="Modules_mojo.graphics_Image.html">Image</a> ( imagename:String, flags:Int=image.defaultflags )</b></div>
+				<div class="description">
+					<p>Main resource loading funtion.
+<p>
+This function loads a resource via the shared Texturecache, using sd, hd or xhd resolution versions depending on current settings.
+If a file does not exist, an error will be generated. Note, you should not mix sd/hd/xhd resources, use a consistent set.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DrawBox'></a>
+				<div class="well well-small name"><b>Function DrawBox : Void ( r:<a href="Modules_congo.rect_Rect.html">Rect</a> )</b></div>
+				<div class="description">
+					<p>Simple rectangle drawing routine, used for debug drawing of bounding rects etc.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='EnableCongoRetina'></a>
+				<div class="well well-small name"><b>Function EnableCongoRetina : Void ()</b></div>
+				<div class="description">
+					<p>Enables iOS retina modes where supported.
+Call this early on, i.e. must be before any autofit/layout code or resource loading is performed.
+<p>
+Internally, calling this function will multiply subsequent resource scalers by 2.0 if the display is Retina.
+<p>
+The Monkey iOS retina config setting must also be set to True for this to work correctly.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetContentScaleFactor'></a>
+				<div class="well well-small name"><b>Function GetContentScaleFactor : Float ()</b></div>
+				<div class="description">
+					<p>[iOS only] Returns the content scale factor, i.e. 'Retina' displays return 2.0. Other targets will return 1.0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetContentScaleFactor(2)'></a>
+				<div class="well well-small name"><b>Function GetContentScaleFactor : Float ()</b></div>
+				<div class="description">
+					<p>(dummy function for unsupported devices - returns 1.0).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetFullResourceName'></a>
+				<div class="well well-small name"><b>Function GetFullResourceName : String ( file:String )</b></div>
+				<div class="description">
+					<p>Handy function which returns a full resource name with the correct sd/hd/xhd folder and file extension added.
+<p>
+Used by CongoImageLoader and CongoFontLoader, but can be used to obtain any resource name if it follows the 
+correct naming convention.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GrabScreenShot'></a>
+				<div class="well well-small name"><b>Function GrabScreenShot : <a href="Modules_mojo.graphics_Image.html">Image</a> ()</b></div>
+				<div class="description">
+					<p>Returns a new Image containing a screen shot of device display.
+Monkey/mojo requires that this is called from within the render loop. 
+<p>
+Note, the Image may be large, and has the dimensions of the device in pixels.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HideMouseCursor'></a>
+				<div class="well well-small name"><b>Function HideMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>	[GLFW] Hides the mouse cursor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HideMouseCursor(2)'></a>
+				<div class="well well-small name"><b>Function HideMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>	[HTML5] Hides the mouse cursor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HideMouseCursor(3)'></a>
+				<div class="well well-small name"><b>Function HideMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>	[Flash] Hides the mouse cursor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HideMouseCursor(4)'></a>
+				<div class="well well-small name"><b>Function HideMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>(empty function for unsupported devices - see main entries)</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ImageFromTP'></a>
+				<div class="well well-small name"><b>Function ImageFromTP : <a href="Modules_mojo.graphics_Image.html">Image</a> ( tpimg:<a href="Modules_mojo.graphics_Image.html">Image</a>, dataName:String, imageName:String )</b></div>
+				<div class="description">
+					<p>Function which returns an Image grabbed from a TexturePacker atlas (exported in Generic xml format). 
+The Image is stored in the shared Texturecache for future use (to avoid processing the xml each time). 
+Will throw exception if no image is loaded.
+<p>
+Used by Sprite class LoadFromTP(), but can also be used standalone. Image will be Null if a name match cannot be found.
+<p>
+Use the regular (sd) resource name for the xml and image names.
+Note, all names are case-sensitive when searching the xml for names.
+<p>
+Dev note about 'GrabImage': this is not inefficient since a grabbed image and its source image share the same
+surface texture in mojo - no copying occurs. See http://www.monkeycoder.co.nz/Community/posts.php?topic=1934 and 
+http://www.monkeycoder.co.nz/Community/posts.php?topic=4176.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsUsingHDResources'></a>
+				<div class="well well-small name"><b>Function IsUsingHDResources : Bool ()</b></div>
+				<div class="description">
+					<p>Returns True if the current settings and display size support hd (double-size) resources.
+See CongoSettings to change the display size settings. 
+<p>
+Generally you don't need to use this manually, since CongoImageLoader() and the Sprite class
+deal with it automatically. However, if you are doing some custom resource handling or other
+graphics code you may need to use this.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsUsingXHDResources'></a>
+				<div class="well well-small name"><b>Function IsUsingXHDResources : Bool ()</b></div>
+				<div class="description">
+					<p>Returns True if the current settings and display size support xhd (4x-size) resources.
+See CongoSettings to change the display size settings. 
+<p>
+Generally you don't need to use this manually, since CongoImageLoader() and the Sprite class
+deal with it automatically. However, if you are doing some custom resource handling or other
+graphics code you may need to use this.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RestoreMouseCursor'></a>
+				<div class="well well-small name"><b>Function RestoreMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>	[GLFW] Restores the mouse cursor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RestoreMouseCursor(2)'></a>
+				<div class="well well-small name"><b>Function RestoreMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>	[HTML5] Restores the mouse cursor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RestoreMouseCursor(3)'></a>
+				<div class="well well-small name"><b>Function RestoreMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>	[Flash] Restores the mouse cursor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RestoreMouseCursor(4)'></a>
+				<div class="well well-small name"><b>Function RestoreMouseCursor : Void ()</b></div>
+				<div class="description">
+					<p>(empty function for unsupported devices - see main entries)</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

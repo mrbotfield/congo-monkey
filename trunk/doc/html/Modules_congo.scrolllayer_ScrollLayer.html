@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">ScrollLayer</span></h1>
+
+
+	<p>A layer with drag, swipe, inertia and bounce effects.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.layer_Layer.html">Layer</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Fields:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#botLimit'>botLimit</a> : Float</li>
+					
+						<li><a href='#bounce'>bounce</a> : Bool</li>
+					
+						<li><a href='#dragStartPos'>dragStartPos</a> : Point</li>
+					
+						<li><a href='#inertia'>inertia</a> : Float</li>
+					
+						<li><a href='#leftLimit'>leftLimit</a> : Float</li>
+					
+						<li><a href='#maxSpeed'>maxSpeed</a> : Float</li>
+					
+						<li><a href='#rightLimit'>rightLimit</a> : Float</li>
+					
+						<li><a href='#snapDist'>snapDist</a> : Float</li>
+					
+						<li><a href='#snapPoints'>snapPoints</a> : List&lt;Point&gt;</li>
+					
+						<li><a href='#topLimit'>topLimit</a> : Float</li>
+					
+						<li><a href='#velocity'>velocity</a> : Point</li>
+					
+						<li><a href='#xlocked'>xlocked</a> : Bool</li>
+					
+						<li><a href='#ylocked'>ylocked</a> : Bool</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( w:Int, h:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.scrolllayer_ScrollLayer.html#AddSnapPoint'>AddSnapPoint</a> : Void ( pt:Point )</li>
+					
+						<li><a href='Modules_congo.scrolllayer_ScrollLayer.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.layer_Layer.html#Draw'>Draw</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+									
+		<tr>
+			<td class="span1 name">Inherited Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A layer with drag, swipe, inertia and bounce effects. 
+Supports vertical or horizontal scrolling, and snapping to 'page' positions.
+<p>
+** CLASS UNDER DEVELOPMENT ** Needs more features, testing, tidy-up properties etc.
+	
+	
+	<hr>
+
+
+
+	<h2>Field Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='botLimit'></a>
+				<div class="well well-small name"><b>Field botLimit : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='bounce'></a>
+				<div class="well well-small name"><b>Field bounce : Bool</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='dragStartPos'></a>
+				<div class="well well-small name"><b>Field dragStartPos : <a href="Modules_congo.point_Point.html">Point</a></b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='inertia'></a>
+				<div class="well well-small name"><b>Field inertia : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='leftLimit'></a>
+				<div class="well well-small name"><b>Field leftLimit : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='maxSpeed'></a>
+				<div class="well well-small name"><b>Field maxSpeed : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='rightLimit'></a>
+				<div class="well well-small name"><b>Field rightLimit : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='snapDist'></a>
+				<div class="well well-small name"><b>Field snapDist : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='snapPoints'></a>
+				<div class="well well-small name"><b>Field snapPoints : <a href="Modules_monkey.list_List.html">List</a>&lt;<a href="Modules_congo.point_Point.html">Point</a>&gt;</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='topLimit'></a>
+				<div class="well well-small name"><b>Field topLimit : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='velocity'></a>
+				<div class="well well-small name"><b>Field velocity : <a href="Modules_congo.point_Point.html">Point</a></b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='xlocked'></a>
+				<div class="well well-small name"><b>Field xlocked : Bool</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ylocked'></a>
+				<div class="well well-small name"><b>Field ylocked : Bool</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( w:Int, h:Int )</b></div>
+				<div class="description">
+					<p>	Creates a scrolllayer with specified size (in device points, ie autofit virtual coords).</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AddSnapPoint'></a>
+				<div class="well well-small name"><b>Method AddSnapPoint : Void ( pt:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Adds a 'snap' point. The layer will lock to these if moving slowly enough.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

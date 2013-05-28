@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">CongoApp</span></h1>
+
+
+	<p>Main app class - derive your main game app from this class.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_mojo.app_App.html">App</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Globals:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#clsColor'>clsColor</a> : Float[]</li>
+					
+						<li><a href='#currentLayer'>currentLayer</a> : AppLayer</li>
+					
+						<li><a href='#imageResScaler'>imageResScaler</a> : Float</li>
+					
+						<li><a href='#m_resumeUpdateRate'>m_resumeUpdateRate</a> : Int</li>
+					
+						<li><a href='#paused'>paused</a> : Bool</li>
+					
+						<li><a href='#renderfps'>renderfps</a> : Int</li>
+					
+						<li><a href='#transition'>transition</a> : Transition</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+								
+		<tr>
+			<td class="span1 name">Fields:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#dT'>dT</a> : Float</li>
+					
+						<li><a href='#gameMilliSecs'>gameMilliSecs</a> : Float</li>
+					
+						<li><a href='#renderframes'>renderframes</a> : Int</li>
+					
+						<li><a href='#rendertimer'>rendertimer</a> : Int</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.congoapp_CongoApp.html#OnCreate'>OnCreate</a> : Int ()</li>
+					
+						<li><a href='Modules_congo.congoapp_CongoApp.html#OnRender'>OnRender</a> : Int ()</li>
+					
+						<li><a href='Modules_congo.congoapp_CongoApp.html#OnUpdate'>OnUpdate</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#IsPaused'>IsPaused</a> : Bool ()</li>
+					
+						<li><a href='#RunTransition'>RunTransition</a> : Bool ( trans:Transition )</li>
+					
+						<li><a href='#SetCurrentLayer'>SetCurrentLayer</a> : Void ( layer:AppLayer, clearTextureCache:Bool=false )</li>
+					
+						<li><a href='#SetPaused'>SetPaused</a> : Void ( state:Bool )</li>
+					
+						<li><a href='#SetScreenColor'>SetScreenColor</a> : Void ( r:Float, g:Float, b:Float )</li>
+					
+						<li><a href='#TogglePaused'>TogglePaused</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_mojo.app_App.html#OnBack'>OnBack</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnClose'>OnClose</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnLoading'>OnLoading</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnResume'>OnResume</a> : Int ()</li>
+					
+						<li><a href='Modules_mojo.app_App.html#OnSuspend'>OnSuspend</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Main app class - derive your main game app from this class. CongoApp deals with applayers, transitions and so on.
+Currently, CongoApp can only have one active applayer.
+<p>
+Derives from the mojo App class.
+	
+	
+	<hr>
+
+
+
+	<h2>Field Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='dT'></a>
+				<div class="well well-small name"><b>Field dT : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='gameMilliSecs'></a>
+				<div class="well well-small name"><b>Field gameMilliSecs : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='renderframes'></a>
+				<div class="well well-small name"><b>Field renderframes : Int</b></div>
+				<div class="description">
+					<p>	Used for framerate calculation, see comments in code to enable.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='rendertimer'></a>
+				<div class="well well-small name"><b>Field rendertimer : Int</b></div>
+				<div class="description">
+					<p>	Used for framerate calculation, see comments in code to enable.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+	<h2>Global Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='clsColor'></a>
+				<div class="well well-small name"><b>Global clsColor : Float[]</b></div>
+				<div class="description">
+					<p>	See SetScreenColor().</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='currentLayer'></a>
+				<div class="well well-small name"><b>Global currentLayer : <a href="Modules_congo.applayer_AppLayer.html">AppLayer</a></b></div>
+				<div class="description">
+					<p>	See SetCurrentLayer() to set this. Under normal use there can only be 1 active applayer.
+	(this is a shared data member so we can access it from a non-member function).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='imageResScaler'></a>
+				<div class="well well-small name"><b>Global imageResScaler : Float</b></div>
+				<div class="description">
+					<p>	(Advanced use). On creation, the app class stores a global image res scaler. Usually you can let CongoImageLoader set a 
+	Sprite's own res scaler, but this provides another way to access this.
+<p>
+	Dev note - perhaps this should be the <b>only</b> way to access it, rather than every Sprite carry its own?</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='m_resumeUpdateRate'></a>
+				<div class="well well-small name"><b>Global m_resumeUpdateRate : Int</b></div>
+				<div class="description">
+					<p>	Used by pause routine to store the current rate, ready for resume.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='paused'></a>
+				<div class="well well-small name"><b>Global paused : Bool</b></div>
+				<div class="description">
+					<p>	Pause state. Use IsPaused() to access this.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='renderfps'></a>
+				<div class="well well-small name"><b>Global renderfps : Int</b></div>
+				<div class="description">
+					<p>	Used for framerate calculation, see comments in code to enable.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='transition'></a>
+				<div class="well well-small name"><b>Global transition : <a href="Modules_congo.transition_Transition.html">Transition</a></b></div>
+				<div class="description">
+					<p>	See RunTransition(). </p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='OnCreate'></a>
+				<div class="well well-small name"><b>Method OnCreate : Int ()</b></div>
+				<div class="description">
+					<p>	Overrides mojo App method.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnRender'></a>
+				<div class="well well-small name"><b>Method OnRender : Int ()</b></div>
+				<div class="description">
+					<p>	Overrides mojo App OnRender() method.
+<p>
+	There is a section of code you can enable to measure framerate performance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnUpdate'></a>
+				<div class="well well-small name"><b>Method OnUpdate : Int ()</b></div>
+				<div class="description">
+					<p>	Overrides mojo App OnUpdate() method.
+<p>
+	Dev note - we follow the basic idea of using the standard OnUpdate and OnRender steps in mojo. In reality, this
+	separation is not mandatory, you can in fact do everything in OnRender to avoid Monkey's update/render 
+	smoothing algorithm, see http://www.monkeycoder.co.nz/Community/posts.php?topic=1436. Since we use a delta time
+	method, it may in fact not be sensible to mix these two, but we'll use it for now.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='IsPaused'></a>
+				<div class="well well-small name"><b>Function IsPaused : Bool ()</b></div>
+				<div class="description">
+					<p>	Returns True when game is paused. Various Update() functions use this to pause themselves. You may need to use
+	it if you write some custom Update() method.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RunTransition'></a>
+				<div class="well well-small name"><b>Function RunTransition : Bool ( trans:<a href="Modules_congo.transition_Transition.html">Transition</a> )</b></div>
+				<div class="description">
+					<p>	Sets a transition effect to run over the current layer.
+	If a transition already exists you can not set a new one, the function will return False.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetCurrentLayer'></a>
+				<div class="well well-small name"><b>Function SetCurrentLayer : Void ( layer:<a href="Modules_congo.applayer_AppLayer.html">AppLayer</a>, clearTextureCache:Bool=false )</b></div>
+				<div class="description">
+					<p>	This function controls the currently displayed applayer. As a non-member, it can be called from anywhere.
+	 Any previous layer is 'discarded' (GC will discard it). Textures will be retained unless the optional 
+	clearTextureCache parameter is set. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetPaused'></a>
+				<div class="well well-small name"><b>Function SetPaused : Void ( state:Bool )</b></div>
+				<div class="description">
+					<p>	The main pause function. See also TogglePaused(). Will pause sounds and music, but will still call Update() 
+	methods of layers/sprites and so on. Draw() methods are also still called but at a reduced framerate of 10fps 
+	(to reduce unnecessary cpu usage).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetScreenColor'></a>
+				<div class="well well-small name"><b>Function SetScreenColor : Void ( r:Float, g:Float, b:Float )</b></div>
+				<div class="description">
+					<p>	Sets the base background color for drawing. Will be seen through transparent sections and some transition effects. 
+	Default is black. Can be called from anywhere (not a member function).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='TogglePaused'></a>
+				<div class="well well-small name"><b>Function TogglePaused : Void ()</b></div>
+				<div class="description">
+					<p>	Convenience function to toggle the pause state. See also SetPaused().</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">TextLabel</span></h1>
+
+
+	<p>A multi-line text label.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.sprite_Sprite.html">Sprite</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( text:String, font:AngelFont, xpos:Float=0, ypos:Float=0, align:Int=angelfont.align_left, boxWidth:Int=1000 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Text'>Text</a> : String ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.textlabel_TextLabel.html#AppendText'>AppendText</a> : Void ( text:String )</li>
+					
+						<li><a href='Modules_congo.textlabel_TextLabel.html#Draw'>Draw</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.textlabel_TextLabel.html#SetText'>SetText</a> : Void ( text:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Text'>Text</a> : String ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxHeight'>BoundingBoxHeight</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxWidth'>BoundingBoxWidth</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawBoundingRect'>DrawBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawGlobalBoundingRect'>DrawGlobalBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetBoundingRect'>GetBoundingRect</a> : Rect ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetCurrentImage'>GetCurrentImage</a> : Image ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#InitResScaler'>InitResScaler</a> : Void ( autoDetect:Bool=true, scale:Float=1.0 )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#LoadFromTP'>LoadFromTP</a> : Bool ( tpimg:Image, dataName:String, imageName:String )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#SetMainImage'>SetMainImage</a> : Void ( img:Image )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A multi-line text label. It wraps angelfont classes to provide a Sprite interface.
+Labels cannot have child sprites.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( text:String, font:AngelFont, xpos:Float=0, ypos:Float=0, align:Int=angelfont.align_left, boxWidth:Int=1000 )</b></div>
+				<div class="description">
+					<p>	Creates a text label. Remember to create the font first (use CongoFontLoader) -- Labels can share fonts.
+	Angelfont alignment options are ALIGN_LEFT, ALIGN_CENTER and ALIGN_RIGHT.
+	
+	Useful characters: ~n = newline, ~q = double quotation mark (see Monkey docs)</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Text'></a>
+				<div class="well well-small name"><b>Method Text : String () Property</b></div>
+				<div class="description">
+					<p>	Returns the currently displayed text.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AppendText'></a>
+				<div class="well well-small name"><b>Method AppendText : Void ( text:String )</b></div>
+				<div class="description">
+					<p>	Appends to the current text.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Draw'></a>
+				<div class="well well-small name"><b>Method Draw : Void ()</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetText'></a>
+				<div class="well well-small name"><b>Method SetText : Void ( text:String )</b></div>
+				<div class="description">
+					<p>	Sets the text to show.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

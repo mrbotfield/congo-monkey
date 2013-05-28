@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">CollisionLayer</span></h1>
+
+
+	<p>A layer class with simple collision detection enabled.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.layer_Layer.html">Layer</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( w:Int, h:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CollisionsEnabled'>CollisionsEnabled</a> : Bool ()</li>
+					
+						<li><a href='#EnableCollisions'>EnableCollisions</a> : Void ( state:Bool=true )</li>
+					
+						<li><a href='#SetMaxCollisionDistance'>SetMaxCollisionDistance</a> : Void ( dist:Float=200.0 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.collisionlayer_CollisionLayer.html#AddCollisionDef'>AddCollisionDef</a> : Void ( cdef:CollisionDef )</li>
+					
+						<li><a href='Modules_congo.collisionlayer_CollisionLayer.html#CollisionOccured'>CollisionOccured</a> : Void ( sprite1:Sprite, sprite2:Sprite )</li>
+					
+						<li><a href='Modules_congo.collisionlayer_CollisionLayer.html#DoCollisionCheck'>DoCollisionCheck</a> : Void ( gpa:List&lt;Sprite&gt;, gpb:List&lt;Sprite&gt; )</li>
+					
+						<li><a href='Modules_congo.collisionlayer_CollisionLayer.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CollisionsEnabled'>CollisionsEnabled</a> : Bool ()</li>
+					
+						<li><a href='#EnableCollisions'>EnableCollisions</a> : Void ( state:Bool=true )</li>
+					
+						<li><a href='#SetMaxCollisionDistance'>SetMaxCollisionDistance</a> : Void ( dist:Float=200.0 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.layer_Layer.html#Draw'>Draw</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+									
+		<tr>
+			<td class="span1 name">Inherited Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A layer class with simple collision detection enabled. Derives from Layer.
+<p>
+** CLASS UNDER DEVELOPMENT ** Useable, but some limitations.
+<p>
+Use CollisionDef to define lists of Sprites that can collide. Each pair of lists is then compared
+using the CollisionRect defined by the Sprites. 
+Sprites can be in multiple lists, but obviously keep lists as small as possible.
+Currently, items must be direct top-level children of the layer (Todo - improve this).
+<p>
+Collisions are reported in CollisionOccured(), which derived classes can override. 
+Sprites do not collide if they are hidden or if
+they explicity have collisions disabled. Collision rects are AABB. Off-screen Sprites will still collide. 
+<p>
+CollisionOccured may receive multiple calls for a collision pair, be sure to process them with this in mind.
+Do not destroy sprites from inside CollisionOccured since the sprite lists are still being processed.
+<p>
+The setting SetMaxCollisionDistance is used to quickly remove Sprites from further checks (very large
+sprites may require require special treatment here).
+<p>
+Dev note - the method here is fairly 'brute force'. We could do more optimisation or introduce a grid/tree technique.
+<p>
+(note - if using physics/box2d its best to use the collision methods there).
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( w:Int, h:Int )</b></div>
+				<div class="description">
+					<p>	Creates a new collision layer with specified size. See Layer documentation for more details.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CollisionsEnabled'></a>
+				<div class="well well-small name"><b>Method CollisionsEnabled : Bool () Property</b></div>
+				<div class="description">
+					<p>	Returns True if collisions enabled. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='EnableCollisions'></a>
+				<div class="well well-small name"><b>Method EnableCollisions : Void ( state:Bool=true ) Property</b></div>
+				<div class="description">
+					<p>	Use this to enable or disable all collisions on this layer</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetMaxCollisionDistance'></a>
+				<div class="well well-small name"><b>Method SetMaxCollisionDistance : Void ( dist:Float=200.0 ) Property</b></div>
+				<div class="description">
+					<p>	This is used to optimise collision checks. If the (manhattan) distance between 2 sprites is greater 
+	than the MaxCollisionDistance, no further checks are done.
+	Default is 200 points. Adjust as required, especially if using large/zoomed-in sprites.
+	
+	Dev note/todo: this setting does not take zoom into account.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AddCollisionDef'></a>
+				<div class="well well-small name"><b>Method AddCollisionDef : Void ( cdef:<a href="Modules_congo.collisionlayer_CollisionDef.html">CollisionDef</a> )</b></div>
+				<div class="description">
+					<p>	Use this to add a collision definition. Any number of definitions can be added, but efficiency will 
+	eventually be an issue (depending on size of each list).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CollisionOccured'></a>
+				<div class="well well-small name"><b>Method CollisionOccured : Void ( sprite1:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, sprite2:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="description">
+					<p>	Collisions trigger this function, derived classes can override this. 
+	Do not delete a Sprite inside this function. Sprites can be in multiple collisions each Update().
+	You could call DisableCollisions on a Sprite to avoid repeat collisions.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DoCollisionCheck'></a>
+				<div class="well well-small name"><b>Method DoCollisionCheck : Void ( gpa:<a href="Modules_monkey.list_List.html">List</a>&lt;<a href="Modules_congo.sprite_Sprite.html">Sprite</a>&gt;, gpb:<a href="Modules_monkey.list_List.html">List</a>&lt;<a href="Modules_congo.sprite_Sprite.html">Sprite</a>&gt; )</b></div>
+				<div class="description">
+					<p>	Performs a collision check between 2 lists of sprites. Called automatically in Update(), you don't usually 
+	need to manually call this. For any collision, CollisionOccured() is called.
+<p>
+	Dev note / limitation: currently assumes the spites are in the same coordinate space -- wont yet work with nested child sprites.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Overrides the Update method to add the collision check.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

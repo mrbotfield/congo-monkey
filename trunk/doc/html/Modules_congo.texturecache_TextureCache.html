@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">TextureCache</span></h1>
+
+
+	<p>A texture cache/resource manager' singleton.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#AddImage'>AddImage</a> : Void ( image:Image, imagepath:String )</li>
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#AddResource'>AddResource</a> : Image ( imagepath:String, flags:Int=image.defaultflags )</li>
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#Contains'>Contains</a> : Bool ( imagepath:String )</li>
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#GetImage'>GetImage</a> : Image ( imagepath:String )</li>
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#Remove'>Remove</a> : Void ( imagepath:String )</li>
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#RemoveAll'>RemoveAll</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.texturecache_TextureCache.html#init'>init</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#getInstance'>getInstance</a> : TextureCache ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A texture cache/resource manager' singleton.
+<p>
+A handy way to store all your textures, and re-use them once loaded.
+<p>
+Notes:
+<p>
+The filenames and paths are case sensitive, but it is recommended you use lower case to avoid any confusion.
+See the log output for warnings about resources not being found.
+<p>
+You cant add the same image path twice.
+<p>
+If you have a large number of images you nay want to preload them all in your constructor to avoid any glitches
+during gameplay.
+<p>
+The cache can be cleared using RemoveAll, but make sure textures are not in use by other code. Hence,
+it makes most sense to empty the cache between game layers, when all new Sprites are re-created.
+The cache does not store a use-count for each resource.
+<p>
+ 	See http://www.monkeycoder.co.nz/Community/posts.php?topic=1934 for Singlton sample,
+ 	and http://www.monkeycoder.co.nz/Community/posts.php?topic=755 for map image cache sample.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>	Private constr.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AddImage'></a>
+				<div class="well well-small name"><b>Method AddImage : Void ( image:<a href="Modules_mojo.graphics_Image.html">Image</a>, imagepath:String )</b></div>
+				<div class="description">
+					<p>	Adds a pre-existing Image directly.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AddResource'></a>
+				<div class="well well-small name"><b>Method AddResource : <a href="Modules_mojo.graphics_Image.html">Image</a> ( imagepath:String, flags:Int=image.defaultflags )</b></div>
+				<div class="description">
+					<p>	Creates an Image from the specified resource and adds it to the cache. Returns the Image. If the cache
+	already contains the Image, that copy will be returned instead.
+	If the source file does not exist, the log will show an error, and your Image will be null/blank.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Contains'></a>
+				<div class="well well-small name"><b>Method Contains : Bool ( imagepath:String )</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetImage'></a>
+				<div class="well well-small name"><b>Method GetImage : <a href="Modules_mojo.graphics_Image.html">Image</a> ( imagepath:String )</b></div>
+				<div class="description">
+					<p>	Returns True if the caches contains an Image with the specified name.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Remove'></a>
+				<div class="well well-small name"><b>Method Remove : Void ( imagepath:String )</b></div>
+				<div class="description">
+					<p>	Removes the relevant Image from the cache.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveAll'></a>
+				<div class="well well-small name"><b>Method RemoveAll : Void ()</b></div>
+				<div class="description">
+					<p>	Removes all Images from the cache.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='init'></a>
+				<div class="well well-small name"><b>Method init : Void ()</b></div>
+				<div class="description">
+					<p>	Internal. Called from constr.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='getInstance'></a>
+				<div class="well well-small name"><b>Function getInstance : <a href="Modules_congo.texturecache_TextureCache.html">TextureCache</a> ()</b></div>
+				<div class="description">
+					<p>	Use this to access the shared instance.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

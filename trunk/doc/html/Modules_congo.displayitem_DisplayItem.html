@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">DisplayItem</span></h1>
+
+
+	<p>Abstract base class for all displayable items (Sprites, Layers, etc).
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+		<tr>
+			<td class="span1 name">Extended&nbsp;by:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.layer_Layer.html">Layer</a>, <a href="Modules_congo.sprite_Sprite.html">Sprite</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Actions'>Actions</a> : List&lt;Action&gt; ()</li>
+					
+						<li><a href='#Angle'>Angle</a> : Float ()</li>
+					
+						<li><a href='#Angle(2)'>Angle</a> : Void ( rot:Float )</li>
+					
+						<li><a href='#Children'>Children</a> : DisplayItem[] ()</li>
+					
+						<li><a href='#CustomFlag'>CustomFlag</a> : Bool ()</li>
+					
+						<li><a href='#CustomFlag(2)'>CustomFlag</a> : Void ( state:Bool )</li>
+					
+						<li><a href='#CustomId'>CustomId</a> : Int ()</li>
+					
+						<li><a href='#CustomId(2)'>CustomId</a> : Void ( value:Int )</li>
+					
+						<li><a href='#CustomItemRef'>CustomItemRef</a> : Sprite ()</li>
+					
+						<li><a href='#CustomItemRef(2)'>CustomItemRef</a> : Void ( item:DisplayItem )</li>
+					
+						<li><a href='#CustomName'>CustomName</a> : String ()</li>
+					
+						<li><a href='#CustomName(2)'>CustomName</a> : Void ( name:String )</li>
+					
+						<li><a href='#DirtyZOrder'>DirtyZOrder</a> : Bool ()</li>
+					
+						<li><a href='#Handle'>Handle</a> : Point ()</li>
+					
+						<li><a href='#Hidden'>Hidden</a> : Bool ()</li>
+					
+						<li><a href='#Hidden(2)'>Hidden</a> : Void ( state:Bool )</li>
+					
+						<li><a href='#NumChildren'>NumChildren</a> : Int ()</li>
+					
+						<li><a href='#Opacity'>Opacity</a> : Float ()</li>
+					
+						<li><a href='#Parent'>Parent</a> : DisplayItem ()</li>
+					
+						<li><a href='#Position'>Position</a> : Void ( pos:Point )</li>
+					
+						<li><a href='#Position(2)'>Position</a> : Point ()</li>
+					
+						<li><a href='#ResScaler'>ResScaler</a> : Float ()</li>
+					
+						<li><a href='#ResScaler(2)'>ResScaler</a> : Void ( rscale:Float=1.0 )</li>
+					
+						<li><a href='#SetAngle'>SetAngle</a> : Void ( rot:Float )</li>
+					
+						<li><a href='#UseLazySort'>UseLazySort</a> : Bool ()</li>
+					
+						<li><a href='#XScale'>XScale</a> : Float ()</li>
+					
+						<li><a href='#XScale(2)'>XScale</a> : Void ( scale:Float )</li>
+					
+						<li><a href='#YScale'>YScale</a> : Float ()</li>
+					
+						<li><a href='#YScale(2)'>YScale</a> : Void ( scale:Float )</li>
+					
+						<li><a href='#ZOrder'>ZOrder</a> : Float ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ActionCompleted'>ActionCompleted</a> : Void ( actionId:Int )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChild'>AddChild</a> : Void ( child:DisplayItem )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChildWithZOrder'>AddChildWithZOrder</a> : Void ( child:Sprite, zOrder:Float=0.0 )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ButtonActivated'>ButtonActivated</a> : Void ( button:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#Draw'>Draw</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#FullSortZOrder'>FullSortZOrder</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#HasChild'>HasChild</a> : Bool ( ditem:DisplayItem )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveAllActions'>RemoveAllActions</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveAllChildren'>RemoveAllChildren</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveChild'>RemoveChild</a> : Void ( sprite:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ReorderChild'>ReorderChild</a> : Void ( child:Sprite, z:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RunAction'>RunAction</a> : Void ( action:Action )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToBack'>SendChildToBack</a> : Void ( child:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToFront'>SendChildToFront</a> : Void ( child:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetHandle'>SetHandle</a> : Void ( xpos:Float, ypos:Float, adjustForResScale:Bool=false )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetHidden'>SetHidden</a> : Void ( state:Bool=true )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetOpacity'>SetOpacity</a> : Void ( alphaLevel:Float, andChildren:Bool=true )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetPosition'>SetPosition</a> : Void ( pos:Point )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetPosition(2)'>SetPosition</a> : Void ( xpos:Float, ypos:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetScale'>SetScale</a> : Void ( scale:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetScale(2)'>SetScale</a> : Void ( xscl:Float, yscl:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#UpdateChildren'>UpdateChildren</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Abstract base class for all displayable items (Sprites, Layers, etc).
+<p>
+Has position, scale, actions, and other base properties. Holds a hierarchy of child items which are processed in Update().
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>	Default constr creates an empty item.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Actions'></a>
+				<div class="well well-small name"><b>Method Actions : <a href="Modules_monkey.list_List.html">List</a>&lt;<a href="Modules_congo.action_Action.html">Action</a>&gt; () Property</b></div>
+				<div class="description">
+					<p>	(Advanced use). Returns the list of Actions. Some Actions may be running, some may have completed.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Angle'></a>
+				<div class="well well-small name"><b>Method Angle : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the current rotation angle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Angle(2)'></a>
+				<div class="well well-small name"><b>Method Angle : Void ( rot:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the current rotation angle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Children'></a>
+				<div class="well well-small name"><b>Method Children : <a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a>[] () Property</b></div>
+				<div class="description">
+					<p>	Returns the array of child items, if you need to access them directly.
+<p>
+	Dev note - be careful if manipulating the array, numChildren is stored separately.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomFlag'></a>
+				<div class="well well-small name"><b>Method CustomFlag : Bool () Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom bool property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomFlag(2)'></a>
+				<div class="well well-small name"><b>Method CustomFlag : Void ( state:Bool ) Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom bool property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomId'></a>
+				<div class="well well-small name"><b>Method CustomId : Int () Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom int property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomId(2)'></a>
+				<div class="well well-small name"><b>Method CustomId : Void ( value:Int ) Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom int property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomItemRef'></a>
+				<div class="well well-small name"><b>Method CustomItemRef : <a href="Modules_congo.sprite_Sprite.html">Sprite</a> () Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom item property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomItemRef(2)'></a>
+				<div class="well well-small name"><b>Method CustomItemRef : Void ( item:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> ) Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom item property.
+<p>
+	Note - remember to clear this if you are expecting the referenced item to be deleted by garbage collection.
+	Also, be careful if the referenced item is deleted elsewhere, the pointer may not then be valid here.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomName'></a>
+				<div class="well well-small name"><b>Method CustomName : String () Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom string property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CustomName(2)'></a>
+				<div class="well well-small name"><b>Method CustomName : Void ( name:String ) Property</b></div>
+				<div class="description">
+					<p>	A user-defined custom string property.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='DirtyZOrder'></a>
+				<div class="well well-small name"><b>Method DirtyZOrder : Bool () Property</b></div>
+				<div class="description">
+					<p>	(Internal). Flag which triggers child resorting. Normally you don't need to use this.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Handle'></a>
+				<div class="well well-small name"><b>Method Handle : <a href="Modules_congo.point_Point.html">Point</a> () Property</b></div>
+				<div class="description">
+					<p>	Returns the item's handle position.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Hidden'></a>
+				<div class="well well-small name"><b>Method Hidden : Bool () Property</b></div>
+				<div class="description">
+					<p>	Returns True if currently hidden.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Hidden(2)'></a>
+				<div class="well well-small name"><b>Method Hidden : Void ( state:Bool ) Property</b></div>
+				<div class="description">
+					<p>	Used to hide an item. Hidden items (and their children) are not drawn, but still receive Updates. See also SetOpacity.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='NumChildren'></a>
+				<div class="well well-small name"><b>Method NumChildren : Int () Property</b></div>
+				<div class="description">
+					<p>	Returns the current number of child items owned by this displayitem.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Opacity'></a>
+				<div class="well well-small name"><b>Method Opacity : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the opacity (alpha). Range is 0.0 (transparent) to 1.0 (fully opaque).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Parent'></a>
+				<div class="well well-small name"><b>Method Parent : <a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> () Property</b></div>
+				<div class="description">
+					<p>	Returns the parent item, or Null if no parent.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Position'></a>
+				<div class="well well-small name"><b>Method Position : Void ( pos:<a href="Modules_congo.point_Point.html">Point</a> ) Property</b></div>
+				<div class="description">
+					<p>	Sets the current position.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Position(2)'></a>
+				<div class="well well-small name"><b>Method Position : <a href="Modules_congo.point_Point.html">Point</a> () Property</b></div>
+				<div class="description">
+					<p>	Returns the current position.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResScaler'></a>
+				<div class="well well-small name"><b>Method ResScaler : Float () Property</b></div>
+				<div class="description">
+					<p>	(Advanced use) Returns the internal res scale factor. Default is 1.0.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResScaler(2)'></a>
+				<div class="well well-small name"><b>Method ResScaler : Void ( rscale:Float=1.0 ) Property</b></div>
+				<div class="description">
+					<p>	(Advanced use) Sets the internal res scale factor. DisplayItems leave this as 1.0, but Sprite's will 
+	set this via CongoImageLoader when hi-res images are used, which we need to scale for.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetAngle'></a>
+				<div class="well well-small name"><b>Method SetAngle : Void ( rot:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the current rotation angle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UseLazySort'></a>
+				<div class="well well-small name"><b>Method UseLazySort : Bool () Property</b></div>
+				<div class="description">
+					<p>	Option which enables a more efficient Z sorting algorithm. 
+	It may take a number of update loops to fully sort all children since only one 'sweep' is done per Update loop.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='XScale'></a>
+				<div class="well well-small name"><b>Method XScale : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the X scale factor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='XScale(2)'></a>
+				<div class="well well-small name"><b>Method XScale : Void ( scale:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the X scale factor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='YScale'></a>
+				<div class="well well-small name"><b>Method YScale : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the Y scale factor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='YScale(2)'></a>
+				<div class="well well-small name"><b>Method YScale : Void ( scale:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the Y scale factor.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ZOrder'></a>
+				<div class="well well-small name"><b>Method ZOrder : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the Z order. See AddChild() or ReorderChild() to change Z order (cant set it directly).</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='ActionCompleted'></a>
+				<div class="well well-small name"><b>Method ActionCompleted : Void ( actionId:Int )</b></div>
+				<div class="description">
+					<p>	Gets called when an Action finishes. Cleans-up finished Actions from our list.
+	Derived classes can override this as required, i.e. to retain or reuse the action instead.
+	actionId is 0 unless defined when creating the action.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AddChild'></a>
+				<div class="well well-small name"><b>Method AddChild : Void ( child:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> )</b></div>
+				<div class="description">
+					<p>	Adds a child item. Z order is 0 by default, will be added after other items with the same Z order.
+	Adding an child twice will throw an error.
+	See also HasChild(), AddChildWithZOrder() and ReorderChild().</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AddChildWithZOrder'></a>
+				<div class="well well-small name"><b>Method AddChildWithZOrder : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, zOrder:Float=0.0 )</b></div>
+				<div class="description">
+					<p>	As AddChild() but will reorder based on the provided Z order.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ButtonActivated'></a>
+				<div class="well well-small name"><b>Method ButtonActivated : Void ( button:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="description">
+					<p>	Gets called when a child button is activated. Derived classes should override this.
+	The situations which trigger an 'activated' state depens on the button type. Use CustomId or CustomString to identify buttons.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Draw'></a>
+				<div class="well well-small name"><b>Method Draw : Void ()</b></div>
+				<div class="description">
+					<p>	Main draw routine. See also PaintItem().
+<p>
+	Transforms get applied before drawing child sprites, so they'll be affected by them
+	(see http://www.monkeycoder.co.nz/Community/posts.php?topic=2412).
+<p>
+	For debugging/testing, uncomment the DrawBoundingRect() line at the end of this function.
+<p>
+	Dev note - we could combine the 3 transforms into a single transform, but the benchmark shows no improvement.
+<p>
+	Dev note - derived classes can override this, but with caution since it affects child transforms etc.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='FullSortZOrder'></a>
+				<div class="well well-small name"><b>Method FullSortZOrder : Void ()</b></div>
+				<div class="description">
+					<p>  	Insertion sort for children Z-ordering. See http://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort
+<p>
+	See also http://www.monkeycoder.co.nz/Community/posts.php?topic=2034 User:impixi code sample.
+	This is reasonably fast if the list is short and/or there are few changes to the order each step.
+	See also UseLazySort for a faster sort.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HasChild'></a>
+				<div class="well well-small name"><b>Method HasChild : Bool ( ditem:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if the specified item is a direct child of this item (not a nested child).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PaintItem'></a>
+				<div class="well well-small name"><b>Method PaintItem : Void ()</b></div>
+				<div class="description">
+					<p>	Derived classes should implement this. It is called from Draw() to paint the item's content, separate to the transforms etc.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveAllActions'></a>
+				<div class="well well-small name"><b>Method RemoveAllActions : Void ()</b></div>
+				<div class="description">
+					<p>	Stops and removes all Actions applied to this item.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveAllChildren'></a>
+				<div class="well well-small name"><b>Method RemoveAllChildren : Void ()</b></div>
+				<div class="description">
+					<p>	Removes all children.
+<p>
+	Note, if the TextureCache was used to store associated Images, they will remain there unless cleared.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveChild'></a>
+				<div class="well well-small name"><b>Method RemoveChild : Void ( sprite:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="description">
+					<p>	Removes a child item. Throws an error if the item is not a child.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ReorderChild'></a>
+				<div class="well well-small name"><b>Method ReorderChild : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, z:Float )</b></div>
+				<div class="description">
+					<p>	Changes an existing child's Z order. A re-sort is scheduled for the next update loop.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RunAction'></a>
+				<div class="well well-small name"><b>Method RunAction : Void ( action:<a href="Modules_congo.action_Action.html">Action</a> )</b></div>
+				<div class="description">
+					<p>	Runs an Action (or ActionSequence) on the item.
+<p>
+	Note - avoid running two actions which affect the same data, e.g. a MoveTo and a MoveBy at the same time.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SendChildToBack'></a>
+				<div class="well well-small name"><b>Method SendChildToBack : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="description">
+					<p>	Sends child to back (lowest Z order). A re-sort is scheduled for the next update loop.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SendChildToFront'></a>
+				<div class="well well-small name"><b>Method SendChildToFront : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="description">
+					<p>	Sends child to front (highest Z order). A re-sort is scheduled for the next update loop.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetHandle'></a>
+				<div class="well well-small name"><b>Method SetHandle : Void ( xpos:Float, ypos:Float, adjustForResScale:Bool=false )</b></div>
+				<div class="description">
+					<p>	Sets the item handle (anchor point), givent in virtual coords.
+	
+	The handle is subtracted before rotation and scale are applied, thus providing a 'local' origin.
+	Note, the handle is relative to the centre of the item, unlike Monkey's Image handles which are at the top-left.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetHidden'></a>
+				<div class="well well-small name"><b>Method SetHidden : Void ( state:Bool=true )</b></div>
+				<div class="description">
+					<p>	Used to hide an item. Hidden items (and their children) are not drawn, but still receive Updates. See also SetOpacity.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetOpacity'></a>
+				<div class="well well-small name"><b>Method SetOpacity : Void ( alphaLevel:Float, andChildren:Bool=true )</b></div>
+				<div class="description">
+					<p>	Sets the opacity (alpha) of this tiem and optionally all (current) child items.
+	1.0 is fully opaque, 0.0 is fully transparent. Not to be confused with mojo function SetAlpha() which controls the
+	Draw state alpha.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetPosition'></a>
+				<div class="well well-small name"><b>Method SetPosition : Void ( pos:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Sets the current position.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetPosition(2)'></a>
+				<div class="well well-small name"><b>Method SetPosition : Void ( xpos:Float, ypos:Float )</b></div>
+				<div class="description">
+					<p>	Sets the current position.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetScale'></a>
+				<div class="well well-small name"><b>Method SetScale : Void ( scale:Float )</b></div>
+				<div class="description">
+					<p>	Set both x and y scale factors to the same amount.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetScale(2)'></a>
+				<div class="well well-small name"><b>Method SetScale : Void ( xscl:Float, yscl:Float )</b></div>
+				<div class="description">
+					<p>	Sets the x and y scale factors separately.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Main Update loop. Deals with Actions and Children. Derived classes can override this. 
+	Pause state is also dealt with here.
+	See also UpdateChildren().</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UpdateChildren'></a>
+				<div class="well well-small name"><b>Method UpdateChildren : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Updates the items children. Called from main Update() loop. It is kept separate for clarity and in case you want
+	to write a custom Update() function.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

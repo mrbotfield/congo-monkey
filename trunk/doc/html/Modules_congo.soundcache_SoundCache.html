@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">SoundCache</span></h1>
+
+
+	<p>A sound cache/resource manager singleton.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#AddResource'>AddResource</a> : Sound ( filepath:String )</li>
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#AddSound'>AddSound</a> : Void ( sound:Sound, filepath:String )</li>
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#Contains'>Contains</a> : Bool ( filepath:String )</li>
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#GetSound'>GetSound</a> : Sound ( filepath:Sound )</li>
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#Remove'>Remove</a> : Void ( filepath:String )</li>
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#RemoveAll'>RemoveAll</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.soundcache_SoundCache.html#init'>init</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#getInstance'>getInstance</a> : SoundCache ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A sound cache/resource manager singleton.
+<p>
+Essentially the same approach as Texturecache. However, this class will use CongoSoundLoader
+to load the correct audio format depending on the target device. See the Monkey docs and config for
+supported audio formats. Unless memory is very tight (e.g. you have a very large number of sounds
+its unlikely you need to routinely empty the cache.
+<p>
+<p>
+The PlaySound() function deals internally with choosing a free audio channel. This is fine in most
+cases, but you are free to use Monkey's PlaySound directly for more control.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>	Private constr.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AddResource'></a>
+				<div class="well well-small name"><b>Method AddResource : <a href="Modules_mojo.audio_Sound.html">Sound</a> ( filepath:String )</b></div>
+				<div class="description">
+					<p>	Creates a Sound from the specified resource name and adds it to the cache. Returns the Sound. If the cache
+	already contains the Sound, that copy will be returned instead.
+	If the file does not exist, an error will be thrown.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='AddSound'></a>
+				<div class="well well-small name"><b>Method AddSound : Void ( sound:<a href="Modules_mojo.audio_Sound.html">Sound</a>, filepath:String )</b></div>
+				<div class="description">
+					<p>	Adds a pre-existing Sound directly.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Contains'></a>
+				<div class="well well-small name"><b>Method Contains : Bool ( filepath:String )</b></div>
+				<div class="description">
+					<p>	Returns True if the caches contains a sound with the specified name.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetSound'></a>
+				<div class="well well-small name"><b>Method GetSound : <a href="Modules_mojo.audio_Sound.html">Sound</a> ( filepath:<a href="Modules_mojo.audio_Sound.html">Sound</a> )</b></div>
+				<div class="description">
+					<p>	Returns a Sound from the cache, or Null if no such resource exists.	</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Remove'></a>
+				<div class="well well-small name"><b>Method Remove : Void ( filepath:String )</b></div>
+				<div class="description">
+					<p>	Removes a relevant Sound from the cache.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RemoveAll'></a>
+				<div class="well well-small name"><b>Method RemoveAll : Void ()</b></div>
+				<div class="description">
+					<p>	Removes all Sounds from the cache.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='init'></a>
+				<div class="well well-small name"><b>Method init : Void ()</b></div>
+				<div class="description">
+					<p>	Internal. Called from constr.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='getInstance'></a>
+				<div class="well well-small name"><b>Function getInstance : <a href="Modules_congo.soundcache_SoundCache.html">SoundCache</a> ()</b></div>
+				<div class="description">
+					<p>	Use this to access the shared instance.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

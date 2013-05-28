@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">PhysicsSprite</span></h1>
+
+
+	<p>A sprite with built-in physics behaviour.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.sprite_Sprite.html">Sprite</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Fields:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#doRotateSprite'>doRotateSprite</a> : Bool</li>
+					
+						<li><a href='#m_body'>m_body</a> : b2Body</li>
+					
+						<li><a href='#objName'>objName</a> : String</li>
+					
+						<li><a href='#objType'>objType</a> : Int</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.physicssprite_PhysicsSprite.html#AddVelocity'>AddVelocity</a> : Void ( vel:b2Vec2 )</li>
+					
+						<li><a href='Modules_congo.physicssprite_PhysicsSprite.html#HandleAddContact'>HandleAddContact</a> : Void ( spr:PhysicsSprite )</li>
+					
+						<li><a href='Modules_congo.physicssprite_PhysicsSprite.html#HandleRemoveContact'>HandleRemoveContact</a> : Void ( spr:PhysicsSprite )</li>
+					
+						<li><a href='Modules_congo.physicssprite_PhysicsSprite.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxHeight'>BoundingBoxHeight</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxWidth'>BoundingBoxWidth</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawBoundingRect'>DrawBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawGlobalBoundingRect'>DrawGlobalBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetBoundingRect'>GetBoundingRect</a> : Rect ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetCurrentImage'>GetCurrentImage</a> : Image ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#InitResScaler'>InitResScaler</a> : Void ( autoDetect:Bool=true, scale:Float=1.0 )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#LoadFromTP'>LoadFromTP</a> : Bool ( tpimg:Image, dataName:String, imageName:String )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#SetMainImage'>SetMainImage</a> : Void ( img:Image )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A sprite with built-in physics behaviour. Requires box2d module.
+See also: PhysicsWorld class.
+<p>
+** THIS CLASS IS UNDER DEVELOPMENT ** - it is useable but has limited functionality.
+<p>
+Todo - private fields, properties.
+	
+	
+	<hr>
+
+
+
+	<h2>Field Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='doRotateSprite'></a>
+				<div class="well well-small name"><b>Field doRotateSprite : Bool</b></div>
+				<div class="description">
+					<p>	Set this to False to prevent the Sprite rotating to match the underlying box2d body.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='m_body'></a>
+				<div class="well well-small name"><b>Field m_body : b2Body</b></div>
+				<div class="description">
+					<p>	The box2d body.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='objName'></a>
+				<div class="well well-small name"><b>Field objName : String</b></div>
+				<div class="description">
+					<p>	User-defined name. See also objType.
+	You can use this field to label different game objects (helpful when casting etc).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='objType'></a>
+				<div class="well well-small name"><b>Field objType : Int</b></div>
+				<div class="description">
+					<p>	User-defined type.
+	You can use this field to label different game objects (helpful when casting etc).</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='AddVelocity'></a>
+				<div class="well well-small name"><b>Method AddVelocity : Void ( vel:b2Vec2 )</b></div>
+				<div class="description">
+					<p>	Gives the body a kick of linear velocity in the specified direction.
+	Will wake-up the body if it was sleeping.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HandleAddContact'></a>
+				<div class="well well-small name"><b>Method HandleAddContact : Void ( spr:<a href="Modules_congo.physicssprite_PhysicsSprite.html">PhysicsSprite</a> )</b></div>
+				<div class="description">
+					<p>	Contact handler.
+	Derived classes can implement these as required.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='HandleRemoveContact'></a>
+				<div class="well well-small name"><b>Method HandleRemoveContact : Void ( spr:<a href="Modules_congo.physicssprite_PhysicsSprite.html">PhysicsSprite</a> )</b></div>
+				<div class="description">
+					<p>	Contact handler.
+	Derived classes can implement these as required.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Main Update function. The Sprite is moved and (optionally) rotated to match the underlying box2d body.
+	Derived classes can override this if required.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

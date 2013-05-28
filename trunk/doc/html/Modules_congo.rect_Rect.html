@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Rect</span></h1>
+
+
+	<p>A rectangle class, including functions for checking intersection with points or other rects.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( x:Float, y:Float, width:Float=0.0, height:Float=0.0 )</li>
+					
+						<li><a href='#New(2)'>New</a> ( pt1:Point, pt2:Point )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Height'>Height</a> : Float ()</li>
+					
+						<li><a href='#Height(2)'>Height</a> : Void ( hgt:Float )</li>
+					
+						<li><a href='#Width'>Width</a> : Float ()</li>
+					
+						<li><a href='#Width(2)'>Width</a> : Void ( wid:Float )</li>
+					
+						<li><a href='#X'>X</a> : Float ()</li>
+					
+						<li><a href='#X(2)'>X</a> : Void ( x:Float )</li>
+					
+						<li><a href='#Y'>Y</a> : Float ()</li>
+					
+						<li><a href='#Y(2)'>Y</a> : Void ( y:Float )</li>
+					
+						<li><a href='#x'>x</a> : Float ()</li>
+					
+						<li><a href='#x(2)'>x</a> : Void ( x:Float )</li>
+					
+						<li><a href='#y'>y</a> : Float ()</li>
+					
+						<li><a href='#y(2)'>y</a> : Void ( y:Float )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.rect_Rect.html#Area'>Area</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.rect_Rect.html#Contains'>Contains</a> : Bool ( point:Point )</li>
+					
+						<li><a href='Modules_congo.rect_Rect.html#Intersects'>Intersects</a> : Bool ( rect2:Rect )</li>
+					
+						<li><a href='Modules_congo.rect_Rect.html#PrintInfo'>PrintInfo</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#Contains(2)'>Contains</a> : Bool ( rect:Rect, point:Point )</li>
+					
+						<li><a href='#Intersects(2)'>Intersects</a> : Bool ( rect1:Rect, rect2:Rect )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A rectangle class, including functions for checking intersection with points or other rects.
+We define the origin of the rect to the top left coordinate.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( x:Float, y:Float, width:Float=0.0, height:Float=0.0 )</b></div>
+				<div class="description">
+					<p>	Construct a rect by providing the top left coordinate, together with the width and height.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( pt1:<a href="Modules_congo.point_Point.html">Point</a>, pt2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Construct a rect by providing the top left and bottom right coordinates.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Height'></a>
+				<div class="well well-small name"><b>Method Height : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the rect height.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Height(2)'></a>
+				<div class="well well-small name"><b>Method Height : Void ( hgt:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the rect height.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Width'></a>
+				<div class="well well-small name"><b>Method Width : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the rect width.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Width(2)'></a>
+				<div class="well well-small name"><b>Method Width : Void ( wid:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the rect width.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='X'></a>
+				<div class="well well-small name"><b>Method X : Float () Property</b></div>
+				<div class="description">
+					<p>	X position of top-left corner.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='X(2)'></a>
+				<div class="well well-small name"><b>Method X : Void ( x:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets X position of top-left corner.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Y'></a>
+				<div class="well well-small name"><b>Method Y : Float () Property</b></div>
+				<div class="description">
+					<p>	Y position of top-left corner.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Y(2)'></a>
+				<div class="well well-small name"><b>Method Y : Void ( y:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets Y position of top-left corner.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='x'></a>
+				<div class="well well-small name"><b>Method x : Float () Property</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='x(2)'></a>
+				<div class="well well-small name"><b>Method x : Void ( x:Float ) Property</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='y'></a>
+				<div class="well well-small name"><b>Method y : Float () Property</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='y(2)'></a>
+				<div class="well well-small name"><b>Method y : Void ( y:Float ) Property</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Area'></a>
+				<div class="well well-small name"><b>Method Area : Float ()</b></div>
+				<div class="description">
+					<p>	Returns the rect area (width x height).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Contains'></a>
+				<div class="well well-small name"><b>Method Contains : Bool ( point:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if the provided point lies within the rect (or lies exactly on an edge).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Intersects'></a>
+				<div class="well well-small name"><b>Method Intersects : Bool ( rect2:<a href="Modules_congo.rect_Rect.html">Rect</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if any part of the rect intersects the provided rect (or if the edges align exactly).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PrintInfo'></a>
+				<div class="well well-small name"><b>Method PrintInfo : Void ()</b></div>
+				<div class="description">
+					<p>	Outputs some debug information about the rect, useful for testing.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Contains(2)'></a>
+				<div class="well well-small name"><b>Function Contains : Bool ( rect:<a href="Modules_congo.rect_Rect.html">Rect</a>, point:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if the point lies within any part of the rect (or exactly on an edge).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Intersects(2)'></a>
+				<div class="well well-small name"><b>Function Intersects : Bool ( rect1:<a href="Modules_congo.rect_Rect.html">Rect</a>, rect2:<a href="Modules_congo.rect_Rect.html">Rect</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if any part of the 2 rects intersect (incl if the edges align exactly).</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

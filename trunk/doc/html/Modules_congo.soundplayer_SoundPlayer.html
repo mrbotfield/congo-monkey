@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">SoundPlayer</span></h1>
+
+
+	<p>A wrapper for playing sound, which deals with file formats, channels etc.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#GetNextChannel'>GetNextChannel</a> : Int ()</li>
+					
+						<li><a href='#LoadAndPlay'>LoadAndPlay</a> : Sound ( filename:String, channel:Int=-1, loop:Bool=false )</li>
+					
+						<li><a href='#MuteAll'>MuteAll</a> : Void ( state:Bool )</li>
+					
+						<li><a href='#Muted'>Muted</a> : Bool ()</li>
+					
+						<li><a href='#PauseAll'>PauseAll</a> : Void ()</li>
+					
+						<li><a href='#Play'>Play</a> : Void ( snd:Sound, channel:Int=-1, loop:Bool=false )</li>
+					
+						<li><a href='#ResumeAll'>ResumeAll</a> : Void ()</li>
+					
+						<li><a href='#SetVolumeAll'>SetVolumeAll</a> : Void ( vol:Float )</li>
+					
+						<li><a href='#StopAll'>StopAll</a> : Void ()</li>
+					
+						<li><a href='#ToggleMuteAll'>ToggleMuteAll</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A wrapper for playing sound, which deals with file formats, channels etc.
+<p>
+See CONGO_MAX_AUDIO_CHANNEL setting, and audioutils functions which load and store sounds.
+This class is not for playing music -- use Monkey's PlayMusic function.
+<p>
+Note - if you loop a sound you will need to store the channel in order to stop it.
+Note - For Flash, try 8- or 16-bit mp3s at sample rates of 11, 22, or 44 kHz.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='GetNextChannel'></a>
+				<div class="well well-small name"><b>Function GetNextChannel : Int ()</b></div>
+				<div class="description">
+					<p>	(Internal). Returns the next available sound channel. See CONGO_MAX_AUDIO_CHANNEL to change the number of available channels.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LoadAndPlay'></a>
+				<div class="well well-small name"><b>Function LoadAndPlay : <a href="Modules_mojo.audio_Sound.html">Sound</a> ( filename:String, channel:Int=-1, loop:Bool=false )</b></div>
+				<div class="description">
+					<p>	Function which loads a sound resource from file, plays it, and also adds it to the cache if required.
+	Won't play if Muted is set.
+<p>
+	See also the overloaded form, which takes a Sound directly (no cache lookup).
+	If no channel is specified, the next available one is selected; You may wish to control the channels yourself
+	to reserve certain channels for certain effects.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='MuteAll'></a>
+				<div class="well well-small name"><b>Function MuteAll : Void ( state:Bool )</b></div>
+				<div class="description">
+					<p>	Mutes (or un-mutes) the sound player. Calls to Play will do nothing when mute is set.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Muted'></a>
+				<div class="well well-small name"><b>Function Muted : Bool ()</b></div>
+				<div class="description">
+					<p>	Returns the mute state.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PauseAll'></a>
+				<div class="well well-small name"><b>Function PauseAll : Void ()</b></div>
+				<div class="description">
+					<p>	Pause all channels.
+<p>
+	Dev note - possible issue in Flash? CongoApp did use this, but changed to StopAll to avoid problem.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Play'></a>
+				<div class="well well-small name"><b>Function Play : Void ( snd:<a href="Modules_mojo.audio_Sound.html">Sound</a>, channel:Int=-1, loop:Bool=false )</b></div>
+				<div class="description">
+					<p>	Function which plays the specified Sound. If no channel is specified, the next available one is selected.
+	Won't play if Muted is set.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResumeAll'></a>
+				<div class="well well-small name"><b>Function ResumeAll : Void ()</b></div>
+				<div class="description">
+					<p>	Resume all channels.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetVolumeAll'></a>
+				<div class="well well-small name"><b>Function SetVolumeAll : Void ( vol:Float )</b></div>
+				<div class="description">
+					<p>	Sets the volume for all channels.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StopAll'></a>
+				<div class="well well-small name"><b>Function StopAll : Void ()</b></div>
+				<div class="description">
+					<p>	Stop all channels. CongoApp calls this when the app is paused.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ToggleMuteAll'></a>
+				<div class="well well-small name"><b>Function ToggleMuteAll : Void ()</b></div>
+				<div class="description">
+					<p>	Toggles the mute state. Useful for sound on/off toggle buttons etc.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

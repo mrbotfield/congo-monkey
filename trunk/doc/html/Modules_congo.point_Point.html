@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Point</span></h1>
+
+
+	<p>A simple point class and associated point/vector functions.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( x:Float=0.0, y:Float=0.0 )</li>
+					
+						<li><a href='#New(2)'>New</a> ( p:Point )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#X'>X</a> : Float ()</li>
+					
+						<li><a href='#X(2)'>X</a> : Void ( xpos:Float )</li>
+					
+						<li><a href='#Y'>Y</a> : Float ()</li>
+					
+						<li><a href='#Y(2)'>Y</a> : Void ( ypos:Float )</li>
+					
+						<li><a href='#x'>x</a> : Float ()</li>
+					
+						<li><a href='#x(2)'>x</a> : Void ( xpos:Float )</li>
+					
+						<li><a href='#y'>y</a> : Float ()</li>
+					
+						<li><a href='#y(2)'>y</a> : Void ( ypos:Float )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.point_Point.html#Length'>Length</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.point_Point.html#LengthSq'>LengthSq</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.point_Point.html#Set'>Set</a> : Void ( x:Float=0.0, y:Float=0.0 )</li>
+					
+						<li><a href='Modules_congo.point_Point.html#Set(2)'>Set</a> : Void ( pt:Point )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#ManHatDist'>ManHatDist</a> : Float ( p1:Point, p2:Point )</li>
+					
+						<li><a href='#PointAdd'>PointAdd</a> : Point ( p1:Point, p2:Point )</li>
+					
+						<li><a href='#PointAngle'>PointAngle</a> : Float ( p1:Point, p2:Point )</li>
+					
+						<li><a href='#PointDist'>PointDist</a> : Float ( p1:Point, p2:Point )</li>
+					
+						<li><a href='#PointDistSq'>PointDistSq</a> : Float ( p1:Point, p2:Point )</li>
+					
+						<li><a href='#PointDot'>PointDot</a> : Float ( p1:Point, p2:Point )</li>
+					
+						<li><a href='#PointMult'>PointMult</a> : Point ( p:Point, amount:Float )</li>
+					
+						<li><a href='#PointNormalize'>PointNormalize</a> : Point ( p:Point )</li>
+					
+						<li><a href='#PointSub'>PointSub</a> : Point ( p1:Point, p2:Point )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( x:Float=0.0, y:Float=0.0 )</b></div>
+				<div class="description">
+					<p>	Creates a point with the given coordinates.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( p:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Creates a point with coordinates equal to the provided Point.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='X'></a>
+				<div class="well well-small name"><b>Method X : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the X coordinate.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='X(2)'></a>
+				<div class="well well-small name"><b>Method X : Void ( xpos:Float ) Property</b></div>
+				<div class="description">
+					<p>	Set the X coordinate.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Y'></a>
+				<div class="well well-small name"><b>Method Y : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the Y coordinate.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Y(2)'></a>
+				<div class="well well-small name"><b>Method Y : Void ( ypos:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the Y coordinate.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='x'></a>
+				<div class="well well-small name"><b>Method x : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the X coordinate (alternative).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='x(2)'></a>
+				<div class="well well-small name"><b>Method x : Void ( xpos:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the X coordinate (alternative).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='y'></a>
+				<div class="well well-small name"><b>Method y : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the Y coordinate (alternative).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='y(2)'></a>
+				<div class="well well-small name"><b>Method y : Void ( ypos:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the Y coordinate (alternative).</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Length'></a>
+				<div class="well well-small name"><b>Method Length : Float ()</b></div>
+				<div class="description">
+					<p>	Returns the length of the vector (from origin to the Point).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LengthSq'></a>
+				<div class="well well-small name"><b>Method LengthSq : Float ()</b></div>
+				<div class="description">
+					<p>	Returns the square of the length of the vector (from origin to the Point).
+	More efficient than Length() since it avoids a Sqrt calculation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Set'></a>
+				<div class="well well-small name"><b>Method Set : Void ( x:Float=0.0, y:Float=0.0 )</b></div>
+				<div class="description">
+					<p>	Alternative method to set coordinates.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Set(2)'></a>
+				<div class="well well-small name"><b>Method Set : Void ( pt:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Sets the coordinates to be equal to the provided Point.
+	
+	Dev note - 'somepoint = mypoint' will make both points reference the <b>same object</b>!.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='ManHatDist'></a>
+				<div class="well well-small name"><b>Function ManHatDist : Float ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns the 'manhatten' distance between two points. Much cheaper than a full distance calculation. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointAdd'></a>
+				<div class="well well-small name"><b>Function PointAdd : <a href="Modules_congo.point_Point.html">Point</a> ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns a new point which is the addition of the two provided points.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointAngle'></a>
+				<div class="well well-small name"><b>Function PointAngle : Float ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns the angle (in radians) between the two vectors.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointDist'></a>
+				<div class="well well-small name"><b>Function PointDist : Float ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Function which returns the distance between two points.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointDistSq'></a>
+				<div class="well well-small name"><b>Function PointDistSq : Float ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Function which returns the square of the distance between two points.
+	More efficient than PointDist() since it avoids a Sqrt calculation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointDot'></a>
+				<div class="well well-small name"><b>Function PointDot : Float ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns the dot product of the two vectors. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointMult'></a>
+				<div class="well well-small name"><b>Function PointMult : <a href="Modules_congo.point_Point.html">Point</a> ( p:<a href="Modules_congo.point_Point.html">Point</a>, amount:Float )</b></div>
+				<div class="description">
+					<p>	Scales the provided vector and returns the result as a new point. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointNormalize'></a>
+				<div class="well well-small name"><b>Function PointNormalize : <a href="Modules_congo.point_Point.html">Point</a> ( p:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Normalizes the provided vector and returns the unit vector as a new point. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PointSub'></a>
+				<div class="well well-small name"><b>Function PointSub : <a href="Modules_congo.point_Point.html">Point</a> ( p1:<a href="Modules_congo.point_Point.html">Point</a>, p2:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns a new point which is the subtraction of the two provided points.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

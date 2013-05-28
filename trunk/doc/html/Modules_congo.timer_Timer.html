@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Timer</span></h1>
+
+
+	<p>A simple timer class.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+						<li><a href='#New(2)'>New</a> ( duration:Float, current:Float=0.0 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CurrentTime'>CurrentTime</a> : Float ()</li>
+					
+						<li><a href='#CurrentTime(2)'>CurrentTime</a> : Void ( time:Float )</li>
+					
+						<li><a href='#Duration'>Duration</a> : Void ( duration:Float )</li>
+					
+						<li><a href='#Duration(2)'>Duration</a> : Float ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.timer_Timer.html#Completed'>Completed</a> : Bool ()</li>
+					
+						<li><a href='Modules_congo.timer_Timer.html#Progress'>Progress</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.timer_Timer.html#Reset'>Reset</a> : Void ( time:Float=0.0 )</li>
+					
+						<li><a href='Modules_congo.timer_Timer.html#SetDuration'>SetDuration</a> : Void ( duration:Float )</li>
+					
+						<li><a href='Modules_congo.timer_Timer.html#Update'>Update</a> : Void ( dT:Float )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A simple timer class. 
+<p>
+Note - we work in milliseconds (as Monkey/Mojo tends to), but choose to use Floats here.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>	Creates a timer with zero duration.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( duration:Float, current:Float=0.0 )</b></div>
+				<div class="description">
+					<p>	Creates a timer of specified duration (in milliseconds). Timers start at 0.0.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CurrentTime'></a>
+				<div class="well well-small name"><b>Method CurrentTime : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the current time in milliseconds.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='CurrentTime(2)'></a>
+				<div class="well well-small name"><b>Method CurrentTime : Void ( time:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the current time in milliseconds. (not usually required in normal use, Update sets the time). See also Reset().</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Duration'></a>
+				<div class="well well-small name"><b>Method Duration : Void ( duration:Float ) Property</b></div>
+				<div class="description">
+					<p>	Sets the duration of the timer, in milliseconds.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Duration(2)'></a>
+				<div class="well well-small name"><b>Method Duration : Float () Property</b></div>
+				<div class="description">
+					<p>	Returns the duration of the timer, in milliseconds.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Completed'></a>
+				<div class="well well-small name"><b>Method Completed : Bool ()</b></div>
+				<div class="description">
+					<p>	Returns True if the current time exceeds or equals the Timer's duration.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Progress'></a>
+				<div class="well well-small name"><b>Method Progress : Float ()</b></div>
+				<div class="description">
+					<p>	Returns the proportion completed, i.e. starts at 0.0, ends at 1.0.
+<p>
+	Note - could return > 1.0 if timer steps beyond duration (for efficiency we dont clamp it here). Returns 1.0 if duration is zero.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Reset'></a>
+				<div class="well well-small name"><b>Method Reset : Void ( time:Float=0.0 )</b></div>
+				<div class="description">
+					<p>	Resets the current time to 0.0. The timer will continue running.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetDuration'></a>
+				<div class="well well-small name"><b>Method SetDuration : Void ( duration:Float )</b></div>
+				<div class="description">
+					<p>	(Deprecated - use Duration property).
+	Sets the timer duration.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Float )</b></div>
+				<div class="description">
+					<p>	Updates the timer. Generally called from a parent or layer's Update method.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
