@@ -1,0 +1,1 @@
+These docs are a subset of the full docs generated using the bin/makedocs command in Monkey/Ted, with a simplified page template (so only Congo pages appear).
