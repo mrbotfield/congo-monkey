@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">AnimatedSprite</span></h1>
+
+
+	<p>Extension of Sprite which supports frame-based animation.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.sprite_Sprite.html">Sprite</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+		<tr>
+			<td class="span1 name">Extended&nbsp;by:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.button_Button.html">Button</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+						<li><a href='#New(2)'>New</a> ( myImg:Image, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int=-1, frameHeight:Int=-1, offsetX:Int=0, offsetY:Int=0 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CurImageNumber'>CurImageNumber</a> : Int ()</li>
+					
+						<li><a href='#ImageHeight'>ImageHeight</a> : Float ()</li>
+					
+						<li><a href='#ImageWidth'>ImageWidth</a> : Float ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GetCurrentImage'>GetCurrentImage</a> : Image ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GoToFinalFrame'>GoToFinalFrame</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GoToFrame'>GoToFrame</a> : Void ( fnum:Int )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#PauseAnim'>PauseAnim</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#ResumeAnim'>ResumeAnim</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#SetImage'>SetImage</a> : Void ( myImg:Image, frameNum:Int )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#SetMainImage'>SetMainImage</a> : Void ( img:Image )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#SetupImageSheet'>SetupImageSheet</a> : Void ( myImg:Image, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int=-1, frameHeight:Int=-1, offsetX:Int=0, offsetY:Int=0 )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#StartAnim'>StartAnim</a> : Void ( fps:Float=60.0, numLoops:Int=-1, isReversed:Bool=false, isBounce:Bool=false, hideOnComplete:Bool=false )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#StopAnim'>StopAnim</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#UpdateAnim'>UpdateAnim</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CurImageNumber'>CurImageNumber</a> : Int ()</li>
+					
+						<li><a href='#ImageHeight'>ImageHeight</a> : Float ()</li>
+					
+						<li><a href='#ImageWidth'>ImageWidth</a> : Float ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxHeight'>BoundingBoxHeight</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxWidth'>BoundingBoxWidth</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawBoundingRect'>DrawBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawGlobalBoundingRect'>DrawGlobalBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetBoundingRect'>GetBoundingRect</a> : Rect ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#InitResScaler'>InitResScaler</a> : Void ( autoDetect:Bool=true, scale:Float=1.0 )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#LoadFromTP'>LoadFromTP</a> : Bool ( tpimg:Image, dataName:String, imageName:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	Extension of Sprite which supports frame-based animation. Frames are loaded from an image atlas or via Texture Packer.
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>	Default constr. No images are added, see SetupImageSheet(), or use the other constr. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( myImg:<a href="Modules_mojo.graphics_Image.html">Image</a>, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int=-1, frameHeight:Int=-1, offsetX:Int=0, offsetY:Int=0 )</b></div>
+				<div class="description">
+					<p>	Main constr. Sets up array of images from the provided atlas. Use StartAnim() afterwards to begin the animation.
+	If you don't provide frame sizes or initial offset it will simply divide up the atlas evenly based on number of rows and columns.
+	
+	Do not use Image.MidHandle on the sprite sheet, the frames are centered automatically.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CurImageNumber'></a>
+				<div class="well well-small name"><b>Method CurImageNumber : Int () Property</b></div>
+				<div class="description">
+					<p>	Returns the currently showing image frame number</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ImageHeight'></a>
+				<div class="well well-small name"><b>Method ImageHeight : Float () Property</b></div>
+				<div class="description">
+					<p>	Overrides the Sprite class method to return the height of the current image.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ImageWidth'></a>
+				<div class="well well-small name"><b>Method ImageWidth : Float () Property</b></div>
+				<div class="description">
+					<p>	Overrides the Sprite class method to return the width of the current image.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='GetCurrentImage'></a>
+				<div class="well well-small name"><b>Method GetCurrentImage : <a href="Modules_mojo.graphics_Image.html">Image</a> ()</b></div>
+				<div class="description">
+					<p>	Overrides the Sprite class method to return the current image frame.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GoToFinalFrame'></a>
+				<div class="well well-small name"><b>Method GoToFinalFrame : Void ()</b></div>
+				<div class="description">
+					<p>	Jumps to the final frame.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GoToFrame'></a>
+				<div class="well well-small name"><b>Method GoToFrame : Void ( fnum:Int )</b></div>
+				<div class="description">
+					<p>	Jumps to the specified frame. Throws an error if the frame is out of range.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PaintItem'></a>
+				<div class="well well-small name"><b>Method PaintItem : Void ()</b></div>
+				<div class="description">
+					<p>	Overrides the base method to paint the current frame.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='PauseAnim'></a>
+				<div class="well well-small name"><b>Method PauseAnim : Void ()</b></div>
+				<div class="description">
+					<p>	Pauses the animation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResumeAnim'></a>
+				<div class="well well-small name"><b>Method ResumeAnim : Void ()</b></div>
+				<div class="description">
+					<p>	Resumes the animation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetImage'></a>
+				<div class="well well-small name"><b>Method SetImage : Void ( myImg:<a href="Modules_mojo.graphics_Image.html">Image</a>, frameNum:Int )</b></div>
+				<div class="description">
+					<p>	(Advanced use). Directly sets the image at the chosen frame position in our array (will expand array automatically if required).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetMainImage'></a>
+				<div class="well well-small name"><b>Method SetMainImage : Void ( img:<a href="Modules_mojo.graphics_Image.html">Image</a> )</b></div>
+				<div class="description">
+					<p>	Overrides the Sprite class method - sets the image at position 0 of our image array.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetupImageSheet'></a>
+				<div class="well well-small name"><b>Method SetupImageSheet : Void ( myImg:<a href="Modules_mojo.graphics_Image.html">Image</a>, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int=-1, frameHeight:Int=-1, offsetX:Int=0, offsetY:Int=0 )</b></div>
+				<div class="description">
+					<p>	Sets up array of images from the provided sheet. Called from main constr, see notes there.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StartAnim'></a>
+				<div class="well well-small name"><b>Method StartAnim : Void ( fps:Float=60.0, numLoops:Int=-1, isReversed:Bool=false, isBounce:Bool=false, hideOnComplete:Bool=false )</b></div>
+				<div class="description">
+					<p>	Starts an animation with the specified properties. Set numLoops to -1 to loop forever.
+	Fps is frames-per-second, defaults to 60.
+	Use isBounce to make the animation reverse when reaching the final frame, and so on.
+	Set hideOnComplete to prevent the final frame staying visible forever at end.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='StopAnim'></a>
+				<div class="well well-small name"><b>Method StopAnim : Void ()</b></div>
+				<div class="description">
+					<p>	Stops the animation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Overrides the Sprite method to deal with pausing the animation.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='UpdateAnim'></a>
+				<div class="well well-small name"><b>Method UpdateAnim : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Internal. Uses timer to update the frame animation. Called from Update(), you don't normally need to call this yourself.	</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

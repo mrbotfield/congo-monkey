@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Button</span></h1>
+
+
+	<p>A UI button class, with various click/toggle modes.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.animatedsprite_AnimatedSprite.html">AnimatedSprite</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( normalImg:Image, downImg:Image, type:Int=buttontype.congo_buttontype_clicker, name:String="", target:DisplayItem=null, sound:Sound=null )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.button_Button.html#Activate'>Activate</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.button_Button.html#IsDown'>IsDown</a> : Bool ()</li>
+					
+						<li><a href='Modules_congo.button_Button.html#IsEnabled'>IsEnabled</a> : Bool ()</li>
+					
+						<li><a href='Modules_congo.button_Button.html#SetActivateSound'>SetActivateSound</a> : Void ( snd:Sound )</li>
+					
+						<li><a href='Modules_congo.button_Button.html#SetEnabled'>SetEnabled</a> : Void ( state:Bool )</li>
+					
+						<li><a href='Modules_congo.button_Button.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GetCurrentImage'>GetCurrentImage</a> : Image ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GoToFinalFrame'>GoToFinalFrame</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GoToFrame'>GoToFrame</a> : Void ( fnum:Int )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#PauseAnim'>PauseAnim</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#ResumeAnim'>ResumeAnim</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#SetImage'>SetImage</a> : Void ( myImg:Image, frameNum:Int )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#SetMainImage'>SetMainImage</a> : Void ( img:Image )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#SetupImageSheet'>SetupImageSheet</a> : Void ( myImg:Image, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int=-1, frameHeight:Int=-1, offsetX:Int=0, offsetY:Int=0 )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#StartAnim'>StartAnim</a> : Void ( fps:Float=60.0, numLoops:Int=-1, isReversed:Bool=false, isBounce:Bool=false, hideOnComplete:Bool=false )</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#StopAnim'>StopAnim</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#UpdateAnim'>UpdateAnim</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A UI button class, with various click/toggle modes.
+<p>
+** THIS CLASS IS UNDER DEVELOPMENT ** - it is useable but has limited functionality.
+<p>
+The Parent (or other specified target) receives a ButtonActivated call. Use customId or customString to identify buttons.
+<p>
+Dev note: we use the multi-frame Image feature of AnimatedSprite to store the up/down images.
+Dev note: currently buttons do not work if they are children of other items (hitbox needs adjusting for parent).
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( normalImg:<a href="Modules_mojo.graphics_Image.html">Image</a>, downImg:<a href="Modules_mojo.graphics_Image.html">Image</a>, type:Int=buttontype.congo_buttontype_clicker, name:String="", target:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a>=null, sound:<a href="Modules_mojo.audio_Sound.html">Sound</a>=null )</b></div>
+				<div class="description">
+					<p>	Creates a button using the provided images. normalImg and downImg can be the same Image if required.
+	The name can be used to identify the button when receiving calls to ButtonActivated. If Target is
+	left as Null then the Parent will receive the ButtonActivated call, or you can choose a different DisplayItem target.
+<p>
+	Tip: for a simple press effect, try setting the downImg Sprite handles to +1 pixel (normalImg and downImg must be different Images).</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Activate'></a>
+				<div class="well well-small name"><b>Method Activate : Void ()</b></div>
+				<div class="description">
+					<p>	Gets called from Update when the button is activated. ButtonActivated() is then called on the parent or specified target. 
+	The Touch is reset to avoid repeat processing. </p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsDown'></a>
+				<div class="well well-small name"><b>Method IsDown : Bool ()</b></div>
+				<div class="description">
+					<p>	Returns True if currently in the 'down' state (applies to all button types). Usually you would use 
+	ButtonActivated() to detect button activations, but you may still want to read the state.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='IsEnabled'></a>
+				<div class="well well-small name"><b>Method IsEnabled : Bool ()</b></div>
+				<div class="description">
+					<p>	Returns True if the button is currently enabled.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetActivateSound'></a>
+				<div class="well well-small name"><b>Method SetActivateSound : Void ( snd:<a href="Modules_mojo.audio_Sound.html">Sound</a> )</b></div>
+				<div class="description">
+					<p>	Sets a default sound for when the button is activated.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetEnabled'></a>
+				<div class="well well-small name"><b>Method SetEnabled : Void ( state:Bool )</b></div>
+				<div class="description">
+					<p>	Use this to disable the button; no image changes or activation calls will occur. Hiding a button has the same effect.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Overrides the Super class Update function. Assumes Touchmanager is updated.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

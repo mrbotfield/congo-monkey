@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">Layer</span></h1>
+
+
+	<p>A general layer class.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+		<tr>
+			<td class="span1 name">Extended&nbsp;by:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.applayer_AppLayer.html">AppLayer</a>, <a href="Modules_congo.collisionlayer_CollisionLayer.html">CollisionLayer</a>, <a href="Modules_congo.scrolllayer_ScrollLayer.html">ScrollLayer</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( w:Int, h:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#LayerHeight'>LayerHeight</a> : Int ()</li>
+					
+						<li><a href='#LayerWidth'>LayerWidth</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.layer_Layer.html#Draw'>Draw</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.layer_Layer.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#SpriteRectContainsPoint'>SpriteRectContainsPoint</a> : Bool ( spr:Sprite, point:Point )</li>
+					
+						<li><a href='#SpriteRectsIntersect'>SpriteRectsIntersect</a> : Bool ( spr1:Sprite, spr2:Sprite )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#LayerHeight'>LayerHeight</a> : Int ()</li>
+					
+						<li><a href='#LayerWidth'>LayerWidth</a> : Int ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ActionCompleted'>ActionCompleted</a> : Void ( actionId:Int )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChild'>AddChild</a> : Void ( child:DisplayItem )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChildWithZOrder'>AddChildWithZOrder</a> : Void ( child:Sprite, zOrder:Float=0.0 )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ButtonActivated'>ButtonActivated</a> : Void ( button:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#FullSortZOrder'>FullSortZOrder</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#HasChild'>HasChild</a> : Bool ( ditem:DisplayItem )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveAllActions'>RemoveAllActions</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveAllChildren'>RemoveAllChildren</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveChild'>RemoveChild</a> : Void ( sprite:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ReorderChild'>ReorderChild</a> : Void ( child:Sprite, z:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RunAction'>RunAction</a> : Void ( action:Action )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToBack'>SendChildToBack</a> : Void ( child:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToFront'>SendChildToFront</a> : Void ( child:Sprite )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetHandle'>SetHandle</a> : Void ( xpos:Float, ypos:Float, adjustForResScale:Bool=false )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetHidden'>SetHidden</a> : Void ( state:Bool=true )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetOpacity'>SetOpacity</a> : Void ( alphaLevel:Float, andChildren:Bool=true )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetPosition'>SetPosition</a> : Void ( pos:Point )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetPosition(2)'>SetPosition</a> : Void ( xpos:Float, ypos:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetScale'>SetScale</a> : Void ( scale:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetScale(2)'>SetScale</a> : Void ( xscl:Float, yscl:Float )</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#UpdateChildren'>UpdateChildren</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A general layer class. Derives from DisplayItem.
+<p>
+A Layer is essentially an empty DisplayItem 'node' to add more DisplayItems/Sprites too.
+It has a centred handle by default so that zoom/rotate transforms occur from it's centre.
+<p>
+See also: AppLayer, a top-level layer with extra features required by CongoApp (transitions etc).
+	
+	
+	<hr>
+
+
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( w:Int, h:Int )</b></div>
+				<div class="description">
+					<p>	Creates a layer with specified size (in device points, ie autofit virtual coords).
+	
+	Dev note - no defaults due to Monkey issue http://monkeycoder.co.nz/Community/posts.php?topic=1150 )</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='LayerHeight'></a>
+				<div class="well well-small name"><b>Method LayerHeight : Int () Property</b></div>
+				<div class="description">
+					<p>	Returns the layer height.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='LayerWidth'></a>
+				<div class="well well-small name"><b>Method LayerWidth : Int () Property</b></div>
+				<div class="description">
+					<p>	Returns the layer width.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Draw'></a>
+				<div class="well well-small name"><b>Method Draw : Void ()</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='SpriteRectContainsPoint'></a>
+				<div class="well well-small name"><b>Function SpriteRectContainsPoint : Bool ( spr:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, point:<a href="Modules_congo.point_Point.html">Point</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if the Sprite's bounding rect contains the given point.
+	Sprite must be direct child of the layer.
+<p>
+	Dev note - todo, improve this.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SpriteRectsIntersect'></a>
+				<div class="well well-small name"><b>Function SpriteRectsIntersect : Bool ( spr1:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, spr2:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="description">
+					<p>	Returns True if the 2 Sprites' bounding rects intersect.
+	Both sprites must be direct children of the layer.
+<p>
+	Dev note - sprites must have same parent - todo, improve this. Todo: change to DisplayItem.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

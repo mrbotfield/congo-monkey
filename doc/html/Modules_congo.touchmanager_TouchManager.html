@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">TouchManager</span></h1>
+
+
+	<p>TouchManager is central singleton class to deal with touch input (and equivalent mouse input).
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Fields:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#maxGestureTime'>maxGestureTime</a> : Float</li>
+					
+						<li><a href='#minHoldTime'>minHoldTime</a> : Float</li>
+					
+						<li><a href='#minSwipeDistance'>minSwipeDistance</a> : Float</li>
+					
+						<li><a href='#swipeStartTolerance'>swipeStartTolerance</a> : Float</li>
+					
+						<li><a href='#touches'>touches</a> : Touch[]</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#GetTouch'>GetTouch</a> : Touch ()</li>
+					
+						<li><a href='#GetTouches'>GetTouches</a> : Touch[] ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.touchmanager_TouchManager.html#DetectGesture'>DetectGesture</a> : Int ( index:Int=0 )</li>
+					
+						<li><a href='Modules_congo.touchmanager_TouchManager.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+						<li><a href='Modules_congo.touchmanager_TouchManager.html#init'>init</a> : Void ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#getInstance'>getInstance</a> : TouchManager ()</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	TouchManager is central singleton class to deal with touch input (and equivalent mouse input).
+<p>
+** THIS CLASS IS UNDER DEVELOPMENT ** - it is useable but has limited functionality.
+<p>
+Uses autofit virtual coords. Remember to call the Update in your main loop [Dev note -
+todo, move Update to CongoApp Update loop].
+<p>
+See CongoSettings for multi-touch setting.
+<p>
+Note: In Monkey, devices with a mouse but no touch screen will simply return mouse data.
+<p>
+Note: we dont have the concept of touch 'targets' yet, or passing touch data to other layers/sprites. 
+<p>
+Dev note: todo, private fields, properties.
+	
+	
+	<hr>
+
+
+
+	<h2>Field Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='maxGestureTime'></a>
+				<div class="well well-small name"><b>Field maxGestureTime : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='minHoldTime'></a>
+				<div class="well well-small name"><b>Field minHoldTime : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='minSwipeDistance'></a>
+				<div class="well well-small name"><b>Field minSwipeDistance : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='swipeStartTolerance'></a>
+				<div class="well well-small name"><b>Field swipeStartTolerance : Float</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='touches'></a>
+				<div class="well well-small name"><b>Field touches : <a href="Modules_congo.touchmanager_Touch.html">Touch</a>[]</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ()</b></div>
+				<div class="description">
+					<p>	Private constr.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Property Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='GetTouch'></a>
+				<div class="well well-small name"><b>Method GetTouch : <a href="Modules_congo.touchmanager_Touch.html">Touch</a> () Property</b></div>
+				<div class="description">
+					<p>	Use this to access the first touch (will always be valid). If not using multi-touch, this is all you need in most cases.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetTouches'></a>
+				<div class="well well-small name"><b>Method GetTouches : <a href="Modules_congo.touchmanager_Touch.html">Touch</a>[] () Property</b></div>
+				<div class="description">
+					<p>	Gives full access to the array of touches. Array will be of length CONGO_MAX_MULTITOUCH. First touch is always at 0.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='DetectGesture'></a>
+				<div class="well well-small name"><b>Method DetectGesture : Int ( index:Int=0 )</b></div>
+				<div class="description">
+					<p>	Internal. Detects gestures such as swipe up, swipe left etc (see SwipeMotion states). 
+	The range of gestures is fairly basic currently.
+	
+	Note, we don't check for doubling-back or other things that might invalidate a gesture.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p>	Updates the touchmanager data. Call this from your Update loop to keep touch data synced (once per update).
+<p>
+	Dev note: todo, automatically call update from CongoApp?</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='init'></a>
+				<div class="well well-small name"><b>Method init : Void ()</b></div>
+				<div class="description">
+					<p>	Internal. Called from constr.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='getInstance'></a>
+				<div class="well well-small name"><b>Function getInstance : <a href="Modules_congo.touchmanager_TouchManager.html">TouchManager</a> ()</b></div>
+				<div class="description">
+					<p>	Use this to access the shared instance.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

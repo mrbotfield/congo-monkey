@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">congo.audioutils</span></h1>
+
+
+	<p>Various standalone functions relating to audio.
+	</p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+								
+		<tr>
+			<td class="span1 name">Imports:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.congosettings.html'>congo.congosettings</a></li>
+					
+						<li><a href='Modules_congo.soundcache.html'>congo.soundcache</a></li>
+					
+						<li><a href='Modules_congo.textutils.html'>congo.textutils</a></li>
+					
+						<li><a href='Modules_mojo.html'>mojo</a></li>
+					
+						<li><a href='Modules_os.html'>os</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+									
+		<tr>
+			<td class="span1 name">Functions:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#CongoSoundLoader'>CongoSoundLoader</a> : Sound ( filename:String, cache:Bool=true )</li>
+					
+						<li><a href='#GetMusicResourceName'>GetMusicResourceName</a> : String ( filename:String, isMusicFile:Bool=false )</li>
+					
+						<li><a href='#GetSoundResourceName'>GetSoundResourceName</a> : String ( filename:String )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+	<h2>Function Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='CongoSoundLoader'></a>
+				<div class="well well-small name"><b>Function CongoSoundLoader : <a href="Modules_mojo.audio_Sound.html">Sound</a> ( filename:String, cache:Bool=true )</b></div>
+				<div class="description">
+					<p>Main sound loading function. Loads a sound via the SoundCache and returns it; will use the cached version if already loaded. Uses GetSoundResourceName to select the correct filename for the current target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetMusicResourceName'></a>
+				<div class="well well-small name"><b>Function GetMusicResourceName : String ( filename:String, isMusicFile:Bool=false )</b></div>
+				<div class="description">
+					<p>Will strip off the music filename extension and replace with the appropriate one for the current target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='GetSoundResourceName'></a>
+				<div class="well well-small name"><b>Function GetSoundResourceName : String ( filename:String )</b></div>
+				<div class="description">
+					<p>Strips off the sound filename extension and replace with the appropriate one for the current target. Used by the SoundPlayer
+class, or can be used standalone. Use GetSoundResourceName for music files, the formats are different.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Class <span class="name">ParticleEmitter</span></h1>
+
+
+	<p>A particle emitter system.
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+		<tr>
+			<td class="span1 name">Extends:</td>
+			<td>
+				<ul class="unstyled">
+					<li><a href="Modules_congo.sprite_Sprite.html">Sprite</a></li>
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Fields:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#blendMode'>blendMode</a> : Int</li>
+					
+						<li><a href='#continuous'>continuous</a> : Bool</li>
+					
+						<li><a href='#emitRate'>emitRate</a> : Float</li>
+					
+						<li><a href='#fadeRate'>fadeRate</a> : Float</li>
+					
+						<li><a href='#gravity'>gravity</a> : Point</li>
+					
+						<li><a href='#lifeTime'>lifeTime</a> : Int</li>
+					
+						<li><a href='#lifeVariance'>lifeVariance</a> : Int</li>
+					
+						<li><a href='#particles'>particles</a> : List&lt;Particle&gt;</li>
+					
+						<li><a href='#radialAccel'>radialAccel</a> : Float</li>
+					
+						<li><a href='#shrinkRate'>shrinkRate</a> : Float</li>
+					
+						<li><a href='#spinRate'>spinRate</a> : Float</li>
+					
+						<li><a href='#startAlpha'>startAlpha</a> : Float</li>
+					
+						<li><a href='#startAlphaVariance'>startAlphaVariance</a> : Float</li>
+					
+						<li><a href='#startAngle'>startAngle</a> : Float</li>
+					
+						<li><a href='#startAngleVariance'>startAngleVariance</a> : Float</li>
+					
+						<li><a href='#startPosXVariance'>startPosXVariance</a> : Float</li>
+					
+						<li><a href='#startPosYVariance'>startPosYVariance</a> : Float</li>
+					
+						<li><a href='#startSize'>startSize</a> : Float</li>
+					
+						<li><a href='#startSizeVariance'>startSizeVariance</a> : Float</li>
+					
+						<li><a href='#startVelX'>startVelX</a> : Float</li>
+					
+						<li><a href='#startVelXVariance'>startVelXVariance</a> : Float</li>
+					
+						<li><a href='#startVelY'>startVelY</a> : Float</li>
+					
+						<li><a href='#startVelYVariance'>startVelYVariance</a> : Float</li>
+					
+						<li><a href='#texture'>texture</a> : Image</li>
+					
+						<li><a href='#timer'>timer</a> : Timer</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Constructors:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='#New'>New</a> ( particleId:Int=0, numParticles:Int=20 )</li>
+					
+						<li><a href='#New(2)'>New</a> ( texture:Image, numParticles:Int=20 )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+								
+		<tr>
+			<td class="span1 name">Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#Draw'>Draw</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#InitBurnDripExample'>InitBurnDripExample</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#InitParticles'>InitParticles</a> : Void ( numParticles:Int=20 )</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#InitSmallPuffExample'>InitSmallPuffExample</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#InitSnowFallExample'>InitSnowFallExample</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#InitSuperNovaExample'>InitSuperNovaExample</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#ResetAll'>ResetAll</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#ResetParticle'>ResetParticle</a> : Void ( p:Particle )</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#SetTexture'>SetTexture</a> : Void ( img:Image )</li>
+					
+						<li><a href='Modules_congo.particleemitter_ParticleEmitter.html#Update'>Update</a> : Void ( dT:Int )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Properties:</td>
+			<td>
+				<ul class="unstyled">
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+								
+		<tr>
+			<td class="span1 name">Inherited Methods:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxHeight'>BoundingBoxHeight</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#BoundingBoxWidth'>BoundingBoxWidth</a> : Float ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawBoundingRect'>DrawBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#DrawGlobalBoundingRect'>DrawGlobalBoundingRect</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetBoundingRect'>GetBoundingRect</a> : Rect ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#GetCurrentImage'>GetCurrentImage</a> : Image ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#InitResScaler'>InitResScaler</a> : Void ( autoDetect:Bool=true, scale:Float=1.0 )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#LoadFromTP'>LoadFromTP</a> : Bool ( tpimg:Image, dataName:String, imageName:String )</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.sprite_Sprite.html#SetMainImage'>SetMainImage</a> : Void ( img:Image )</li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	A particle emitter system. Derives from Sprite, can be treated as such, added as a child to another sprite or layer.
+(main data is public for simplicity).
+<p>
+If you use the built-in particle texture sheet, remember to copy congoparticles.png into your data folder.
+	
+	
+	<hr>
+
+
+
+	<h2>Field Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='blendMode'></a>
+				<div class="well well-small name"><b>Field blendMode : Int</b></div>
+				<div class="description">
+					<p>	Standard Monkey blend mode, currently AdditiveBlend or AlphaBlend but also depends on target.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='continuous'></a>
+				<div class="well well-small name"><b>Field continuous : Bool</b></div>
+				<div class="description">
+					<p>	Set to True to keep emitting until emitter lifetime elapsed.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='emitRate'></a>
+				<div class="well well-small name"><b>Field emitRate : Float</b></div>
+				<div class="description">
+					<p>	Defines the delay between each particle being emitted, in ms. Default 100 ms. Only applies if continuous emitter.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='fadeRate'></a>
+				<div class="well well-small name"><b>Field fadeRate : Float</b></div>
+				<div class="description">
+					<p>	Fade rate.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='gravity'></a>
+				<div class="well well-small name"><b>Field gravity : <a href="Modules_congo.point_Point.html">Point</a></b></div>
+				<div class="description">
+					<p>	Gravity vector. Default to slow y fall.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='lifeTime'></a>
+				<div class="well well-small name"><b>Field lifeTime : Int</b></div>
+				<div class="description">
+					<p>	Particle lifetime in ms. Default 5000 ms.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='lifeVariance'></a>
+				<div class="well well-small name"><b>Field lifeVariance : Int</b></div>
+				<div class="description">
+					<p>	Particle lifetime variance. Default 1000 ms.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='particles'></a>
+				<div class="well well-small name"><b>Field particles : <a href="Modules_monkey.list_List.html">List</a>&lt;<a href="Modules_congo.particleemitter_Particle.html">Particle</a>&gt;</b></div>
+				<div class="description">
+					<p>	Stores all our particles.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='radialAccel'></a>
+				<div class="well well-small name"><b>Field radialAccel : Float</b></div>
+				<div class="description">
+					<p>	Radial acceleration, default 0.0. Note - gravity and radialAccel dont really work together, use one or the other. 
+	Radial accel is more cpu intensive (has to normalise a direction vector)</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='shrinkRate'></a>
+				<div class="well well-small name"><b>Field shrinkRate : Float</b></div>
+				<div class="description">
+					<p>	Shink rate. Can be negative to grow in size.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='spinRate'></a>
+				<div class="well well-small name"><b>Field spinRate : Float</b></div>
+				<div class="description">
+					<p>	Spin rate of particles. Will spin in direction of initial rotation. Hence, must have a non-zero start angle for this to work.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startAlpha'></a>
+				<div class="well well-small name"><b>Field startAlpha : Float</b></div>
+				<div class="description">
+					<p>	Start alpha (opacity). Default 1.0</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startAlphaVariance'></a>
+				<div class="well well-small name"><b>Field startAlphaVariance : Float</b></div>
+				<div class="description">
+					<p>	Alpha variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startAngle'></a>
+				<div class="well well-small name"><b>Field startAngle : Float</b></div>
+				<div class="description">
+					<p>	Start rotation angle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startAngleVariance'></a>
+				<div class="well well-small name"><b>Field startAngleVariance : Float</b></div>
+				<div class="description">
+					<p>	Start angle variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startPosXVariance'></a>
+				<div class="well well-small name"><b>Field startPosXVariance : Float</b></div>
+				<div class="description">
+					<p>	Start X position variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startPosYVariance'></a>
+				<div class="well well-small name"><b>Field startPosYVariance : Float</b></div>
+				<div class="description">
+					<p>	Start Y position variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startSize'></a>
+				<div class="well well-small name"><b>Field startSize : Float</b></div>
+				<div class="description">
+					<p>	Starting size (scale).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startSizeVariance'></a>
+				<div class="well well-small name"><b>Field startSizeVariance : Float</b></div>
+				<div class="description">
+					<p>	Starting size variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startVelX'></a>
+				<div class="well well-small name"><b>Field startVelX : Float</b></div>
+				<div class="description">
+					<p>	Start X velocity.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startVelXVariance'></a>
+				<div class="well well-small name"><b>Field startVelXVariance : Float</b></div>
+				<div class="description">
+					<p>	Start X velocity variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startVelY'></a>
+				<div class="well well-small name"><b>Field startVelY : Float</b></div>
+				<div class="description">
+					<p>	Start Y velocity.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='startVelYVariance'></a>
+				<div class="well well-small name"><b>Field startVelYVariance : Float</b></div>
+				<div class="description">
+					<p>	Start Y velocity variance.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='texture'></a>
+				<div class="well well-small name"><b>Field texture : <a href="Modules_mojo.graphics_Image.html">Image</a></b></div>
+				<div class="description">
+					<p>	Particle texture. Currently, all particles share the same texture.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='timer'></a>
+				<div class="well well-small name"><b>Field timer : <a href="Modules_congo.timer_Timer.html">Timer</a></b></div>
+				<div class="description">
+					<p>	Main timer for the particle system.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Constructor Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='New'></a>
+				<div class="well well-small name"><b>Method New ( particleId:Int=0, numParticles:Int=20 )</b></div>
+				<div class="description">
+					<p>	Creates an emitter using a built-in texture, numbered 0 to 15. See the "data/congoparticles.png" texture sheet.
+	Move the emitter using the standard Position parameters.  Use lifetime -1 for continuous emit.
+	Set other parameters individually, or use one of the default sets.
+<p>
+	Tips: try using a small number of particles, e.g. 20-100. Additive blending can help with the effect.
+	Note, black particles will not be visible if blend mode is AdditiveBlending.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='New(2)'></a>
+				<div class="well well-small name"><b>Method New ( texture:<a href="Modules_mojo.graphics_Image.html">Image</a>, numParticles:Int=20 )</b></div>
+				<div class="description">
+					<p>	As above, but using a custom particle texture. See congoparticles for example texure size.</p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+						
+	<h2>Method Documentation</h2>
+	<div class="scope-members-list">
+		
+			<div class="item">
+				<a name='Draw'></a>
+				<div class="well well-small name"><b>Method Draw : Void ()</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='InitBurnDripExample'></a>
+				<div class="well well-small name"><b>Method InitBurnDripExample : Void ()</b></div>
+				<div class="description">
+					<p>	Built-in particle effect settings you can use. Continuous emitter example, try with ~100 white particles</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='InitParticles'></a>
+				<div class="well well-small name"><b>Method InitParticles : Void ( numParticles:Int=20 )</b></div>
+				<div class="description">
+					<p>	Internal, called from constr. In theory you could use it elsewhere to add more particles, 
+	but it is intended that the emitter has a fixed number.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='InitSmallPuffExample'></a>
+				<div class="well well-small name"><b>Method InitSmallPuffExample : Void ()</b></div>
+				<div class="description">
+					<p>	Built-in particle effect settings you can use. Try with ~20 white particles.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='InitSnowFallExample'></a>
+				<div class="well well-small name"><b>Method InitSnowFallExample : Void ()</b></div>
+				<div class="description">
+					<p>	Built-in particle effect settings you can use. Continuous emitter example, try with ~100 white particles (id 2 - solid sphere).</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='InitSuperNovaExample'></a>
+				<div class="well well-small name"><b>Method InitSuperNovaExample : Void ()</b></div>
+				<div class="description">
+					<p>	Built-in particle effect settings you can use. Try with ~20 white particles.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResetAll'></a>
+				<div class="well well-small name"><b>Method ResetAll : Void ()</b></div>
+				<div class="description">
+					<p>	Starts or resets the particles to their original parameters.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ResetParticle'></a>
+				<div class="well well-small name"><b>Method ResetParticle : Void ( p:<a href="Modules_congo.particleemitter_Particle.html">Particle</a> )</b></div>
+				<div class="description">
+					<p>	Internal. Resets a single particle.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='SetTexture'></a>
+				<div class="well well-small name"><b>Method SetTexture : Void ( img:<a href="Modules_mojo.graphics_Image.html">Image</a> )</b></div>
+				<div class="description">
+					<p>	Can be used to set the current texture.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='Update'></a>
+				<div class="well well-small name"><b>Method Update : Void ( dT:Int )</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+	</div>
+	<hr>
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
