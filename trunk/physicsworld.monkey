@@ -8,6 +8,7 @@ Strict
 
 Import box2d.common
 Import box2d.dynamics
+Import congo.textutils
 
 #Rem monkeydoc
 Wrapper for the main physics world. Requires box2d module.
@@ -15,7 +16,8 @@ Wrapper for the main physics world. Requires box2d module.
 Dev note: we used basic variable-rate timestep integration here - we should add a fixed rate option, which is more reliable 
 since it is decoupled from our main framerate target.
 
-Todo: add some functions for creating basic shapes (Factory?).
+Todo: add some functions For creating basic shapes (Factory?).
+#End
 Class PhysicsWorld
 
 	#Rem monkeydoc
@@ -77,7 +79,8 @@ Class PhysicsWorld
 	
 	#Rem monkeydoc
 	Call this function to initialise a 'debug draw' view to help with debugging the box2d shapes etc.
-	Remember to draw it from your layer (after autofit And cls, but before other mojo graphics calls).
+	Remember To draw it from your layer (after autofit And cls, but before other mojo graphics calls).
+	#End
 	Method CreateDebugDraw:b2DebugDraw()
 	
 		Local debugDraw:b2DebugDraw = New b2DebugDraw()
