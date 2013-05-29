@@ -72,6 +72,10 @@ Class PhysicsSprite Extends Sprite
 		
 	End
 	
+	Method GetVelocity:b2Vec2()
+		Return m_body.GetLinearVelocity()
+	End
+	
 	#Rem monkeydoc
 	Contact handler.
 	Derived classes can implement these as required.
