@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:46bb3ce7fdeede8b12041a500dfc06e4$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="sheet1tpXHD.png" width="2048" height="2048">
+    <sprite n="blueballoon.png" x="4" y="4" w="172" h="365"/>
+    <sprite n="crosshair.png" x="180" y="4" w="209" h="211"/>
+    <sprite n="eyelids.png" x="393" y="4" w="46" h="27"/>
+    <sprite n="greenballoon.png" x="443" y="4" w="172" h="366"/>
+    <sprite n="okdown.png" x="619" y="4" w="491" h="202"/>
+    <sprite n="okup.png" x="1114" y="4" w="491" h="202"/>
+    <sprite n="pause.png" x="1609" y="4" w="73" h="73"/>
+    <sprite n="playdown.png" x="4" y="374" w="491" h="202"/>
+    <sprite n="playup.png" x="499" y="374" w="491" h="202"/>
+    <sprite n="redballoon.png" x="994" y="374" w="172" h="366"/>
+    <sprite n="sheep.png" x="1170" y="374" w="261" h="310"/>
+    <sprite n="soundoff.png" x="1435" y="374" w="72" h="72"/>
+    <sprite n="soundon.png" x="1511" y="374" w="72" h="72"/>
+    <sprite n="titlelogo.png" x="4" y="744" w="1173" h="251"/>
+    <sprite n="yellowballoon.png" x="1181" y="744" w="172" h="364"/>
+</TextureAtlas>
