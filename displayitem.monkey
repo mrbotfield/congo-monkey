@@ -36,7 +36,7 @@ Private
 	
 	' Children, parent, sorting.
 	Field children:DisplayItem[] 		' children in z-order. See AddChild, Children().
-	Field numChildren:Int = 0		' See NumChildren(). We dont use the array size, since some could be null or removed.
+	Field numChildren:Int = 0		' See NumChildren(). (we could use the array size, but keep this counter instead).
 	Field parent:DisplayItem = Null	' useful link back our parent, or Null if none.
 	Field dirtyZOrder:Bool = False 	' Internal, triggers z-sorting.
 	Field useLazySort:Bool = False 	' Set this to avoid full z-order child sort. See notes with function.
@@ -308,25 +308,57 @@ Public
 	End
 	
 	#Rem monkeydoc
-	Removes a child item. Throws an error if the item is not a child.
+	Removes a child item. Throws an Error If the item is Not a child.
+	
+	Removing children from the array is not very efficient, its not recommended to use this in
+	cpu-critical code (e.g. it is always better to re-use pools of sprites).
 	#End
 	Method RemoveChild:Void( sprite:Sprite)
 		
-		If child.parent <> Self 
+		CongoLog( CONGO_NAME_STRING + " - RemoveChild: starting with " + numChildren + " children" )
+		
+		If sprite.parent <> Self 
 			CongoLog( CONGO_ERROR_STRING + "Not a child sprite, can't remove it." )
 			Throw New Throwable()
 			Return
 		End
 		
+		Local locate:Int = -1
 		For Local i:Int=0 Until numChildren
 			If children[i] = sprite Then 
+				locate = i
 				children[i].parent = Null
 				children[i] = Null
 			End
 		Next
 		
-		' Note, we do not reduce the child array size (inefficient).
-		CongoLog( CONGO_NAME_STRING + " - RemoveChild: now has " + numChildren + " children" )
+		If locate < 0 Or locate >= numChildren Then
+			CongoLog( CONGO_ERROR_STRING + "Cant locate child in RemoveChild." )
+			Throw New Throwable()
+			Return
+		End
+		
+		' rebuild the child list, ignoring the removed child.
+		' This is not fast. We could leave Null entries but that might cause issues elsewhere.
+		Local newch:DisplayItem[]
+		newch = newch.Resize( numChildren -1 )
+		
+		Local nxtc:Int = 0
+		For Local i:Int=0 Until locate
+				newch[nxtc] = children[i]
+				nxtc += 1
+		Next
+		For Local i:Int=locate+1 Until numChildren
+				If i < numChildren Then 
+					newch[nxtc] = children[i]
+					nxtc += 1
+				End
+		Next
+		
+		children = newch
+		numChildren = children.Length()
+		
+		CongoLog( CONGO_NAME_STRING + " - RemoveChild: item now has " + numChildren + " children" )
 		
 	End
 	
@@ -422,6 +454,7 @@ Public
 	Method RemoveAllChildren:Void()
 		
 		children = [] ' GC should clear them from here...
+		numChildren = 0
 		
 	End
 	
