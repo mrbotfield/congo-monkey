@@ -45,3 +45,6 @@ Import congo.angelfont.simpletextbox '
 Import congo.physicssprite
 Import congo.physicsworld
 
+' mochi media (flash only). Requires mochi sdk, and path update so  
+' mxmlc can find it (e.g. edit source-path in flex-config.xml).
+Import congo.mochi
