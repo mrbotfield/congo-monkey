@@ -93,6 +93,7 @@ Public
 			imageResScaler = 1.0
 		End
 
+		SetPaused( False ) ' ensures the function gets processed by Monkey trans (flash native uses it even if we dont).
 		Return 0
 	
 	End
@@ -116,7 +117,8 @@ Public
 	#Rem monkeydoc 
 	The main pause function. See also TogglePaused(). Will pause sounds and music, but will still call Update() 
 	methods of layers/sprites and so on. Draw() methods are also still called but at a reduced framerate of 10fps 
-	(to reduce unnecessary cpu usage).
+	(To reduce unnecessary cpu usage). If using custom Update code you need to check IsPaused() after 
+	Super.Update() and return if paused. 
 	#End
 	Function SetPaused:Void( state:Bool )
 		
@@ -130,13 +132,13 @@ Public
 			SoundPlayer.StopAll()
 			PauseMusic() ' mojo fn
 			If currentLayer currentLayer.LayerPaused()
-			CongoLog( "Paused" )
+			CongoLog( "SetPaused TRUE" )
 		Else
 			SetUpdateRate( m_resumeUpdateRate )
 			SoundPlayer.ResumeAll()
 			ResumeMusic() ' mojo fn
 			If currentLayer currentLayer.LayerResumed()
-			CongoLog( "Resumed" )
+			CongoLog( "SetPaused FALSE" )
 		End
 
 	End
@@ -240,6 +242,28 @@ Public
 		#End
 			
 		PopMatrix()	
+		
+		Return 0
+	End
+	
+	#Rem monkeydoc
+	Overrides mojo App OnSuspend() method.
+	#End
+	Method OnSuspend:Int()
+	
+		Super.OnSuspend()
+		CongoLog( "OnSuspend" )
+		
+		Return 0
+	End
+	
+	#Rem monkeydoc
+	Overrides mojo App OnResume() method.
+	#End
+	Method OnResume:Int()
+	
+		Super.OnResume()
+		CongoLog( "OnResume" )
 		
 		Return 0
 	End
