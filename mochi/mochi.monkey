@@ -2,7 +2,7 @@
 Mochi media wrapper (flash only). Requires mochi sdk, and path update so  
 mxmlc compiler can find it (e.g. edit source-path in flex-config.xml).
 
-** THIS CLASS IS UNDER DEVELOPMENT ** - it is useable but has limited functionality.
+** THIS Class IS UNDER DEVELOPMENT ** - it is useable but has limited functionality (the full Mochi api is quite large).
 Currently does connection and leaderboard score submit.
 #End
 
@@ -17,25 +17,30 @@ Strict
 	Import "native/mochiwrapper.flash.as"
 	Extern
 
-Class MochiWrapper = "MochiWrapper"
+	#Rem monkeydoc
+	Wrapper Class. Most functions are static (currently doesnt store the game id).
+	#End
+	Class MochiWrapper = "MochiWrapper"
 
 	#Rem monkeydoc
 	Connect. Call this early on, e.g. at startup/splashscreen. Use the game id provided To you by Mochi.
 	#End
-	Method ConnectToMochi:Void( mochi_game_id:String )
+	Function ConnectToMochi:Void( mochi_game_id:String ) = "MochiWrapper.ConnectToMochi"
 	
 	#Rem monkeydoc
 	Submit score. The Mochi dialog/leaderboard widget is shown. The board id Array is as described in the Mochi sample code.
 	#End	
-	Method SubmitScore:Void( playerscore:Int, boardIDArray:Int[] )
+	Function SubmitScore:Void( playerscore:Int, boardIDArray:Int[] ) = "MochiWrapper.SubmitScore"
+	
+	' Shows an ad. resString has format "600x400".
+	Function ShowInterLevelAd:Void( mochi_game_id:String, resString:String ) = "MochiWrapper.ShowInterLevelAd"
 	
 	#Rem monkeydoc
-	Error callback.
+	General Error.
 	#End
-	Method Error:Void()
+	Function MochiError:Void() = "MochiWrapper::MochiError"
 	
-End
+End ' (class)
 
-Public
 	
-#End
+#End ' (#If TARGET="flash")
