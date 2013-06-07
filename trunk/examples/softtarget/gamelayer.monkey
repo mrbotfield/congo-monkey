@@ -257,6 +257,21 @@ Public
 	   	End
 
 	End
+	
+	Method Draw:Void()
+		
+		Super.Draw()
+		
+		' darken when paused
+		If CongoApp.IsPaused() Then
+			SetColor(0,0,0)
+			SetAlpha( 0.25 )
+			DrawRect( 0, 0, VDeviceWidth(), VDeviceHeight() )
+			SetColor( 255, 255, 255 )
+			SetAlpha( 1.0 )
+		End
+		
+	End
 
 	Method Update:Void( dT:Int )
 	
