@@ -37,7 +37,9 @@ class MochiWrapper
 			 trace( "created new mochiAdClip container clip to hold ad." );
 		}
 	
-		MochiAd.showInterLevelAd({ clip:mochiAdClip, id:mochi_game_id, res:resString, ad_started:ad_started });
+		MochiAd.showInterLevelAd({ clip:mochiAdClip, id:mochi_game_id, res:resString, 
+				ad_started:AdStartedCallback, ad_finished:AdFinishedCallback, 
+				ad_skipped:AdSkippedCallback, ad_failed:AdFailedCallback });
 		
 	}
 
@@ -54,26 +56,26 @@ class MochiWrapper
 	// translation code/naming changes, these lines will need to be fixed.
 	
 	// called when ad starts. (may not get called if network down)
-	static private function ad_started():void{
-		trace(" - ad_started callback.");
+	static private function AdStartedCallback():void{
+		trace(" - AdStartedCallback callback.");
 		bb_congoapp_CongoApp.g_SetPaused( true );
 	}
 	
 	// called when ad finishes.
-	 static private function ad_finished():void{
-		trace(" - ad_finished callback.");
+	 static private function AdFinishedCallback():void{
+		trace(" - AdFinishedCallback callback.");
 		bb_congoapp_CongoApp.g_SetPaused( false );
 	}
 	
 	// ad skipped. (this can regularly happen if too many ads requested).
-	 static private function ad_skipped():void{
-		trace(" - ad_skipped callback.");
+	 static private function AdSkippedCallback():void{
+		trace(" - AdSkippedCallback callback.");
 		bb_congoapp_CongoApp.g_SetPaused( false );
 	}
 	
 	// ad fail (can happen if network down or ads blocked. gets called before ad_finished).
-	 static private function ad_failed():void{
-		trace(" - ad_failed callback.");
+	 static private function AdFailedCallback():void{
+		trace(" - AdFailedCallback callback.");
 		bb_congoapp_CongoApp.g_SetPaused( false );
 	}
 
