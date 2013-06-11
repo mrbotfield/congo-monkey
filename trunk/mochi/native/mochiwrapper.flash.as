@@ -38,8 +38,8 @@ class MochiWrapper
 		}
 	
 		MochiAd.showInterLevelAd({ clip:mochiAdClip, id:mochi_game_id, res:resString, 
-				ad_started:AdStartedCallback, ad_finished:AdFinishedCallback, 
-				ad_skipped:AdSkippedCallback, ad_failed:AdFailedCallback });
+				ad_started:AdStartedCallback, ad_loaded:AdLoadedCallback,
+				ad_finished:AdFinishedCallback, ad_skipped:AdSkippedCallback, ad_failed:AdFailedCallback });
 		
 	}
 
@@ -58,6 +58,13 @@ class MochiWrapper
 	// called when ad starts. (may not get called if network down)
 	static private function AdStartedCallback():void{
 		trace(" - AdStartedCallback callback.");
+		// (no pause here, we do it in AdLoadedCallback)
+	}
+	
+	// called when ad is loaded and about to show. Called after ad_started (its most useful for pausing game
+	// right before ad starts).
+	static private function AdLoadedCallback( width:Number, height:Number ):void{
+		trace(" - AdLoadedCallback callback.");
 		bb_congoapp_CongoApp.g_SetPaused( true );
 	}
 	
