@@ -8,6 +8,9 @@
 import mochi.as3.*;
 import flash.display.*;
 
+// Replace this with your unique mochi game_id authentication string.
+	var _mochiads_game_id:String = "xxxxxxxxxxxxxxxx";
+
 class MochiWrapper
 {
 

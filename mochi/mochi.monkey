@@ -2,6 +2,8 @@
 Mochi media wrapper (flash only). Requires mochi sdk, and path update so  
 mxmlc compiler can find it (e.g. edit source-path in flex-config.xml).
 
+You must replace the _mochiads_game_id String in mochiwrapper.flash.as with your unique game id.
+
 ** THIS Class IS UNDER DEVELOPMENT ** - it is useable but has limited functionality (the full Mochi api is quite large).
 Currently does connection and leaderboard score submit.
 #End
