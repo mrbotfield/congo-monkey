@@ -245,7 +245,7 @@ Public
 	(Advanced use) Sets the internal res scale factor. DisplayItems leave this as 1.0, but Sprite's will 
 	set this via CongoImageLoader when hi-res images are used, which we need to scale for.
 	#End
-	Method ResScaler:Void( rscale:Float = 1.0 ) Property
+	Method ResScaler:Void( rscale:Float ) Property
 		resScaler = rscale
 	End
 	
