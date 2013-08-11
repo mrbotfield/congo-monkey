@@ -119,7 +119,7 @@
 					
 						<li><a href='#ResScaler'>ResScaler</a> : Float ()</li>
 					
-						<li><a href='#ResScaler(2)'>ResScaler</a> : Void ( rscale:Float=1.0 )</li>
+						<li><a href='#ResScaler(2)'>ResScaler</a> : Void ( rscale:Float )</li>
 					
 						<li><a href='#SetAngle'>SetAngle</a> : Void ( rot:Float )</li>
 					
@@ -473,7 +473,7 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='ResScaler(2)'></a>
-				<div class="well well-small name"><b>Method ResScaler : Void ( rscale:Float=1.0 ) Property</b></div>
+				<div class="well well-small name"><b>Method ResScaler : Void ( rscale:Float ) Property</b></div>
 				<div class="description">
 					<p>	(Advanced use) Sets the internal res scale factor. DisplayItems leave this as 1.0, but Sprite's will 
 	set this via CongoImageLoader when hi-res images are used, which we need to scale for.</p>
@@ -685,7 +685,10 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 				<a name='RemoveChild'></a>
 				<div class="well well-small name"><b>Method RemoveChild : Void ( sprite:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
 				<div class="description">
-					<p>	Removes a child item. Throws an error if the item is not a child.</p>
+					<p>	Removes a child item. Throws an Error If the item is Not a child.
+	
+	Removing children from the array is not very efficient, its not recommended to use this in
+	cpu-critical code (e.g. it is always better to re-use pools of sprites).</p>
 					
 					
 				</div>

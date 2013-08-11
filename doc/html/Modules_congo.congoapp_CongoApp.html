@@ -110,6 +110,10 @@
 					
 						<li><a href='Modules_congo.congoapp_CongoApp.html#OnRender'>OnRender</a> : Int ()</li>
 					
+						<li><a href='Modules_congo.congoapp_CongoApp.html#OnResume'>OnResume</a> : Int ()</li>
+					
+						<li><a href='Modules_congo.congoapp_CongoApp.html#OnSuspend'>OnSuspend</a> : Int ()</li>
+					
 						<li><a href='Modules_congo.congoapp_CongoApp.html#OnUpdate'>OnUpdate</a> : Int ()</li>
 					
 				</ul>
@@ -153,10 +157,6 @@
 						<li><a href='Modules_mojo.app_App.html#OnClose'>OnClose</a> : Int ()</li>
 					
 						<li><a href='Modules_mojo.app_App.html#OnLoading'>OnLoading</a> : Int ()</li>
-					
-						<li><a href='Modules_mojo.app_App.html#OnResume'>OnResume</a> : Int ()</li>
-					
-						<li><a href='Modules_mojo.app_App.html#OnSuspend'>OnSuspend</a> : Int ()</li>
 					
 				</ul>
 			</td>
@@ -340,6 +340,26 @@ Derives from the mojo App class.
 			</div>
 		
 			<div class="item">
+				<a name='OnResume'></a>
+				<div class="well well-small name"><b>Method OnResume : Int ()</b></div>
+				<div class="description">
+					<p>	Overrides mojo App OnResume() method.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='OnSuspend'></a>
+				<div class="well well-small name"><b>Method OnSuspend : Int ()</b></div>
+				<div class="description">
+					<p>	Overrides mojo App OnSuspend() method.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
 				<a name='OnUpdate'></a>
 				<div class="well well-small name"><b>Method OnUpdate : Int ()</b></div>
 				<div class="description">
@@ -402,7 +422,8 @@ Derives from the mojo App class.
 				<div class="description">
 					<p>	The main pause function. See also TogglePaused(). Will pause sounds and music, but will still call Update() 
 	methods of layers/sprites and so on. Draw() methods are also still called but at a reduced framerate of 10fps 
-	(to reduce unnecessary cpu usage).</p>
+	(To reduce unnecessary cpu usage). If using custom Update code you need to check IsPaused() after 
+	Super.Update() and return if paused. </p>
 					
 					
 				</div>
