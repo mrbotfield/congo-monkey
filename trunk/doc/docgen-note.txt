@@ -1,1 +1,5 @@
-These docs are a subset of the full docs generated using the bin/makedocs command in Monkey/Ted, with a simplified page template (so only Congo pages appear).
+These docs are a subset of the full docs generated using the bin/makedocs command in Monkey/Ted, with a simplified page template (so only Congo pages appear, not mixed in with other modules).
+
+To regenerate: delete (or move) the docs/html folder to ensure a clean rebuild. Back-up the main page_template.html in docs/templates/devolonter, replace with the congo version and re-build the docs (can do from inside monkey, or manually). 
+Copy the contents of the html folder elsewhere, then restore the original monkey docs by
+putting back the moved folder or by doing a clean rebuild with the original template in place.
