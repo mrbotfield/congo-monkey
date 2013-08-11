@@ -48,7 +48,7 @@ Private
 	Field customId:Int = 0
 	Field customFlag:Bool = False
 	Field customName:String = ""
-	Field customItemRef:DisplayItem = Null	' i.e. can refer to another sprite etc.
+	Field customItemRef:DisplayItem = Null	' i.e. can refer to another sprite/item.
 	
 	' Experimental.
 	Field trMatrix:Float[6] 				' stores current transformation matrix generated in Draw step.
@@ -292,7 +292,7 @@ Public
 			Return
 		End
 		
-		If child = Null CongoLog( CONGO_WARNING_STRING + "Child sprite is null." )
+		If child = Null CongoLog( CONGO_WARNING_STRING + "Child item is null." )
 		
 		If numChildren = children.Length() Then
 			' extend capacity. Expensive, but hopefully not called often. Tip: re-use objects in object pools.
@@ -311,21 +311,21 @@ Public
 	Removes a child item. Throws an Error If the item is Not a child.
 	
 	Removing children from the array is not very efficient, its not recommended to use this in
-	cpu-critical code (e.g. it is always better to re-use pools of sprites).
+	cpu-critical code (e.g. it is always better to re-use pools of sprites/items).
 	#End
-	Method RemoveChild:Void( sprite:Sprite)
+	Method RemoveChild:Void( child:DisplayItem )
 		
 		CongoLog( CONGO_NAME_STRING + " - RemoveChild: starting with " + numChildren + " children" )
 		
-		If sprite.parent <> Self 
-			CongoLog( CONGO_ERROR_STRING + "Not a child sprite, can't remove it." )
+		If child.parent <> Self 
+			CongoLog( CONGO_ERROR_STRING + "Not a child item, can't remove it." )
 			Throw New Throwable()
 			Return
 		End
 		
 		Local locate:Int = -1
 		For Local i:Int=0 Until numChildren
-			If children[i] = sprite Then 
+			If children[i] = child Then 
 				locate = i
 				children[i].parent = Null
 				children[i] = Null
@@ -365,7 +365,7 @@ Public
 	#Rem monkeydoc
 	As AddChild() but will reorder based on the provided Z order.
 	#End
-	Method AddChildWithZOrder:Void( child:Sprite, zOrder:Float = 0.0 )
+	Method AddChildWithZOrder:Void( child:DisplayItem, zOrder:Float = 0.0 )
 		AddChild( child )
 		ReorderChild( child, zOrder )
 	End
@@ -373,7 +373,7 @@ Public
 	#Rem monkeydoc
 	Changes an existing child's Z order. A re-sort is scheduled for the next update loop.
 	#End
-	Method ReorderChild:Void( child:Sprite, z:Float )
+	Method ReorderChild:Void( child:DisplayItem, z:Float )
 		If child.zOrder = z Return
 		child.zOrder = z
 		If numChildren > 1 dirtyZOrder = True
@@ -382,11 +382,11 @@ Public
 	#Rem monkeydoc
 	Sends child to front (highest Z order). A re-sort is scheduled for the next update loop.
 	#End
-	Method SendChildToFront:Void( child:Sprite )
+	Method SendChildToFront:Void( child:DisplayItem )
 		
 		For Local i:Int = 0 Until children.Length
-			Local spr:Sprite = children[i]
-			If spr.zOrder >= child.zOrder ReorderChild( child, spr.zOrder + 1 )
+			Local di:DisplayItem = children[i]
+			If di.zOrder >= child.zOrder ReorderChild( child, di.zOrder + 1 )
 		Next
 		
 	End
@@ -394,11 +394,11 @@ Public
 	#Rem monkeydoc
 	Sends child to back (lowest Z order). A re-sort is scheduled for the next update loop.
 	#End
-	Method SendChildToBack:Void( child:Sprite )
+	Method SendChildToBack:Void( child:DisplayItem )
 	
 		For Local i:Int = 0 Until children.Length
-			Local spr:Sprite = children[i]
-			If spr.zOrder <= child.zOrder ReorderChild( child, spr.zOrder - 1 )
+			Local di:DisplayItem = children[i]
+			If di.zOrder <= child.zOrder ReorderChild( child, di.zOrder - 1 )
 		Next
 		
 	End
@@ -504,7 +504,7 @@ Public
 	#Rem monkeydoc
 	A user-defined custom item property.
 	#End
-	Method CustomItemRef:Sprite() Property
+	Method CustomItemRef:DisplayItem() Property
 		Return customItemRef
 	End	
 
@@ -545,7 +545,7 @@ Public
 		' Does the actual item render - derived classes must implement this.
 		PaintItem()
 
-		' need to undo res scaler since child sprites have their own. But, we do pass down the parents general scale factor.
+		' need to undo res scaler since child items have their own. But, we do pass down the parents general scale factor.
 		Scale( ResScaler, ResScaler )
 		
 		' Draw children (our current transform applies to them)
@@ -667,7 +667,7 @@ Private
 			Next
 		End
 		
-		' CongoLog( "ActionCompleted, id = " + actionId + ". Sprite has " + m_actions.Count() + " active actions." )
+		' CongoLog( "ActionCompleted, id = " + actionId + ". item has " + m_actions.Count() + " active actions." )
 	End
 	
 	#Rem monkeydoc
