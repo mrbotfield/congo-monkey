@@ -50,9 +50,9 @@ Private
 	Field customName:String = ""
 	Field customItemRef:DisplayItem = Null	' i.e. can refer to another sprite/item.
 	
-	' Experimental.
-	Field trMatrix:Float[6] 				' stores current transformation matrix generated in Draw step.
-	Field trMatrixDirty:Bool = True 		' (currently unused)
+	' Experimental. Note, you can use GetMatrix in a derived class to store the global transform if you wish.
+	' Field trMatrix:Float[6] 				' (currently unused) stores current transformation matrix generated in Draw step.
+	' Field trMatrixDirty:Bool = True 		' (currently unused)
 	
 
 Public
