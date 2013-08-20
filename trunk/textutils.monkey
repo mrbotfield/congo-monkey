@@ -12,15 +12,17 @@ Import congo.congosettings
 #Rem monkeydoc
 Main log function. Only writes in debug mode (edit this as required). 
 
-Dev note - release mode function may still be generated, i.e. it is not be 'compiled-out'. 
+Dev note - release mode function may still be generated, i.e. it is not 'compiled-out'. 
 #End
+
+' note- switched from DebugLog To Print - see http://monkeycoder.co.nz/Community/posts.php?topic=5764#65317
 #If CONFIG="debug"
 Function CongoLog:Void( str:String )
-	DebugLog( str )
+	Print( str )
 End
 #Else
 Function CongoLog:Void( str:String )
-	' (nothing to do - uncomment if release mode required) 
-	'DebugLog( str )
+	' (nothing to do - uncomment if release mode log required) 
+	'Print( str )
 End
 #End
