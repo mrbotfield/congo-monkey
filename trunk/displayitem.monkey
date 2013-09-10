@@ -280,6 +280,16 @@ Public
 	End
 	 
 	#Rem monkeydoc
+	Returns the named child, or null if none. Uses CustomName.
+	#End 
+	Method GetChildByCustomName:DisplayItem( customName:String )
+		For Local i:Int=0 Until numChildren
+			If children[i].CustomName = customName Return children[i]
+		Next
+		Return Null
+	End
+	
+	#Rem monkeydoc
 	Adds a child item. Z order is 0 by default, will be added after other items with the same Z order.
 	Adding an child twice will throw an error.
 	See also HasChild(), AddChildWithZOrder() and ReorderChild().
@@ -400,6 +410,29 @@ Public
 			Local di:DisplayItem = children[i]
 			If di.zOrder <= child.zOrder ReorderChild( child, di.zOrder - 1 )
 		Next
+		
+	End
+	
+	#Rem monkeydoc
+	For advanced use. Returns a recursive list of all child items related to this one. 
+	The search is breadth-first, as each child node is visited. Function is not
+	particularly efficient as it must process each child array and construct new lists.
+	#End
+	Method RecursiveChildList:List<DisplayItem>()
+		Local result:List<DisplayItem> = New List<DisplayItem>
+
+		'  add recursively to our list
+		Local ch:List<DisplayItem> = New List<DisplayItem>( Self.Children() )
+		
+		For Local di:DisplayItem = Eachin ch
+			result.AddLast( di )
+			Local rec:List<DisplayItem> = di.RecursiveChildList()
+			For Local add:DisplayItem = Eachin rec
+				result.AddLast( add )
+			Next
+		Next
+		
+		Return result
 		
 	End
 
