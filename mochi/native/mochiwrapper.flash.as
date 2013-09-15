@@ -16,12 +16,24 @@ import flash.display.*;
 //	public class MonkeyGame extends Sprite{
 //		public var _mochiads_game_id:String = "xxxxxxxxxxxxxxxx"; [YOUR CODE HERE]
 
+
+// Dev notes - Use of Generated class/function names
+// =================================================
+// This code relies on Monkey generated class/fn names, which occassionally change.
+// Earler versions of Monkey (prior to v72) used name style bb_congoapp_CongoApp.g_Function, 
+// this is now c_CongoApp.m_SetPaused.
+// Also, access to the stage has changed. Previously we could use game.stage, but now we use
+// BBFlashGame.FlashGame().GetDisplayObjectContainer().stage  (is there a cleaner version?).
+
+// URLs, maybe relevant
+// http://www.monkeycoder.co.nz/Community/posts.php?topic=4792
+
 class MochiWrapper
 {
 
 	 static public function ConnectToMochi( mochi_game_id:String):void {
 	
-		MochiServices.connect( mochi_game_id, game.stage, onConnectError);
+		MochiServices.connect( mochi_game_id, BBFlashGame.FlashGame().GetDisplayObjectContainer().stage, onConnectError);
 		trace("Connecting to Mochi.");
 	}
 
@@ -37,11 +49,11 @@ class MochiWrapper
 		trace ( "In MochiWrapper ShowInterLevelAd" )
 		
 		// mochi requires a movieclip container. we make a re-useable one and add it to the stage.
-		var mochiAdClip:MovieClip = game.stage.getChildByName( "mochiAdClip" ) as MovieClip;
+		var mochiAdClip:MovieClip = BBFlashGame.FlashGame().GetDisplayObjectContainer().stage.getChildByName( "mochiAdClip" ) as MovieClip;
 		if ( mochiAdClip == null ) {
 			 mochiAdClip = new MovieClip();
 			 mochiAdClip.name = "mochiAdClip";
-			 game.stage.addChild(mochiAdClip);
+			 BBFlashGame.FlashGame().GetDisplayObjectContainer().stage.addChild(mochiAdClip);
 			 trace( "created new mochiAdClip container clip to hold ad." );
 		}
 	
@@ -60,8 +72,9 @@ class MochiWrapper
 	}
 	
 	// callbacks from mochi ad code. We implement these to pause the game behind the ad, or to catch errors.
-	// Dev note- we rely on the bb_congoapp_CongoApp class name here (and its static fns) - but if Monkey 
-	// translation code/naming changes, these lines will need to be fixed.
+	// Dev note- we rely on the c_CongoApp.m_Function generated class name here (and its function names) -
+	// but if Monkey translation code/naming changes, these lines will need to be fixed.
+	// Earler versions of Monkey (prior to v72) used name style bb_congoapp_CongoApp.g_Function
 	
 	// called when ad starts. (may not get called if network down)
 	static private function AdStartedCallback():void{
@@ -73,25 +86,25 @@ class MochiWrapper
 	// right before ad starts).
 	static private function AdLoadedCallback( width:Number, height:Number ):void{
 		trace(" - AdLoadedCallback callback.");
-		bb_congoapp_CongoApp.g_SetPaused( true );
+		c_CongoApp.m_SetPaused( true );
 	}
 	
 	// called when ad finishes.
 	 static private function AdFinishedCallback():void{
 		trace(" - AdFinishedCallback callback.");
-		bb_congoapp_CongoApp.g_SetPaused( false );
+		c_CongoApp.m_SetPaused( false );
 	}
 	
 	// ad skipped. (this can regularly happen if too many ads requested).
 	 static private function AdSkippedCallback():void{
 		trace(" - AdSkippedCallback callback.");
-		bb_congoapp_CongoApp.g_SetPaused( false );
+		c_CongoApp.m_SetPaused( false );
 	}
 	
 	// ad fail (can happen if network down or ads blocked. gets called before ad_finished).
 	 static private function AdFailedCallback():void{
 		trace(" - AdFailedCallback callback.");
-		bb_congoapp_CongoApp.g_SetPaused( false );
+		c_CongoApp.m_SetPaused( false );
 	}
 
 	static private function MochiError():void
