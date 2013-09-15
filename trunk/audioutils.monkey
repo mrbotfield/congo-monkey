@@ -83,6 +83,8 @@ Function GetSoundResourceName:String( filename:String )
 	' (only works on some targets)
 	'If FileType( fret ) = 0 CongoLog( CONGO_WARNING_STRING + " file not found: " + fret ) 
 	
+	CongoLog( "GetSoundResourceName returning value " + fret )
+	
 	Return fret
 
 End
@@ -133,6 +135,7 @@ Function GetMusicResourceName:String( filename:String, isMusicFile:Bool = False 
 	' (only works on some targets)
 	'If FileType( fret ) = 0 CongoLog( CONGO_WARNING_STRING + " file not found: " + fret ) 
 	
+	CongoLog( "GetMusicResourceName returning value " + fret )
 	Return fret
 
 End
