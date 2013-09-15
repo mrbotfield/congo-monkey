@@ -40,6 +40,15 @@ Strict
 	' Shows an ad. resString has format "600x400".
 	Function ShowInterLevelAd:Void( mochi_game_id:String, resString:String ) = "ShowInterLevelAd"
 	
+	' Shows the Showcase widget.
+	Function LoadShowcase:Void( mochi_game_id:String, posString:String ) = "LoadShowcase"
+	
+	' Close the current Showcase widget (NB only supports 1 widget)
+	Function CloseShowcase:Void() = "CloseShowcase"
+	
+	' Re-open the current Showcase widget (NB only supports 1 widget)
+	Function OpenShowcase:Void() = "OpenShowcase"
+	
 	#Rem monkeydoc
 	General Error.
 	#End
