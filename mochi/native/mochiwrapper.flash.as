@@ -62,6 +62,44 @@ class MochiWrapper
 				ad_finished:AdFinishedCallback, ad_skipped:AdSkippedCallback, ad_failed:AdFailedCallback });
 		
 	}
+	
+	// This is the new Showcase widget ad. 
+	// NB - not all options implemented (see mochi docs for more).
+	// posString represents an X, Y offset from the center, e.g. "0x0" for default.
+	static public function LoadShowcase( mochi_game_id:String, posString:String ):void {
+
+		trace ( "In MochiWrapper LoadShowcase" )
+		
+		// mochi requires a movieclip container. we make a re-useable one and add it to the stage.
+		// Note - not shared with other ads, use empty one (docs mention empty clip).
+		var mochiAdClip2:MovieClip = BBFlashGame.FlashGame().GetDisplayObjectContainer().stage.getChildByName( "mochiAdClip2" ) as MovieClip;
+		if ( mochiAdClip2 == null ) {
+			 mochiAdClip2 = new MovieClip();
+			 mochiAdClip2.name = "mochiAdClip2";
+			 BBFlashGame.FlashGame().GetDisplayObjectContainer().stage.addChild(mochiAdClip2);
+			 trace( "created new mochiAdClip container clip to hold ad." );
+		}
+	
+		MochiAd.loadShowcase({ clip:mochiAdClip2, id:mochi_game_id, position:posString, 
+				ad_closed:AdClosedCallback, ad_skipped:AdSkippedCallback, ad_failed:AdFailedCallback });
+		
+	}
+	
+	static public function CloseShowcase():void {
+		trace ( "In MochiWrapper CloseShowcase" )
+		var mochiAdClip2:MovieClip = BBFlashGame.FlashGame().GetDisplayObjectContainer().stage.getChildByName( "mochiAdClip2" ) as MovieClip;
+		if ( mochiAdClip2 ) {
+			MochiAd.closeAdGroup(mochiAdClip2)
+		}
+	}
+	
+	static public function OpenShowcase():void {
+		trace ( "In MochiWrapper OpenShowcase" )
+		var mochiAdClip2:MovieClip = BBFlashGame.FlashGame().GetDisplayObjectContainer().stage.getChildByName( "mochiAdClip2" ) as MovieClip;
+		if ( mochiAdClip2 ) {
+			MochiAd.openAdGroup(mochiAdClip2)
+		}
+	}
 
 	// Helper fn. this is the current suggested mochi leaderboard hex id converter code.
 	static private function boardIDHex( boardIDArray:Array ):String
@@ -100,6 +138,13 @@ class MochiWrapper
 		trace(" - AdSkippedCallback callback.");
 		c_CongoApp.m_SetPaused( false );
 	}
+	
+	// called when ad is closed by the user (Showcase/Dock only).
+	static private function AdClosedCallback():void{
+		trace(" - AdClosedCallback callback.");
+		c_CongoApp.m_SetPaused( false );
+	}
+	
 	
 	// ad fail (can happen if network down or ads blocked. gets called before ad_finished).
 	 static private function AdFailedCallback():void{
