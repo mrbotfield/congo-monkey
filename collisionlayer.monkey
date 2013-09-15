@@ -54,7 +54,7 @@ Dev note - the method here is fairly 'brute force'. We could do more optimisatio
 
 (note - if using physics/box2d its best to use the collision methods there).
 #End
-Class CollisionLayer Extends Layer
+Class CollisionLayer Extends AppLayer ' was layer
 
 Private
 
