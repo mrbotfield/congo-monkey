@@ -8,8 +8,13 @@
 import mochi.as3.*;
 import flash.display.*;
 
-// Replace this with your unique mochi game_id authentication string.
-	var _mochiads_game_id:String = "xxxxxxxxxxxxxxxx";
+// Mochi id is required:
+// Either, uncomment this line and use you unique mochi game_id authentication string.
+//	var _mochiads_game_id:String = "xxxxxxxxxxxxxxxx";
+//
+// OR manually add to the MonkeyGame() function in the generated source code, e.g.
+//	public class MonkeyGame extends Sprite{
+//		public var _mochiads_game_id:String = "xxxxxxxxxxxxxxxx"; [YOUR CODE HERE]
 
 class MochiWrapper
 {
