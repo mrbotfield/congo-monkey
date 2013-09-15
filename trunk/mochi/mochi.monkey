@@ -11,6 +11,9 @@ Currently does connection and leaderboard score submit.
 ' Part of the 'Congo' module for Monkey.
 ' (c) Barry R Smith 2012-2013. This code is released under the MIT License - see LICENSE.txt.
 
+' Dev note- previously (prior to v72) these static functions were defined using "MochiWrapper.Name",
+' but this creates as code MochiWrapper.MochiWrapper.Name, which fails. Now, removed the MochiWrapper part.
+
 Strict
 
 ' (all code skipped if not flash target)
@@ -27,20 +30,20 @@ Strict
 	#Rem monkeydoc
 	Connect. Call this early on, e.g. at startup/splashscreen. Use the game id provided To you by Mochi.
 	#End
-	Function ConnectToMochi:Void( mochi_game_id:String ) = "MochiWrapper.ConnectToMochi"
+	Function ConnectToMochi:Void( mochi_game_id:String ) = "ConnectToMochi"
 	
 	#Rem monkeydoc
 	Submit score. The Mochi dialog/leaderboard widget is shown. The board id Array is as described in the Mochi sample code.
 	#End	
-	Function SubmitScore:Void( playerscore:Int, boardIDArray:Int[] ) = "MochiWrapper.SubmitScore"
+	Function SubmitScore:Void( playerscore:Int, boardIDArray:Int[] ) = "SubmitScore"
 	
 	' Shows an ad. resString has format "600x400".
-	Function ShowInterLevelAd:Void( mochi_game_id:String, resString:String ) = "MochiWrapper.ShowInterLevelAd"
+	Function ShowInterLevelAd:Void( mochi_game_id:String, resString:String ) = "ShowInterLevelAd"
 	
 	#Rem monkeydoc
 	General Error.
 	#End
-	Function MochiError:Void() = "MochiWrapper::MochiError"
+	Function MochiError:Void() = "MochiError"
 	
 End ' (class)
 
