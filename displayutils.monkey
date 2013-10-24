@@ -31,10 +31,12 @@ Import congo.angelfont
 	Import "native/displayutils.${TARGET}.cpp"
 	Extern
 	#Rem monkeydoc
+	DEPRECATED - use mojo HideMouse instead.
 	[GLFW] Hides the mouse cursor.
 	#End
 	Function HideMouseCursor:Void() = "HideMouseCursor"
 	#Rem monkeydoc
+	DEPRECATED - use mojo ShowMouse instead.
 	[GLFW] Restores the mouse cursor.
 	#End
 	Function RestoreMouseCursor:Void() = "RestoreMouseCursor"
@@ -44,10 +46,12 @@ Import congo.angelfont
 	Import "native/displayutils.${TARGET}.js"
 	Extern
 	#Rem monkeydoc
+	DEPRECATED - use mojo HideMouse instead.
 	[HTML5] Hides the mouse cursor.
 	#End
 	Function HideMouseCursor:Void() = "HideMouseCursor"
 	#Rem monkeydoc
+	DEPRECATED - use mojo ShowMouse instead.
 	[HTML5] Restores the mouse cursor.
 	#End
 	Function RestoreMouseCursor:Void() = "RestoreMouseCursor"
@@ -57,10 +61,12 @@ Import congo.angelfont
 	Import "native/displayutils.${TARGET}.as"
 	Extern
 	#Rem monkeydoc
+	DEPRECATED - use mojo HideMouse instead.
 	[Flash] Hides the mouse cursor.
 	#End
 	Function HideMouseCursor:Void() = "HideMouseCursor"
 	#Rem monkeydoc
+	DEPRECATED - use mojo ShowMouse instead.
 	[Flash] Restores the mouse cursor.
 	#End
 	Function RestoreMouseCursor:Void() = "RestoreMouseCursor"

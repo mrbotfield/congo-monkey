@@ -16,6 +16,7 @@ Import congo.congosettings
 	Import "native/networkutils.${TARGET}.cpp"
 	Extern
 	#Rem monkeydoc
+	DEPRECATED - use mojo OpenUrl instead.
 	[GLFW] Opens a browser page with the given URL. Exact behaviour depends on target platform.
 	Windowname is usually one of _blank, _self, _parent, _top.
 	#End
@@ -26,6 +27,7 @@ Import congo.congosettings
 	Import "native/networkutils.${TARGET}.js"
 	Extern
 	#Rem monkeydoc
+	DEPRECATED - use mojo OpenUrl instead.
 	[HTML5] Opens a browser page with the given URL. Exact behaviour depends on target platform.
 	Windowname is usually one of _blank, _self, _parent, _top.
 	#End
@@ -36,6 +38,7 @@ Import congo.congosettings
 	Import "native/networkutils.${TARGET}.as"
 	Extern
 	#Rem monkeydoc
+	DEPRECATED - use mojo OpenUrl instead.
 	[Flash] Opens a browser page with the given URL. Exact behaviour depends on target platform.
 	Windowname is usually one of _blank, _self, _parent, _top.
 	#End
