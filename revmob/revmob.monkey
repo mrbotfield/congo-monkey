@@ -26,15 +26,28 @@ Strict
 	Class RevMobWrapper = "RevMobWrapper"
 
 		#Rem monkeydoc
-		Connect. Call this early on, e.g. at startup/splashscreen. 
+		Connect. Session must be started before any ad can be shown.
+		Call this early on, e.g. at startup/splashscreen. 
 		Use the app id provided To you by RevMob when registering an app.
+		See also: Testing modes.
 		#End
 		Function StartSessionWithAppID:Void( revmob_app_id:String ) = "StartSessionWithAppID"
 	
 		#Rem monkeydoc
-		Show full screen ad. Session must be started first.
+		Show full screen ad. 
 		#End	
 		Function ShowFullscreen:Void() = "ShowFullscreen"
+		
+		#Rem monkeydoc
+		Show banner ad. This is a thin banner across bottom of screen.
+		See also: HideBanner.
+		#End	
+		Function ShowBanner:Void() = "ShowBanner"
+		
+		#Rem monkeydoc
+		Hides a banner ad.
+		#End	
+		Function HideBanner:Void() = "HideBanner"
 		
 		#Rem monkeydoc
 		Enables Revmob's test mode. Ads and clicks can be tested using this.

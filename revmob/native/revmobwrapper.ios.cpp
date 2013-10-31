@@ -20,6 +20,18 @@ public:
 		[[RevMobAds session] showFullscreen];
 	}
 	
+	static void ShowBanner()
+	{
+		//NSLog( @"In revmob iOS ShowBanner" );
+		[[RevMobAds session] showBanner];
+	}
+	
+	static void HideBanner()
+	{
+		//NSLog( @"In revmob iOS HideBanner" );
+		[[RevMobAds session] hideBanner];
+	}
+	
 	static void TestingWithAds()
 	{
 		//NSLog( @"In revmob iOS TestingWithAds" );
