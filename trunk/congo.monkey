@@ -48,3 +48,7 @@ Import congo.physicsworld
 ' mochi media (flash only). Requires mochi sdk, and path update so  
 ' mxmlc can find it (e.g. edit source-path in flex-config.xml).
 Import congo.mochi
+
+' revmob (ios and android only). Requires RevMob setup, see docs.
+Import congo.revmob
+
