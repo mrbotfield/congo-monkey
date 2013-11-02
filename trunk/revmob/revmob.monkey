@@ -7,8 +7,8 @@ Link ads not supported (req delegate code change?). Callbacks/listeners not impl
 
 iOS: 
 Open the generated Xcode project and drag the Revmob.framework to the
-'Frameworks' section. Also, go to Build Phases section and add the AdSupport,
-SystemConfiguration and StoreKit frameworks.
+'Frameworks' section. Also, go to Build Phases section and add the AdSupport (*weak link*
+for pre-iOS6 support), SystemConfiguration and StoreKit frameworks.
 
 Android:
 See the Revmob help pages for the required additions to AndroidManifest.xml, e.g.
@@ -35,7 +35,8 @@ Strict
 
 		#Rem monkeydoc
 		Connect. Session must be started before any ad can be shown.
-		Call this early on, e.g. at startup/splashscreen. 
+		Call this early on -- Revmob docs suggest doing this
+		at didFinishLaunchingWithOptions (ios) or onCreate (android).
 		Use the app id provided To you by RevMob when registering an app.
 		See also: Testing modes.
 		#End
