@@ -32,6 +32,15 @@ public:
 		[[RevMobAds session] hideBanner];
 	}
 	
+	/*
+	static void OpenAdLink()
+	{
+		//NSLog( @"In revmob iOS OpenAdLink" );
+		MonkeyAppDelegate *appDelegate = (MonkeyAppDelegate *)[[UIApplication sharedApplication] delegate];
+		[[RevMobAds session] openAdLinkWithDelegate:appDelegate];
+	}
+	*/
+	
 	static void TestingWithAds()
 	{
 		//NSLog( @"In revmob iOS TestingWithAds" );
