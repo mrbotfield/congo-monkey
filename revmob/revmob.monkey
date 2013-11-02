@@ -35,8 +35,8 @@ Strict
 
 		#Rem monkeydoc
 		Connect. Session must be started before any ad can be shown.
-		Call this early on -- Revmob docs suggest doing this
-		at didFinishLaunchingWithOptions (ios) or onCreate (android).
+		Call this early on, in App OnCreate or New (Revmob docs suggest doing it
+		in didFinishLaunchingWithOptions on ios, or onCreate on android).
 		Use the app id provided To you by RevMob when registering an app.
 		See also: Testing modes.
 		#End

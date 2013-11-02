@@ -21,7 +21,7 @@ class RevMobWrapper
 	
 	public static void StartSessionWithAppID( String revmob_app_id ) 
 	{
-		revmob = RevMob.start( BBAndroidGame.AndroidGame()._activity, revmob_app_id ); 
+		revmob = RevMob.start( BBAndroidGame.AndroidGame().GetActivity(), revmob_app_id ); 
 	}
 
 	public static void ShowFullscreen()
