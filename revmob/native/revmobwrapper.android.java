@@ -27,7 +27,7 @@ class RevMobWrapper
 	public static void ShowFullscreen()
 	{
 		if ( revmob != null )
-			revmob.showFullscreen( BBAndroidGame.AndroidGame()._activity);
+			revmob.showFullscreen( BBAndroidGame.AndroidGame().GetActivity() );
 		
 	} 
 	
