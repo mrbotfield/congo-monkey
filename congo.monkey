@@ -24,7 +24,7 @@ Import congo.action
 Import congo.easefunction
 Import congo.timer
 Import congo.button
-'Import congo.menu
+'Import congo.menu -- WIP.
 Import congo.displayutils
 Import congo.networkutils
 Import congo.audioutils
@@ -44,11 +44,14 @@ Import congo.angelfont.simpletextbox '
 ' physics - these require box2d module to be installed
 Import congo.physicssprite
 Import congo.physicsworld
-
+Import congo.animatedphysicssprite  ' dec2013. need better fix...
+ 
 ' mochi media (flash only). Requires mochi sdk, and path update so  
 ' mxmlc can find it (e.g. edit source-path in flex-config.xml).
 Import congo.mochi
 
-' revmob (ios and android only). Requires RevMob setup, see docs.
-Import congo.revmob
+' Enable for revmob (ios and android only). Requires RevMob setup, see docs.
+' Import congo.revmob ' WIP
 
+' chartboost (ios and android only). Requires chartboost setup, see docs.
+' Import congo.chartboost  ' WIP
