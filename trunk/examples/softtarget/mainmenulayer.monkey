@@ -104,7 +104,7 @@ Public
 		CongoLog( "ButtonActivated (mainmenu), button id " + button.CustomName )
 	
 		If button.CustomName = "moregames" Then
-			OpenBrowserURL( "http://goodreactions.com/" )
+			OpenUrl( "http://goodreactions.com/" )
 		Else If button.CustomName  = "play" Then
 			If CongoApp.RunTransition( New TransitionGridSquares( 500, False, New EaseLinear(), 0, "play" ) ) Then
 				playbutton.SetEnabled( False )
