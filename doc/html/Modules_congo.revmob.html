@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congo Documentation</title>
+	<link rel="stylesheet" type="text/css" href="pagestyle.css" />
+</head>
+<body>
+	<div class="sheet container">
+		<header class="main">
+
+			<div class="title">
+				<a href="Modules_congo.html"><img src="data/congo.png"/></a>Congo Documentation
+			</div>
+
+		</header>
+
+		<div class="row content">
+			<div class="span12">
+			
+				
+<h1>Module <span class="name">congo.revmob</span></h1>
+
+
+	<p>RevMob ad wrapper (iOS and Android only).
+	<a href="#description"> More...</a></p>
+
+
+<hr>
+
+<table class="table scope-contents">
+	
+	
+	
+	
+	
+
+	
+
+								
+		<tr>
+			<td class="span1 name">Classes:</td>
+			<td>
+				<ul class="unstyled">
+					
+						<li><a href='Modules_congo.revmob_RevMobWrapper.html'>RevMobWrapper</a></li>
+					
+						<li><a href='Modules_congo.revmob_RevMobWrapper(2).html'>RevMobWrapper</a></li>
+					
+				</ul>
+			</td>
+		</tr>
+	
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+</table>
+
+
+	<a name="description"></a>
+	<h2>Detailed Discussion</h2>
+	RevMob ad wrapper (iOS and Android only). Requires RevMob sdk to be setup correctly.
+<p>
+** THIS Class IS UNDER DEVELOPMENT ** - it is useable but has limited functionality 
+(the full api is not implemented). Currently does connection and some of the ad banner units.
+Link ads not supported (req delegate code change?). Callbacks/listeners not implemented.
+<p>
+iOS: 
+Open the generated Xcode project and drag the Revmob.framework to the
+'Frameworks' section. Also, go to Build Phases section and add the AdSupport (<b>weak link</b>
+for pre-iOS6 support), SystemConfiguration and StoreKit frameworks.
+<p>
+Android:
+See the Revmob help pages for the required additions to AndroidManifest.xml, e.g.
+the <application> and <uses-permission> sections. Note, the copy of androidmanifest.xml
+in the build foler can get overwritten, better to change the main template version.
+Also, copy the revmob.x.x.x.jar lib to your ./build/android/libs folder. 
+<p>
+	
+	
+	<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

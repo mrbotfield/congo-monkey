@@ -91,7 +91,7 @@
 					
 						<li><a href='#CustomId(2)'>CustomId</a> : Void ( value:Int )</li>
 					
-						<li><a href='#CustomItemRef'>CustomItemRef</a> : Sprite ()</li>
+						<li><a href='#CustomItemRef'>CustomItemRef</a> : DisplayItem ()</li>
 					
 						<li><a href='#CustomItemRef(2)'>CustomItemRef</a> : Void ( item:DisplayItem )</li>
 					
@@ -150,7 +150,7 @@
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChild'>AddChild</a> : Void ( child:DisplayItem )</li>
 					
-						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChildWithZOrder'>AddChildWithZOrder</a> : Void ( child:Sprite, zOrder:Float=0.0 )</li>
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#AddChildWithZOrder'>AddChildWithZOrder</a> : Void ( child:DisplayItem, zOrder:Float=0.0 )</li>
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#ButtonActivated'>ButtonActivated</a> : Void ( button:Sprite )</li>
 					
@@ -158,23 +158,27 @@
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#FullSortZOrder'>FullSortZOrder</a> : Void ()</li>
 					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#GetChildByCustomName'>GetChildByCustomName</a> : DisplayItem ( customName:String )</li>
+					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#HasChild'>HasChild</a> : Bool ( ditem:DisplayItem )</li>
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#PaintItem'>PaintItem</a> : Void ()</li>
+					
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RecursiveChildList'>RecursiveChildList</a> : List&lt;DisplayItem&gt; ()</li>
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveAllActions'>RemoveAllActions</a> : Void ()</li>
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveAllChildren'>RemoveAllChildren</a> : Void ()</li>
 					
-						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveChild'>RemoveChild</a> : Void ( sprite:Sprite )</li>
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#RemoveChild'>RemoveChild</a> : Void ( child:DisplayItem )</li>
 					
-						<li><a href='Modules_congo.displayitem_DisplayItem.html#ReorderChild'>ReorderChild</a> : Void ( child:Sprite, z:Float )</li>
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#ReorderChild'>ReorderChild</a> : Void ( child:DisplayItem, z:Float )</li>
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#RunAction'>RunAction</a> : Void ( action:Action )</li>
 					
-						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToBack'>SendChildToBack</a> : Void ( child:Sprite )</li>
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToBack'>SendChildToBack</a> : Void ( child:DisplayItem )</li>
 					
-						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToFront'>SendChildToFront</a> : Void ( child:Sprite )</li>
+						<li><a href='Modules_congo.displayitem_DisplayItem.html#SendChildToFront'>SendChildToFront</a> : Void ( child:DisplayItem )</li>
 					
 						<li><a href='Modules_congo.displayitem_DisplayItem.html#SetHandle'>SetHandle</a> : Void ( xpos:Float, ypos:Float, adjustForResScale:Bool=false )</li>
 					
@@ -330,7 +334,7 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='CustomItemRef'></a>
-				<div class="well well-small name"><b>Method CustomItemRef : <a href="Modules_congo.sprite_Sprite.html">Sprite</a> () Property</b></div>
+				<div class="well well-small name"><b>Method CustomItemRef : <a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> () Property</b></div>
 				<div class="description">
 					<p>	A user-defined custom item property.</p>
 					
@@ -587,7 +591,7 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='AddChildWithZOrder'></a>
-				<div class="well well-small name"><b>Method AddChildWithZOrder : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, zOrder:Float=0.0 )</b></div>
+				<div class="well well-small name"><b>Method AddChildWithZOrder : Void ( child:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a>, zOrder:Float=0.0 )</b></div>
 				<div class="description">
 					<p>	As AddChild() but will reorder based on the provided Z order.</p>
 					
@@ -640,6 +644,16 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 			</div>
 		
 			<div class="item">
+				<a name='GetChildByCustomName'></a>
+				<div class="well well-small name"><b>Method GetChildByCustomName : <a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> ( customName:String )</b></div>
+				<div class="description">
+					<p>	Returns the named child, or null if none. Uses CustomName.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
 				<a name='HasChild'></a>
 				<div class="well well-small name"><b>Method HasChild : Bool ( ditem:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> )</b></div>
 				<div class="description">
@@ -654,6 +668,18 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 				<div class="well well-small name"><b>Method PaintItem : Void ()</b></div>
 				<div class="description">
 					<p>	Derived classes should implement this. It is called from Draw() to paint the item's content, separate to the transforms etc.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='RecursiveChildList'></a>
+				<div class="well well-small name"><b>Method RecursiveChildList : <a href="Modules_monkey.list_List.html">List</a>&lt;<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a>&gt; ()</b></div>
+				<div class="description">
+					<p>	For advanced use. Returns a recursive list of all child items related to this one. 
+	The search is breadth-first, as each child node is visited. Function is not
+	particularly efficient as it must process each child array and construct new lists.</p>
 					
 					
 				</div>
@@ -683,12 +709,12 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='RemoveChild'></a>
-				<div class="well well-small name"><b>Method RemoveChild : Void ( sprite:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="well well-small name"><b>Method RemoveChild : Void ( child:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> )</b></div>
 				<div class="description">
 					<p>	Removes a child item. Throws an Error If the item is Not a child.
 	
 	Removing children from the array is not very efficient, its not recommended to use this in
-	cpu-critical code (e.g. it is always better to re-use pools of sprites).</p>
+	cpu-critical code (e.g. it is always better to re-use pools of sprites/items).</p>
 					
 					
 				</div>
@@ -696,7 +722,7 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='ReorderChild'></a>
-				<div class="well well-small name"><b>Method ReorderChild : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, z:Float )</b></div>
+				<div class="well well-small name"><b>Method ReorderChild : Void ( child:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a>, z:Float )</b></div>
 				<div class="description">
 					<p>	Changes an existing child's Z order. A re-sort is scheduled for the next update loop.</p>
 					
@@ -718,7 +744,7 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='SendChildToBack'></a>
-				<div class="well well-small name"><b>Method SendChildToBack : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="well well-small name"><b>Method SendChildToBack : Void ( child:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> )</b></div>
 				<div class="description">
 					<p>	Sends child to back (lowest Z order). A re-sort is scheduled for the next update loop.</p>
 					
@@ -728,7 +754,7 @@ Has position, scale, actions, and other base properties. Holds a hierarchy of ch
 		
 			<div class="item">
 				<a name='SendChildToFront'></a>
-				<div class="well well-small name"><b>Method SendChildToFront : Void ( child:<a href="Modules_congo.sprite_Sprite.html">Sprite</a> )</b></div>
+				<div class="well well-small name"><b>Method SendChildToFront : Void ( child:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a> )</b></div>
 				<div class="description">
 					<p>	Sends child to front (highest Z order). A re-sort is scheduled for the next update loop.</p>
 					
