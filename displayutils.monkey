@@ -256,7 +256,7 @@ Function ImageFromTP:Image( tpimg:Image, dataName:String, imageName:String )
 	theImage = TextureCache.getInstance().GetImage( imageName )
 	If theImage <> Null Return theImage
 
-	Local atlasFileStr:String = LoadString( dataName + ".xml" )
+	Local atlasFileStr:String = mojo.LoadString( dataName + ".xml" ) ' (bug fix, mojo and os both have LoadString).
 	CongoLog( "TP xml file - loaded " + atlasFileStr.Length() + " chars." )
 	If atlasFileStr.Length() = 0 CongoLog( CONGO_WARNING_STRING + "Texturepacker file empty or wrong filename." )
 		
