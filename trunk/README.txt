@@ -5,7 +5,9 @@ Currently the module is tested against Monkey Pro version 76d -- other versions 
 
 Usage: copy the 'congo' folder into <monkey>/modules. To use the physics classes, you will also need to copy the 'box2d' folder into <monkey>/module (or download the box2d classes separately). To test the module, try running the applications in the Examples folder.
 
-Copyright (c) 2012-2013 Barry R Smith. 
+Use of some features depends on 3rd party libraries, e.g. Mochi, Chartboost, etc.
+
+Copyright (c) 2012-2014 Barry R Smith. 
 
 This software is provided 'as is', without warranty. See LICENSE.txt for more information. 
 
