@@ -2,7 +2,7 @@
 #End
 
 ' Part of the 'Congo' module for Monkey.
-' (c) Barry R Smith 2012-2013. This code is released under the MIT License - see LICENSE.txt.
+' (c) Barry R Smith 2012-2014. This code is released under the MIT License - see LICENSE.txt.
 
 Strict
 ' (not mojo dependent)
@@ -11,6 +11,7 @@ Strict
 Import congo.point
 Import congo.rect
 Import congo.action
+Import congo.congoapp
 
 #Rem monkeydoc
 Abstract base class for all displayable items (Sprites, Layers, etc).
