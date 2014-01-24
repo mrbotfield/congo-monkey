@@ -16,7 +16,7 @@ Global CONGO_NAME_STRING:String 	= "Congo"
 #Rem monkeydoc
 (Internal) Module version number string.
 #End
-Global CONGO_VERSION_STRING:String = "0.52" ' requires Monkey 72b.
+Global CONGO_VERSION_STRING:String = "0.53"
 #Rem monkeydoc
 (Internal) Error message string.
 #End
