@@ -435,7 +435,7 @@ Public
 		m_item.Position.y = m_y1 + ( m_y2 - m_y1 ) * tt
 		m_item.Angle = m_angle1 + ( m_angle2 - m_angle1 ) * tt
 		m_item.XScale = m_scale1 + ( m_scale2 - m_scale1 ) * tt
-		m_item.YScale = m_sprite.XScale
+		m_item.YScale = m_item.XScale
 		m_item.SetOpacity( m_alpha1 + ( m_alpha2 - m_alpha1) * tt )
 		
 		If m_timer.Completed() Then
