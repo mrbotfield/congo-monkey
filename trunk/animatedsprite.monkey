@@ -12,6 +12,8 @@ Import congo.timer
 
 #Rem monkeydoc
 Extension of Sprite which supports frame-based animation. Frames are loaded from an image atlas or via Texture Packer.
+
+Todo - properties etc.
 #End
 Class AnimatedSprite Extends Sprite	
 	
@@ -88,6 +90,10 @@ Public
 	#End
 	Method PauseAnim:Void()
 		animPaused = True
+	End
+	
+	Method AnimPaused:Bool()
+		Return animPaused
 	End
 	
 	#Rem monkeydoc
