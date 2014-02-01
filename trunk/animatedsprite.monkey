@@ -131,6 +131,7 @@ Public
 	
 	#Rem monkeydoc
 	Overrides the Sprite class method - sets the image at position 0 of our image array.
+	Hence, it can behave like a regular single frame sprite, if required.
 	#End
 	Method SetMainImage:Void( img:Image )
 	
@@ -228,6 +229,18 @@ Public
 		Next
 	
 	End 
+	
+	#Rem monkeydoc
+	Clears the array of image frames, replacing it with default empty frame. Resets curent image number to 0.
+	You might need this if re-using an AnimatedSprite and need to replace the previous set of frames.	
+	#End
+	Method ClearImageSheet:Void()
+		'images = images.Resize( 1 )
+		images = New Image[1]
+		curImageNum = 0
+		totFrames = 1
+		
+	End
 	
 	#Rem monkeydoc
 	Overrides the base method to paint the current frame.
