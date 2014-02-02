@@ -46,7 +46,7 @@ Public
 	End
 	
 	#Rem monkeydoc
-	Creates a Sprite with a single image. See also CongoImageLoader (in DisplayUtils) to load an Image.
+	Creates a Sprite with a single image. See also CongoResourceLoader (in DisplayUtils) to load an Image.
 	You can set Image.MidHandle on the image as required.
 	#End
 	Method New( myImg:Image )
