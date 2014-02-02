@@ -582,7 +582,8 @@ Public
 		' need to undo res scaler since child items have their own. But, we do pass down the parents general scale factor.
 		Scale( ResScaler, ResScaler )
 		
-		' Draw children (our current transform applies to them)
+		' Draw children (our current transform applies to them).
+		' Todo - allow children with negative z order to draw below us - these are always above.
 		For Local i:Int=0 Until NumChildren
 			Children[i].Draw()
 		Next
