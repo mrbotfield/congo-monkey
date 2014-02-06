@@ -201,27 +201,25 @@ Function VTouchY:Float (index:Int = 0, limit:Bool = True)
 	Return VirtualDisplay.Display.VTouchY (index, limit)
 End
 
-' [BRS] added general global to virtual conversion function (no edge limits).
+' [BRS] general global to virtual coordinate conversion.
 Function ToVirtualPosX:Float( pos:Float )
 	Return VirtualDisplay.Display.ToVirtualPosX (pos)
 End
 
-#rem
-' [BRS] added general global to virtual conversion function (no edge limits).
+' [BRS] general global to virtual coordinate conversion.
 Function ToVirtualPosY:Float( pos:Float )
 	Return VirtualDisplay.Display.ToVirtualPosY (pos)
 End
 
-' [BRS] reverse, from virtual to global coords. Assumes 'top-level' coords, not relative to any parent sprite.
+' [BRS] general virtual to global coordinate conversion.
 Function ToGlobalPosX:Float( pos:Float )
 	Return VirtualDisplay.Display.ToGlobalPosX (pos)
 End
 
-' [BRS] reverse, from virtual to global coords. Assumes 'top-level' coords, not relative to any parent sprite.
+' [BRS] general virtual to global coordinate conversion.
 Function ToGlobalPosY:Float( pos:Float )
 	Return VirtualDisplay.Display.ToGlobalPosY (pos)
 End
-#end
 
 ' Virtual display size...
 
@@ -454,7 +452,7 @@ Class VirtualDisplay
 
 	End
 	
-	' [BRS] added general global to virtual conversion function (no edge limits).
+	' [BRS] global to virtual coordinate conversion.
 	Method ToVirtualPosX:Float( pos:Float )
 	
 		' We combine these 2 lines (same code as VMouse, VTouch etc)
@@ -463,23 +461,21 @@ Class VirtualDisplay
 		Return (( pos - Float (DeviceWidth ()) * 0.5 ) / multi ) / vzoom + (VDeviceWidth () * 0.5)
 	End
 	
-#rem
-	' [BRS] added general global to virtual conversion function (no edge limits).
+	' [BRS] global to virtual coordinate conversion.
 	Method ToVirtualPosY:Float( pos:Float )
 	
 		Return (( pos - Float (DeviceHeight ()) * 0.5 ) / multi ) / vzoom + (VDeviceHeight () * 0.5)
 	End
 	
-	' [BRS] reverse, from virtual to global coords. Assumes 'top-level' coords, not relative to any parent sprite.
+	' [BRS] virtual to global coordinate conversion.
 	Method ToGlobalPosX:Float( pos:Float )
 	 	Return vzoom*multi*(pos - VDeviceWidth()*0.5) + Float(DeviceWidth()*0.5)
 	End
 	
-	' [BRS] reverse, from virtual to global coords. Assumes 'top-level' coords, not relative to any parent sprite.
+	' [BRS] virtual to global coordinate conversion.
 	Method ToGlobalPosY:Float( pos:Float )
 	 	Return vzoom*multi*(pos - VDeviceHeight()*0.5) + Float(DeviceHeight()*0.5)
 	End
-#end
 
 	' [BRS] see CONGO_AUTOFIT_NOBORDERS to prevent border clip.
 	Method UpdateVirtualDisplay:Int ( zoomborders:Bool , keepborders:Bool )
