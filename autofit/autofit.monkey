@@ -11,7 +11,7 @@ Import mojo.app
 Import mojo.graphics
 Import mojo.input
 
-Import congo.congosettings ' [BRS] added for noborder setting
+Import congo.congosettings ' [CONGO] added for noborder setting
 
 ' Changes - made Strict and added VTouchX/Y.
 
@@ -201,22 +201,22 @@ Function VTouchY:Float (index:Int = 0, limit:Bool = True)
 	Return VirtualDisplay.Display.VTouchY (index, limit)
 End
 
-' [BRS] general global to virtual coordinate conversion.
+' [CONGO] general global to virtual coordinate conversion.
 Function ToVirtualPosX:Float( pos:Float )
 	Return VirtualDisplay.Display.ToVirtualPosX (pos)
 End
 
-' [BRS] general global to virtual coordinate conversion.
+' [CONGO] general global to virtual coordinate conversion.
 Function ToVirtualPosY:Float( pos:Float )
 	Return VirtualDisplay.Display.ToVirtualPosY (pos)
 End
 
-' [BRS] general virtual to global coordinate conversion.
+' [CONGO] general virtual to global coordinate conversion.
 Function ToGlobalPosX:Float( pos:Float )
 	Return VirtualDisplay.Display.ToGlobalPosX (pos)
 End
 
-' [BRS] general virtual to global coordinate conversion.
+' [CONGO] general virtual to global coordinate conversion.
 Function ToGlobalPosY:Float( pos:Float )
 	Return VirtualDisplay.Display.ToGlobalPosY (pos)
 End
@@ -452,7 +452,7 @@ Class VirtualDisplay
 
 	End
 	
-	' [BRS] global to virtual coordinate conversion.
+	' [CONGO] global to virtual coordinate conversion.
 	Method ToVirtualPosX:Float( pos:Float )
 	
 		' We combine these 2 lines (same code as VMouse, VTouch etc)
@@ -461,23 +461,23 @@ Class VirtualDisplay
 		Return (( pos - Float (DeviceWidth ()) * 0.5 ) / multi ) / vzoom + (VDeviceWidth () * 0.5)
 	End
 	
-	' [BRS] global to virtual coordinate conversion.
+	' [CONGO] global to virtual coordinate conversion.
 	Method ToVirtualPosY:Float( pos:Float )
 	
 		Return (( pos - Float (DeviceHeight ()) * 0.5 ) / multi ) / vzoom + (VDeviceHeight () * 0.5)
 	End
 	
-	' [BRS] virtual to global coordinate conversion.
+	' [CONGO] virtual to global coordinate conversion.
 	Method ToGlobalPosX:Float( pos:Float )
 	 	Return vzoom*multi*(pos - VDeviceWidth()*0.5) + Float(DeviceWidth()*0.5)
 	End
 	
-	' [BRS] virtual to global coordinate conversion.
+	' [CONGO] virtual to global coordinate conversion.
 	Method ToGlobalPosY:Float( pos:Float )
 	 	Return vzoom*multi*(pos - VDeviceHeight()*0.5) + Float(DeviceHeight()*0.5)
 	End
 
-	' [BRS] see CONGO_AUTOFIT_NOBORDERS to prevent border clip.
+	' [CONGO] see CONGO_AUTOFIT_NOBORDERS to prevent border clip.
 	Method UpdateVirtualDisplay:Int ( zoomborders:Bool , keepborders:Bool )
 
 		' ---------------------------------------------------------------------
@@ -576,7 +576,7 @@ Class VirtualDisplay
 				offx = (fdw - realx) * 0.5
 				offy = (fdh - realy) * 0.5
 	
-				If Not CONGO_AUTOFIT_NOBORDERS ' [BRS] checks congo setting, disable for no clipping.
+				If Not CONGO_AUTOFIT_NOBORDERS ' [CONGO] checks congo setting, disable for no clipping.
 	
 					' -----------------------------------------------------
 					' Calculate inner area...
@@ -652,7 +652,7 @@ Class VirtualDisplay
 		' Draw borders at full device size...
 		' ---------------------------------------------------------------------
 
-		If Not CONGO_AUTOFIT_NOBORDERS ' [BRS] added our setting
+		If Not CONGO_AUTOFIT_NOBORDERS ' [CONGO] added our setting
 			
 			SetScissor 0, 0, DeviceWidth (), DeviceHeight ()
 			Cls 0, 0, 0

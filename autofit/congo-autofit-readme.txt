@@ -5,7 +5,7 @@ See also http://www.monkeycoder.co.nz/Community/posts.php?topic=1500 for more in
 
 The autofit code does not generate monkeydoc documentation.
 
-The code is compatible with Congo retina options and the HD image resource loader. Any changes I make for Congo will be noted by '[BRS]' in the source files.
+The code is compatible with Congo retina options and the HD image resource loader. Any changes made for Congo will be noted by '[CONGO]' comments in the source files.
 
 Changes:
 
