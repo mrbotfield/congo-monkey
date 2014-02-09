@@ -3,8 +3,8 @@
 
 #import "Chartboost.h" // (chartboost folder must be added to Xcode project).
 
-#define CONGO_CHARTBOOST_IOS_APPID "527552c816ba47fc3b000017" // set to YOUR iOS app id
-#define CONGO_CHARTBOOST_IOS_APPSIG "7c4dd4840b077c6217c138074f71810e3c112797" // set to YOUR iOS app sig
+#define CONGO_CHARTBOOST_IOS_APPID "YOUR-APP-ID" // set to YOUR iOS app id
+#define CONGO_CHARTBOOST_IOS_APPSIG "YOUR-APP-SIG" // set to YOUR iOS app sig
 
 class ChartboostWrapper
 {
