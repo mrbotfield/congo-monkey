@@ -4,6 +4,7 @@ chartboost.com site. Currently, the callback/delegate methods are not implemente
 ie the wrapper provides basic functionality -- you may find more complete wrappers
 elsewhere. Android integration requires some extra setup, see step 5 below.
 
+For a basic test-harness, see the sample Congo app 'adtester.monkey'.
 
 1. Register an account at chartboost.com, download the required SDKs. Note any
 device or target SDK/OS requirements that may be relevant to your project.
