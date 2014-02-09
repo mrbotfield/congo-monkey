@@ -1,0 +1,180 @@
+
+// ... (changes to end of androidgame.java).
+
+// [CONGO] The flagged lines/functions below need to be added to the end of
+// the androidgame.java template file in <MonkeyDir>/targets/android/modules/native.
+// Or, create a new target to avoid changing the original files.
+
+// ** The default template could, of course, change between versions of Monkey, so
+// take care when doing this! **
+
+import com.chartboost.sdk.*; // [CONGO]
+
+class AndroidGame extends Activity{
+
+	BBAndroidGame _game;
+	
+	GameView _view;
+
+	 private Chartboost cb; // [CONGO]
+	
+	//***** GameView *****
+
+	public static class GameView extends BBAndroidGame.GameView{
+
+		public GameView( Context context ){
+			super( context );
+		}
+		
+		public GameView( Context context,AttributeSet attrs ){
+			super( context,attrs );
+		}
+	}
+	
+	//***** Activity *****
+	
+	// [CONGO] Added onCreate so we can add Chartboost code
+	// See https://help.chartboost.com/documentation/android
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		
+		// Configure Chartboost
+		this.cb = Chartboost.sharedChartboost();
+		String appId = ChartboostWrapper.CONGO_CHARTBOOST_ANDROID_APPID;
+		String appSignature = ChartboostWrapper.CONGO_CHARTBOOST_ANDROID_APPSIG;
+		this.cb.onCreate(this, appId, appSignature, null);
+	}
+	
+	// [CONGO] Added new function for Chartboost wrapper
+	public void showInterstitial( String location ){
+		this.cb.showInterstitial( location );
+	}
+
+	// [CONGO] Added new function for Chartboost wrapper
+	public void cacheInterstitial( String location ){
+		this.cb.cacheInterstitial( location );
+	}
+
+	// [CONGO] Added new fn for Chartboost wrapper
+	public boolean hasCachedInterstitial( String location ){
+		return this.cb.hasCachedInterstitial( location );
+	}
+
+	// [CONGO] Added new function for Chartboost wrapper
+	public String getChartboostAppID(){
+		return this.cb.getAppID();
+	}
+
+	// [CONGO] Added new fn for Chartboost wrapper
+	public void showMoreApps(){
+		this.cb.showMoreApps();
+	}
+
+	// [CONGO] Added new fn for Chartboost wrapper
+	public void cacheMoreApps(){
+		this.cb.cacheMoreApps();
+	}
+
+	// [CONGO] Added new fn for Chartboost wrapper
+	public boolean hasCachedMoreApps(){
+		return this.cb.hasCachedMoreApps();
+	}
+
+	public void onWindowFocusChanged( boolean hasFocus ){
+		if( hasFocus ){
+			_view.onResume();
+			_game.ResumeGame();
+		}else{
+			_game.SuspendGame();
+			_view.onPause();
+		}
+	}
+
+	@Override
+	public void onBackPressed(){
+		//deprecating this!
+		_game.KeyEvent( BBGameEvent.KeyDown,27 );
+		_game.KeyEvent( BBGameEvent.KeyUp,27 );
+		
+		//new KEY_BACK value...
+		_game.KeyEvent( BBGameEvent.KeyDown,0x1a0 );
+		_game.KeyEvent( BBGameEvent.KeyUp,0x1a0 );
+
+		// [CONGO] added Chartboost code here.
+		// If an interstitial is on screen, close it. 
+		if (this.cb.onBackPressed())
+        		return;
+    		else
+        		super.onBackPressed();
+	}
+
+	@Override
+	public void onStart(){
+		super.onResume();
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onStart();
+		}
+
+		// [CONGO] added Chartboost code here.
+		this.cb.onStart(this);
+		// Notify the beginning of a user session.
+    		this.cb.startSession();
+		
+		// Cache/show interstitial
+ 		// optional: this.cb.cacheInterstitial();
+		// optional: this.cb.showInterstitial();
+	}
+
+	@Override
+	public void onRestart(){
+		super.onResume();
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onRestart();
+		}
+	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onResume();
+		}
+	}
+	
+	@Override 
+	public void onPause(){
+		super.onPause();
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onPause();
+		}
+	}
+
+	@Override
+	public void onStop(){
+		super.onResume();
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onStop();
+		}
+		// [CONGO] added Chartboost code here.
+		this.cb.onStop(this);
+	}
+	
+	@Override
+	protected void onDestroy(){
+		super.onDestroy();
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onDestroy();
+		}
+		// [CONGO] added Chartboost code here.
+		this.cb.onDestroy(this);
+	}
+	
+	@Override
+	protected void onActivityResult( int requestCode,int resultCode,Intent data ){
+		for( ActivityDelegate delegate : _game._activityDelegates ){
+			delegate.onActivityResult( requestCode,resultCode,data );
+		}
+	}
+}
+
