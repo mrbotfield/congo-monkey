@@ -17,7 +17,7 @@ Add these IDs to chartboostwrapper.ios.cpp and/or chartboostwrapper.android.java
 (Note, test mode disables itself after ~20 ad requests, which can be a bit confusing!).
 
 4. It can be useful to create a default network publishing campaign via the dashboard, 
-and associate it with your newly created app(s). This is a requirement for seeting
+and associate it with your newly created app(s). This is a requirement for seeing
 actual ads on a device (not just the test ad).
 
 5. *Android only*: add the required code to the androidgame.java template file --
@@ -27,7 +27,9 @@ separate target by copying the entire <MonkeyDir>targets/android folder, giving 
 a new #TARGET_NAME in TARGET.monkey (restart TED to see the new target listed).
 
 It is also worth checking the app permissions in the AndroidManifest.xml (in 
-templates/template) to ensure the recommended settings are used, e.g. require android.permission.INTERNET (see https://help.chartboost.com/documentation/android, optionally add ACCESS_NETWORK_STATE etc). Note, you must delete your android build
+templates/template) to ensure the recommended settings are used, e.g. require
+android.permission.INTERNET (see https://help.chartboost.com/documentation/android,
+optionally add ACCESS_NETWORK_STATE etc). Note, you must delete your android build
 folder to get updated versions to copy from the target template folder!
 See the provided AndroidManifest-EXAMPLE.xml for reference.
 
@@ -36,7 +38,8 @@ Also, not the following section added to the manifest:
     			android:excludeFromRecents="true"
     			android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 
-It is also sensible to check the min/target API values -- current Chartboost requires API level 8, the Monkey defaults tend to set much lower values.
+It is also sensible to check the min/target API values -- current Chartboost requires
+API level 8, the Monkey defaults tend to set much lower values.
 
 6a. For iOS, copy the Chartboost folder you downloaded earlier (containing Chartboost.h
 and libChartboost.a) into your game's Xcode project. The project won't get wiped over
@@ -53,7 +56,8 @@ the app resumes; you can do this inside OnResume().
 
   Where to place interstitial ads is up to you, usually they are best at startup, 
 game over, or pause screens. Note the optional location strings, these can be used to
-disable or limit ads at certain points of your game (see https://help.chartboost.com/documentation/ios/namedlocations).
+disable or limit ads at certain points of your game (see
+https://help.chartboost.com/documentation/ios/namedlocations).
 
   Use of the 'Show More Games' feature requires a campaign (or your own apps) to be
 set up in the 'more apps' section of the game's page on the dashboard. See
