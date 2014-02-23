@@ -103,14 +103,14 @@ Public
 	End
 	
 	#Rem monkeydoc
-	Sets the current rotation angle.
+	Sets the current rotation angle in degrees (counter-clockwise).
 	#End
 	Method Angle:Void( rot:Float ) Property
 		Self.angle = rot
 	End
 	
 	#Rem monkeydoc
-	Sets the current rotation angle.
+	Sets the current rotation angle in degrees (counter-clockwise).
 	#End
 	Method SetAngle:Void( rot:Float ) Property
 		Self.angle = rot
