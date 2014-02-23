@@ -189,6 +189,17 @@ Function IsUsingXHDResources:Bool()
 End
 
 #Rem monkeydoc
+Returns the display aspect ratio width/height, where width is the longest edge. Uses pixel coordinates reported by the device.
+#End
+Function DeviceAspectRatio:Float()
+
+	Local longest:Int  = Max( DeviceWidth(), DeviceHeight() ) 
+	Local shortest:Int = Min( DeviceWidth(), DeviceHeight() ) 
+	Return Float(longest) / Float(shortest)
+
+End
+
+#Rem monkeydoc
 Handy function which returns a full resource name with the correct sd/hd/xhd folder and file extension added.
 
 Used by CongoImageLoader and CongoFontLoader, but can be used to obtain any resource name if it follows the 
