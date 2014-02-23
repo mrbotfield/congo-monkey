@@ -158,6 +158,7 @@ Public
 	This function controls the currently displayed applayer. As a non-member, it can be called from anywhere.
 	 Any previous layer is 'discarded' (GC will discard it). Textures will be retained unless the optional 
 	clearTextureCache parameter is set. 
+	TODO: clearTextureCache should be removed? The new layer already exists before the cache is cleared! Clear it manually beforehand.
 	#End
 	Function SetCurrentLayer:Void( layer:AppLayer, clearTextureCache:Bool = False )
 		
