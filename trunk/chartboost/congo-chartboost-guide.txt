@@ -13,9 +13,17 @@ device or target SDK/OS requirements that may be relevant to your project.
 iOS and Android versions of an app will each have unique IDs. 
 Add these IDs to chartboostwrapper.ios.cpp and/or chartboostwrapper.android.java
 [unfortunately these are 'hard-coded' here at the moment].
+Set the orientation options to the most suitable ones for your app.
 
 3. Until you're ready to deploy to a store, enable test mode on the dashboard.
 (Note, test mode disables itself after ~20 ad requests, which can be a bit confusing!).
+Devices will receive a dummy ad. 
+
+When disabled, your app will try to obtain real ads. This may fail due to various restrictions on the server (number of ads, frequency of ads etc). To test without
+these restrictions, register a 'test device' on the Company Info section of the
+dashboard. You need to obtain the device id in order to register it, e.g. see
+https://help.chartboost.com/documentation/identifiers. [may require READ_PHONE_STATE
+permission in manifest?].
 
 4. It can be useful to create a default network publishing campaign via the dashboard, 
 and associate it with your newly created app(s). This is a requirement for seeing
@@ -26,6 +34,11 @@ see details in androidgame-CHANGES.java file. Either make the changes directly t
 <MonkeyDir>/targets/android/modules/native/androidgame.java or (to be safe) make a 
 separate target by copying the entire <MonkeyDir>targets/android folder, giving it 
 a new #TARGET_NAME in TARGET.monkey (restart TED to see the new target listed).
+
+Optionally, you can add all the delegate functions too, as described at 
+https://help.chartboost.com/documentation/android/delegation (or the their sample 
+code). These can help with testing, or for more control over ads, e.g. actions after
+success/fail of an ad. Log messages can be viewed using logcat.
 
 It is also worth checking the app permissions in the AndroidManifest.xml (in 
 templates/template) to ensure the recommended settings are used, e.g. require
@@ -62,7 +75,8 @@ https://help.chartboost.com/documentation/ios/namedlocations).
 
   Use of the 'Show More Games' feature requires a campaign (or your own apps) to be
 set up in the 'more apps' section of the game's page on the dashboard. See
-https://help.chartboost.com/documentation/moreapps. 
+https://help.chartboost.com/documentation/moreapps. You can add the same campaigns
+multiple times and arrange the list however you like.
 
 
 [BRS] Feb 2014.
