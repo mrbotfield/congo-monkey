@@ -244,7 +244,7 @@ Public
 	
 	#Rem monkeydoc
 	(Advanced use) Sets the internal res scale factor. DisplayItems leave this as 1.0, but Sprite's will 
-	set this via CongoImageLoader when hi-res images are used, which we need to scale for.
+	set this via CongoResourceLoader when hi-res images are used, which we need to scale for.
 	#End
 	Method ResScaler:Void( rscale:Float ) Property
 		resScaler = rscale
