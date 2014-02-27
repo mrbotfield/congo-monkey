@@ -191,6 +191,8 @@ Public
 	
 	#Rem monkeydoc
 	Sets up array of images from the provided sheet. Called from main constr, see notes there.
+	TODO - this needs to take account of hd/xhd sheets when specifying the frame size.
+	Also, needs to be able to work out frame sizes of a subsections of a sheet (using xoffset etc).
 	#End
 	Method SetupImageSheet:Void(	myImg:Image, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int = -1, frameHeight:Int = -1, offsetX:Int = 0, offsetY:Int = 0)
 
