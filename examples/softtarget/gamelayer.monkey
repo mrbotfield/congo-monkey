@@ -195,7 +195,7 @@ Public
 	Method PersistGameData:Void()
 		GameData.getInstance().StoreInt( "hiscore", hiscore )
 		GameData.getInstance().StoreBool( "muted", SoundPlayer.Muted() )
-		Local result:Int = GameData.getInstance().SaveAll()
+		GameData.getInstance().SaveAll()
 	End
 	
 	Method UpdateLabels:Void()

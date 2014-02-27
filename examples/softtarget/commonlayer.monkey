@@ -82,7 +82,7 @@ Public
 			SoundPlayer.Play ( click )
 			' save state
 			GameData.getInstance().StoreBool( "muted", SoundPlayer.Muted() )
-			Local result:Int = GameData.getInstance().SaveAll()
+			GameData.getInstance().SaveAll()
 		End
 				
 	End

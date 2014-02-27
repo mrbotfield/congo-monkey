@@ -166,11 +166,10 @@ Public
 		
 	#Rem monkeydoc
 	Persists all current data to disk (via Monkey's SaveState). Will overwrite all previous data.
-	Returns an Int but this is likely to be 0 regardless of success (see Monkey internals).
 
 	You should call this at reasonable times, e.g. when settings are changed, or at the end of a level.
 	#End
-	Method SaveAll:Int()
+	Method SaveAll:Void()
 		
 		Local value:String
 		Local tosave:String
@@ -180,11 +179,10 @@ Public
 			tosave += key + kvSeparator + value + dataSeparator
 		End
 		
-		Local result:Int = SaveState( tosave ) 
-		CongoLog( "Gamedata savestate returned " + result + " Map contains " + m_cache.Count() + " entries." )
+		SaveState( tosave ) 
+		CongoLog( "Gamedata savestate: Map contains " + m_cache.Count() + " entries." )
 		CongoLog( "Gamedata state: " + tosave )
-		
-		Return result
+
 	End
 	
 	#Rem monkeydoc
