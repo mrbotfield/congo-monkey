@@ -98,8 +98,11 @@ Public
 
 #Rem monkeydoc
 Enables iOS retina modes where supported.
-Call this early on, i.e. must be before any autofit/layout code or resource loading is performed.
+** TODO/Dev note - this function is no longer used **. Remove? 
+ResScaler does the scaling, whilst IOS_RETINA_ENABLED=True is the default in monkey, which means retina
+devices will report their full 2x display sizes -- we don't need to scale this; autofit sees double the pixels.
 
+Call this early on, i.e. must be before any autofit/layout code or resource loading is performed.
 Internally, calling this function will multiply subsequent resource scalers by 2.0 if the display is Retina.
 
 The Monkey iOS retina config setting must also be set to True for this to work correctly.
@@ -112,7 +115,8 @@ Function EnableCongoRetina:Void()
 End
 
 #Rem monkeydoc
-Internal. Stores the current device scale factor. Don't set this manually, use EnableCongoRetina()
+Internal. Stores the current device scale factor. Don't set this manually, use EnableCongoRetina().
+TODO/dev note - this is currently not used! Remove? ResScaler does all the scaling in the displayitem.
 #End
 Global CONGO_DEVICE_CONTENT_SCALE:Float = 1.0
 
