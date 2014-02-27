@@ -7,7 +7,6 @@ Various standalone functions relating to audio.
 
 Strict
 Import mojo
-Import os
 
 Import congo.congosettings
 Import congo.textutils
