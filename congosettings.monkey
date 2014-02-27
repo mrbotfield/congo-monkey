@@ -35,7 +35,9 @@ perform this automatically.
 
 See also CONGO_HD_DEVICE_WIDTHREQ and CONGO_XHD_DEVICE_WIDTHREQ.
 
-Note - on iOS you can use this *instead* of the @2x' filename convention. This also means you can use hd resources on a non-retina iPad.
+iOS Notes - on iOS you can use this *instead* of the @2x' filename convention. This also means you can use hd resources on a non-retina iPad.
+By default, Monkey sets CFG_IOS_RETINA_ENABLED to true, which means that retina-capable devices will report their
+full 2x display size (in pixels), and pick up the appropriate hd resources.
 
 Note - you should not mix sd and hd (or xhd) resources -- keep a consistent set.
 
@@ -80,8 +82,11 @@ Global CONGO_XHD_FOLDER:String 	= "xhd"
 
 #Rem monkeydoc
 Change this to determine the threshold screen width where hd images will be used (if enabled above). 
+Here, width is defined as the shortest edge.
+
 Default of 640 pixels means that devices with 320x480 displays (e.g. iPhone3G, basic Android) will not use HD images,
-whilst iPhone4 and all iPads will, since they have widths of 640 and 768 pixels respectively.
+whilst iPhone4 and all iPads will, since they have widths of 640 and 768 pixels respectively. There are also various
+Android tablets with resolution 1280x800.
 
 Note - for browser targets >640 wide you might want to disable hd, these are really intended for mobile targets.
 #End
