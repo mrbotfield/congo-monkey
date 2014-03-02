@@ -5,8 +5,6 @@ Strict
 Import mojo
 Import congo
 
-Import mainmenulayer
-
 Class GameItemType
 	Global WALLGAP:Int  = 1	
 	' (can add more items here. Wall items have id < 100)
@@ -250,7 +248,7 @@ Public
 	End
 	
 	Method ActionCompleted:Void( actionId:Int )
-		' you could go a main menu, but we'll just restart game.
+		' you could go to a main menu here, but we'll just restart game.
 		If actionId = 1 RestartGame() 
 	End
 
