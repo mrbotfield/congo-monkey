@@ -69,14 +69,18 @@ CongoApp OnCreate() method. The Chartboost docs recommend calling StartSession w
 the app resumes; you can do this inside OnResume().
 
   Where to place interstitial ads is up to you, usually they are best at startup, 
-game over, or pause screens. Note the optional location strings, these can be used to
-disable or limit ads at certain points of your game (see
-https://help.chartboost.com/documentation/ios/namedlocations).
+game over, or pause screens. Since loading can take a moment, it is best to cache
+the ad ahead of using it.
+
+  Note the optional location strings, these can be used to disable or limit ads at
+certain points of your game. If not specified they are 'Default' location
+(see https://help.chartboost.com/documentation/ios/namedlocations).
 
   Use of the 'Show More Games' feature requires a campaign (or your own apps) to be
 set up in the 'more apps' section of the game's page on the dashboard. See
 https://help.chartboost.com/documentation/moreapps. You can add the same campaigns
-multiple times and arrange the list however you like.
+multiple times and arrange the list however you like. Like ads, it is best to cache
+the page ahead of using it.
 
 
-[BRS] Feb 2014.
+[BRS] Feb/Mar 2014.
