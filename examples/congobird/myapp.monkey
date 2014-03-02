@@ -37,7 +37,8 @@ Public
 		SetUpdateRate ( 60 )
 		CongoLog( "Actual device size (pixels): " + DeviceWidth() + " x " + DeviceHeight() )
 		Local aratio:Float = DeviceAspectRatio()
-		' If aspect ratio is outside what our BG graphics cover, we'll letterbox it.
+		' Our graphics are made to support 4:3 to 16:9 aspect ratios. If the display is outside
+		' this then we'll letterbox it, rather than see graphics outside the game area.
 		If aratio < 1.33 Or aratio > 1.78 Then
 			CongoLog( "Aspect ratio outside those supported, will letterbox " + aratio )
 			CONGO_AUTOFIT_NOBORDERS = False
