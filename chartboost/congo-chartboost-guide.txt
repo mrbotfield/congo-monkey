@@ -19,11 +19,9 @@ Set the orientation options to the most suitable ones for your app.
 (Note, test mode disables itself after ~20 ad requests, which can be a bit confusing!).
 Devices will receive a dummy ad. 
 
-When disabled, your app will try to obtain real ads. This may fail due to various restrictions on the server (number of ads, frequency of ads etc). To test without
+When disabled, your app will try to obtain real ads. This may fail due to various restrictions on the server (number of ads, frequency of ads etc); To test without
 these restrictions, register a 'test device' on the Company Info section of the
-dashboard. You need to obtain the device id in order to register it, e.g. see
-https://help.chartboost.com/documentation/identifiers. [may require READ_PHONE_STATE
-permission in manifest?].
+dashboard.
 
 4. It can be useful to create a default network publishing campaign via the dashboard, 
 and associate it with your newly created app(s). This is a requirement for seeing
@@ -33,12 +31,13 @@ actual ads on a device (not just the test ad).
 see details in androidgame-CHANGES.java file. Either make the changes directly to  
 <MonkeyDir>/targets/android/modules/native/androidgame.java or (to be safe) make a 
 separate target by copying the entire <MonkeyDir>targets/android folder, giving it 
-a new #TARGET_NAME in TARGET.monkey (restart TED to see the new target listed).
+a new #TARGET_NAME in it's TARGET.monkey file (restart TED to see new targets appear).
 
 Optionally, you can add all the delegate functions too, as described at 
-https://help.chartboost.com/documentation/android/delegation (or the their sample 
-code). These can help with testing, or for more control over ads, e.g. actions after
-success/fail of an ad. Log messages can be viewed using logcat.
+https://help.chartboost.com/documentation/android/delegation (or see their sample 
+project). These can help with testing, or for more control over ads, e.g. to perform
+actions after success/fail of an ad request. 
+Log messages can be viewed using logcat.
 
 It is also worth checking the app permissions in the AndroidManifest.xml (in 
 templates/template) to ensure the recommended settings are used, e.g. require
