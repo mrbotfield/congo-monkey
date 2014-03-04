@@ -1,16 +1,17 @@
 'Congo Bird' game example for Congo. 
 
 A flapping bird game.
-This examples shows use of sprites, layers, animation, fonts, actions, sounds,
+This example shows use of sprites, layers, animation, fonts, actions, sounds,
 and simple player input. It also shows how you can store level items, perform
 sprite scrolling, and do basic collision detection.
 
 sd/hd/xhd versions of resources are included. The backdrop images are designed
 to be larger than the virtual game area, allowing the full screen to be used
-on most mobile devices, whilst retaining a consistent 320x480 pts game area.
+on most mobile devices (4:3 to 16:9 aspect ratios), whilst retaining a consistent
+320x480 (point) virtual game area.
 
 +++ This code forms the basis of 'Plucky Parrot', which is available for free from
-the App Store and Google Play +++
+the App Store and Google Play from March 2014! +++
 
 ***
 

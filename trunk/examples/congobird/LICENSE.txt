@@ -23,7 +23,7 @@ Copyright (c) 2014 Barry R Smith, barry@goodreactions.com
  THE SOFTWARE.
 
 
-Graphics assets (*) are covered by copyright and are licensed for distribution under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License (http://creativecommons.org/licenses/by-nc-nd/3.0/). 
+Graphics assets are covered by copyright and are licensed for distribution under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License (http://creativecommons.org/licenses/by-nc-nd/3.0/). 
 
 The free font '04b_19' by Yuji Oshimoto is used (http://www.04.jp.org/). Available at http://www.dafont.com/04b-19.font.
 
