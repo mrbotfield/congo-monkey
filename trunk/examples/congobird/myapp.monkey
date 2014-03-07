@@ -13,11 +13,16 @@ Function Main:Int()
 	CONGO_HD_FOLDER = "hd"
 	CONGO_XHD_FOLDER = "xhd"
 	CONGO_AUDIO_FOLDER = "audio"
-	
 	CONGO_HD_SUFFIX = ""
 	CONGO_XHD_SUFFIX = ""
-	CONGO_HD_DEVICE_WIDTHREQ = 640
-	CONGO_XHD_DEVICE_WIDTHREQ = 1280
+	
+	' To support Android better we enable HD resources on devices that are fairly close to 2x res, e.g. 800x480.
+	' (allow for losing pixels to the hardware buttons -- DisplayWidth/Height don't include these in the size).
+	'
+	' Similarly, for XHD we enable these for ~1200 size tablets, which are much closer to 4x than 2x. 
+	' Its not perfect -- we could enable an intermediate x1.5 size perhaps, rather than just use 1x, 2x, 4x.
+	CONGO_HD_DEVICE_WIDTHREQ = 440 ' default is 640, e.g. iPhone retina.
+	CONGO_XHD_DEVICE_WIDTHREQ = 1100 ' default is 1280, e.g. iPad retina.
 	CONGO_ENABLE_HD_IMAGES  = True 
 	CONGO_ENABLE_XHD_IMAGES = True
 	
