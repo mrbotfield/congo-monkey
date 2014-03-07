@@ -142,6 +142,26 @@ Public
 		Return item
 	End
 	
+	Method Draw:Void()
+		Super.Draw
+		
+		' Some Debug info:
+		SetColor( 0, 0, 255 )
+		DrawBox( New Rect( 0, 0, VDeviceWidth(), VDeviceHeight() )) ' box around *virtual* area.
+		SetColor( 255, 255, 255 )
+		DrawText( "Congo Demo", 10, 10 )
+		DrawText( "Size (px): " + DeviceWidth() + " " + DeviceHeight(), 10, 440 )
+	'	Local aspect:Float = DeviceAspectRatio()
+		DrawText( "Asp ratio: " + String( DeviceAspectRatio() )[..5], 310, 460, 1.0, 0.5 )
+		If IsUsingXHDResources() Then
+			DrawText( "XHD Resources", 10, 460 )
+		Else If IsUsingHDResources() Then
+			DrawText( "HD Resources", 10, 460 )
+		Else
+			DrawText( "SD Resources", 10, 460 )
+		End
+	End
+	
 	Method Update:Void( dT:Int )
 		Super.Update( dT ) ' required - the super class deals with child updates etc.		
 		UpdateLevel( dT )  ' does main level item update function (see below).		
