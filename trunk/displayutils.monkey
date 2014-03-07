@@ -194,6 +194,7 @@ End
 
 #Rem monkeydoc
 Returns the display aspect ratio width/height, where width is the longest edge. Uses pixel coordinates reported by the device.
+On some devices, e.g. Android, DeviceWidth/Height excludes the software button area, i.e. it reports only the 'useable' area.
 #End
 Function DeviceAspectRatio:Float()
 
