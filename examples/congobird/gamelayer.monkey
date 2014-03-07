@@ -47,9 +47,9 @@ Public
 	Field sfx_flap:Sound = Null
 	
 	' New layer with specified size in device points (assumes autofit virtual coords).
-	Method New( w:Int, h:Int)
+	Method New( w:Int, h:Int)	
 		Super.New( w, h ) ' (call to Super.New must be before other code)	
-		
+				
 		' main scrolling bg
 		bgw1 = New Sprite( CongoResourceLoader( "bgw.png", Image.MidHandle ))
 		AddChildWithZOrder( bgw1, 0 )		
@@ -143,8 +143,8 @@ Public
 	End
 	
 	Method Draw:Void()
-		Super.Draw
-		
+		Super.Draw()
+
 		' Some Debug info:
 		SetColor( 0, 0, 255 )
 		DrawBox( New Rect( 0, 0, VDeviceWidth(), VDeviceHeight() )) ' box around *virtual* area.
@@ -160,6 +160,7 @@ Public
 		Else
 			DrawText( "SD Resources", 10, 460 )
 		End
+		If CONGO_AUTOFIT_NOBORDERS = False DrawText( "(Letterboxed)", 310, 440, 1.0, 0.5 )
 	End
 	
 	Method Update:Void( dT:Int )
