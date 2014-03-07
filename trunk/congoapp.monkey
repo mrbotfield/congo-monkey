@@ -51,9 +51,8 @@ Public
 
 	#Rem monkeydoc
 	(Advanced use). On creation, the app class stores a global image res scaler. Usually you can let CongoImageLoader set a 
-	Sprite's own res scaler, but this provides another way to access this.
-
-	Dev note - perhaps this should be the *only* way to access it, rather than every Sprite carry its own?
+	Sprite's own res scaler, but this provides another way to access this, e.g. if you need to scale something
+	outside of a regular Sprite.
 	#End
 	Global imageResScaler:Float = 1.0
 	
@@ -82,7 +81,7 @@ Public
 	Overrides mojo App method.
 	#End
 	Method OnCreate:Int()
-		
+
 		CongoLog( "CongoApp: OnCreate. " + CONGO_NAME_STRING + " version " + CONGO_VERSION_STRING )
 		
 		If IsUsingXHDResources() Then
