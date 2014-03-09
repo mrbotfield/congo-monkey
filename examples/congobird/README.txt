@@ -10,6 +10,9 @@ to be larger than the virtual game area, allowing the full screen to be used
 on most mobile devices (4:3 to 16:9 aspect ratios), whilst retaining a consistent
 320x480 (point) virtual game area.
 
+Google Play (Android) version: https://play.google.com/store/apps/details?id=com.goodreactions.congobird
+HTML5 version: http://goodreactions.com/congobird/
+
 +++ This code forms the basis of 'Plucky Parrot', which is available for free from
 the App Store and Google Play from March 2014! +++
 
