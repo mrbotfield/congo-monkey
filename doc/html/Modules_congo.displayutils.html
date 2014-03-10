@@ -101,6 +101,8 @@
 					
 						<li><a href='#CongoResourceLoader'>CongoResourceLoader</a> : Image ( imagename:String, flags:Int=image.defaultflags )</li>
 					
+						<li><a href='#DeviceAspectRatio'>DeviceAspectRatio</a> : Float ()</li>
+					
 						<li><a href='#DrawBox'>DrawBox</a> : Void ( r:Rect )</li>
 					
 						<li><a href='#EnableCongoRetina'>EnableCongoRetina</a> : Void ()</li>
@@ -167,7 +169,8 @@
 				<a name='CONGO_DEVICE_CONTENT_SCALE'></a>
 				<div class="well well-small name"><b>Global CONGO_DEVICE_CONTENT_SCALE : Float</b></div>
 				<div class="description">
-					<p>Internal. Stores the current device scale factor. Don't set this manually, use EnableCongoRetina()</p>
+					<p>Internal. Stores the current device scale factor. Don't set this manually, use EnableCongoRetina().
+TODO/dev note - this is currently not used! Remove? ResScaler does all the scaling in the displayitem.</p>
 					
 					
 				</div>
@@ -218,6 +221,17 @@ If a file does not exist, an error will be generated. Note, you should not mix s
 			</div>
 		
 			<div class="item">
+				<a name='DeviceAspectRatio'></a>
+				<div class="well well-small name"><b>Function DeviceAspectRatio : Float ()</b></div>
+				<div class="description">
+					<p>Returns the display aspect ratio width/height, where width is the longest edge. Uses pixel coordinates reported by the device.
+On some devices, e.g. Android, DeviceWidth/Height excludes the software button area, i.e. it reports only the 'useable' area.</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
 				<a name='DrawBox'></a>
 				<div class="well well-small name"><b>Function DrawBox : Void ( r:<a href="Modules_congo.rect_Rect.html">Rect</a> )</b></div>
 				<div class="description">
@@ -232,8 +246,11 @@ If a file does not exist, an error will be generated. Note, you should not mix s
 				<div class="well well-small name"><b>Function EnableCongoRetina : Void ()</b></div>
 				<div class="description">
 					<p>Enables iOS retina modes where supported.
-Call this early on, i.e. must be before any autofit/layout code or resource loading is performed.
+** TODO/Dev note - this function is no longer used **. Remove? 
+ResScaler does the scaling, whilst IOS_RETINA_ENABLED=True is the default in monkey, which means retina
+devices will report their full 2x display sizes -- we don't need to scale this; autofit sees double the pixels.
 <p>
+Call this early on, i.e. must be before any autofit/layout code or resource loading is performed.
 Internally, calling this function will multiply subsequent resource scalers by 2.0 if the display is Retina.
 <p>
 The Monkey iOS retina config setting must also be set to True for this to work correctly.</p>

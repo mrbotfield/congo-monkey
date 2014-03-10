@@ -22,7 +22,7 @@
 <h1>Module <span class="name">congo.chartboost</span></h1>
 
 
-	<p>Chartboost ad wrapper (iOS and Android only).
+	<p>Chartboost wrapper (iOS and Android only).
 	<a href="#description"> More...</a></p>
 
 
@@ -44,8 +44,6 @@
 				<ul class="unstyled">
 					
 						<li><a href='Modules_congo.chartboost_ChartboostWrapper.html'>ChartboostWrapper</a></li>
-					
-						<li><a href='Modules_congo.chartboost_ChartboostWrapper(2).html'>ChartboostWrapper</a></li>
 					
 				</ul>
 			</td>
@@ -79,36 +77,14 @@
 
 	<a name="description"></a>
 	<h2>Detailed Discussion</h2>
-	Chartboost ad wrapper (iOS and Android only). Requires Chartboost sdk to be setup correctly.
-Register new apps on the chartboost dashboard -- each target app gets its own id and sig.
+	Chartboost wrapper (iOS and Android only). 
 <p>
 ** THIS CLASS IS UNDER DEVELOPMENT ** - it is useable but has limited functionality 
-(the full api is not implemented). Currently does connection and some of the ad banner units.
-Callbacks/listeners not implemented.
+(the full api is implementd but not the callbacks/listeners).
 <p>
-Note - set Test Mode to Enabled via web dashboard. It reverts to Disabled every 20 attempts.
-<p>
-iOS: 
-Drag the chartboost folder into the generate Xcode project.
-Go to Build Phases section in Xcode and add the required frameworks (see docs), incl AdSupport (<b>weak link</b> for pre-iOS6 support).
-Note that chartboost docs state that StartSession should be used in applicationDidBecomeActive, ie whenever app becomes active.
-<p>
-Android:
-See the Chartboost help pages for the required permissions to add to AndroidManifest.xml.
-The copy of androidmanifest.xml in the build folder can get overwritten, may be better to
-change the main template version instead.
-<p>
-Copy chartboost.jar and chartboost.jar.properties files to your ./build/android/libs folder. 
-<p>
-Then, edit the AndroidGame class in <monkey>/targets/android/modules/native/androidgame.java to be:
-<p>
-import com.chartboost.sdk.*; // NEW
-	class AndroidGame extends Activity{
-<p>
-		private Chartboost cb; // ADD THIS
-		// ...
-<p>
--- and add the extra chartboost code for onStart(), onStop(), onDestroy() and onBackPressed(), as described at https://help.chartboost.com/documentation/android.
+Requires Chartboost SDK to be setup correctly.
+See the accompanying congo-chartboost-guide.txt file for further setup instructions.
+(Android requires editing of template Monkey files, and manifest).
 <p>
 	
 	

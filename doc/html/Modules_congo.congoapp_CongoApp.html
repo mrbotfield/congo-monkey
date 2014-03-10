@@ -158,6 +158,8 @@
 					
 						<li><a href='Modules_mojo.app_App.html#OnLoading'>OnLoading</a> : Int ()</li>
 					
+						<li><a href='Modules_mojo.app_App.html#OnResize'>OnResize</a> : Int ()</li>
+					
 				</ul>
 			</td>
 		</tr>
@@ -257,9 +259,8 @@ Derives from the mojo App class.
 				<div class="well well-small name"><b>Global imageResScaler : Float</b></div>
 				<div class="description">
 					<p>	(Advanced use). On creation, the app class stores a global image res scaler. Usually you can let CongoImageLoader set a 
-	Sprite's own res scaler, but this provides another way to access this.
-<p>
-	Dev note - perhaps this should be the <b>only</b> way to access it, rather than every Sprite carry its own?</p>
+	Sprite's own res scaler, but this provides another way to access this, e.g. if you need to scale something
+	outside of a regular Sprite.</p>
 					
 					
 				</div>
@@ -410,7 +411,8 @@ Derives from the mojo App class.
 				<div class="description">
 					<p>	This function controls the currently displayed applayer. As a non-member, it can be called from anywhere.
 	 Any previous layer is 'discarded' (GC will discard it). Textures will be retained unless the optional 
-	clearTextureCache parameter is set. </p>
+	clearTextureCache parameter is set. 
+	TODO: clearTextureCache should be removed? The new layer already exists before the cache is cleared! Clear it manually beforehand.</p>
 					
 					
 				</div>

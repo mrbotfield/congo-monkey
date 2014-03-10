@@ -76,7 +76,7 @@
 					
 						<li><a href='#OpenBrowserURL(2)'>OpenBrowserURL</a> : Void ( url:String, windowName:String="_blank" )</li>
 					
-						<li><a href='#OpenBrowserURL(3)'>OpenBrowserURL</a> : Void ( url:String, windowName:String="_blank" )</li>
+						<li><a href='#OpenBrowserURL(3)'>OpenBrowserURL</a> : Void ( url:String, windowName:String="none" )</li>
 					
 				</ul>
 			</td>
@@ -118,8 +118,8 @@
 				<a name='OpenBrowserURL'></a>
 				<div class="well well-small name"><b>Function OpenBrowserURL : Void ( url:String, windowName:String="_blank" )</b></div>
 				<div class="description">
-					<p>	DEPRECATED - use mojo OpenUrl instead.
-	[GLFW] Opens a browser page with the given URL. Exact behaviour depends on target platform.
+					<p>	DEPRECATE? - use mojo OpenUrl instead. However, this function can open in a new window.
+	[HTML5] Opens a browser page with the given URL. Exact behaviour depends on target platform.
 	Windowname is usually one of _blank, _self, _parent, _top.</p>
 					
 					
@@ -130,8 +130,8 @@
 				<a name='OpenBrowserURL(2)'></a>
 				<div class="well well-small name"><b>Function OpenBrowserURL : Void ( url:String, windowName:String="_blank" )</b></div>
 				<div class="description">
-					<p>	DEPRECATED - use mojo OpenUrl instead.
-	[HTML5] Opens a browser page with the given URL. Exact behaviour depends on target platform.
+					<p>	DEPRECATE? - use mojo OpenUrl instead. However, this function can open in a new window.
+	[Flash] Opens a browser page with the given URL. Exact behaviour depends on target platform.
 	Windowname is usually one of _blank, _self, _parent, _top.</p>
 					
 					
@@ -140,11 +140,9 @@
 		
 			<div class="item">
 				<a name='OpenBrowserURL(3)'></a>
-				<div class="well well-small name"><b>Function OpenBrowserURL : Void ( url:String, windowName:String="_blank" )</b></div>
+				<div class="well well-small name"><b>Function OpenBrowserURL : Void ( url:String, windowName:String="none" )</b></div>
 				<div class="description">
-					<p>	DEPRECATED - use mojo OpenUrl instead.
-	[Flash] Opens a browser page with the given URL. Exact behaviour depends on target platform.
-	Windowname is usually one of _blank, _self, _parent, _top.</p>
+					<p>Aside from Flash and Html5 targets, OpenBrowserURL just calls mojo's OpenUrl. Windowname ignored.</p>
 					
 					
 				</div>
