@@ -103,6 +103,10 @@
 			<td>
 				<ul class="unstyled">
 					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#AnimPaused'>AnimPaused</a> : Bool ()</li>
+					
+						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#ClearImageSheet'>ClearImageSheet</a> : Void ()</li>
+					
 						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GetCurrentImage'>GetCurrentImage</a> : Image ()</li>
 					
 						<li><a href='Modules_congo.animatedsprite_AnimatedSprite.html#GoToFinalFrame'>GoToFinalFrame</a> : Void ()</li>
@@ -194,6 +198,8 @@
 	<a name="description"></a>
 	<h2>Detailed Discussion</h2>
 	Extension of Sprite which supports frame-based animation. Frames are loaded from an image atlas or via Texture Packer.
+<p>
+Todo - properties etc.
 	
 	
 	<hr>
@@ -277,6 +283,27 @@
 	<div class="scope-members-list">
 		
 			<div class="item">
+				<a name='AnimPaused'></a>
+				<div class="well well-small name"><b>Method AnimPaused : Bool ()</b></div>
+				<div class="description">
+					<p></p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
+				<a name='ClearImageSheet'></a>
+				<div class="well well-small name"><b>Method ClearImageSheet : Void ()</b></div>
+				<div class="description">
+					<p>	Clears the array of image frames, replacing it with default empty frame. Resets curent image number to 0.
+	You might need this if re-using an AnimatedSprite and need to replace the previous set of frames.	</p>
+					
+					
+				</div>
+			</div>
+		
+			<div class="item">
 				<a name='GetCurrentImage'></a>
 				<div class="well well-small name"><b>Method GetCurrentImage : <a href="Modules_mojo.graphics_Image.html">Image</a> ()</b></div>
 				<div class="description">
@@ -350,7 +377,8 @@
 				<a name='SetMainImage'></a>
 				<div class="well well-small name"><b>Method SetMainImage : Void ( img:<a href="Modules_mojo.graphics_Image.html">Image</a> )</b></div>
 				<div class="description">
-					<p>	Overrides the Sprite class method - sets the image at position 0 of our image array.</p>
+					<p>	Overrides the Sprite class method - sets the image at position 0 of our image array.
+	Hence, it can behave like a regular single frame sprite, if required.</p>
 					
 					
 				</div>
@@ -360,7 +388,9 @@
 				<a name='SetupImageSheet'></a>
 				<div class="well well-small name"><b>Method SetupImageSheet : Void ( myImg:<a href="Modules_mojo.graphics_Image.html">Image</a>, numFrames:Int, numCols:Int, numRows:Int, frameWidth:Int=-1, frameHeight:Int=-1, offsetX:Int=0, offsetY:Int=0 )</b></div>
 				<div class="description">
-					<p>	Sets up array of images from the provided sheet. Called from main constr, see notes there.</p>
+					<p>	Sets up array of images from the provided sheet. Called from main constr, see notes there.
+	TODO - this needs to take account of hd/xhd sheets when specifying the frame size.
+	Also, needs to be able to work out frame sizes of a subsections of a sheet (using xoffset etc).</p>
 					
 					
 				</div>

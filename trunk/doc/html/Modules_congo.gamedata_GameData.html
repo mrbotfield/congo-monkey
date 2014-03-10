@@ -80,7 +80,7 @@
 					
 						<li><a href='Modules_congo.gamedata_GameData.html#RetrieveString'>RetrieveString</a> : String ( keyword:String )</li>
 					
-						<li><a href='Modules_congo.gamedata_GameData.html#SaveAll'>SaveAll</a> : Int ()</li>
+						<li><a href='Modules_congo.gamedata_GameData.html#SaveAll'>SaveAll</a> : Void ()</li>
 					
 						<li><a href='Modules_congo.gamedata_GameData.html#StoreBool'>StoreBool</a> : Void ( keyword:String, value:Bool )</li>
 					
@@ -227,10 +227,9 @@ Dev note - Todo: array/lists of each type. e.g. for highscores etc.
 		
 			<div class="item">
 				<a name='SaveAll'></a>
-				<div class="well well-small name"><b>Method SaveAll : Int ()</b></div>
+				<div class="well well-small name"><b>Method SaveAll : Void ()</b></div>
 				<div class="description">
 					<p>	Persists all current data to disk (via Monkey's SaveState). Will overwrite all previous data.
-	Returns an Int but this is likely to be 0 regardless of success (see Monkey internals).
 <p>
 	You should call this at reasonable times, e.g. when settings are changed, or at the end of a level.</p>
 					

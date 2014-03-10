@@ -2,9 +2,12 @@ These docs are a subset of the full docs generated using the bin/makedocs comman
 
 Update: in recent versions of Ted you can use Help->Rebuild Help, which will overwrite the main docs for all modules (but obviously this mixes standard modules with everything else).
 
-To regenerate: delete (or move) the docs/html folder to ensure a clean rebuild. Back-up the main page_template.html in docs/templates/devolonter, replace with the congo version and re-build the docs (from inside monkey, or manually). 
+To regenerate: delete (or move) the main monkey docs/html folder to ensure a clean rebuild. Back-up the main page_template.html in docs/templates/devolonter, replace with the congo version and re-build the docs (from inside monkey, or manually). 
 Copy the data/congo.png into the generated data folder.
 
 Finally, copy the contents of the html folder elsewhere, then restore the original monkey docs by putting back the moved folder or by doing a clean rebuild with the original template in place.
 
 For SVN, only the Modules_congo* files are checked-in, together with the data folder and pagestyle.css. Modules_congo.html is therefore the starting page.
+
+
+*** TO FIX: subfolders don't seem to be parsed by makedocs?

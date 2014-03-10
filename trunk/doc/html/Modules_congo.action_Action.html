@@ -77,11 +77,11 @@
 			<td>
 				<ul class="unstyled">
 					
-						<li><a href='Modules_congo.action_Action.html#Init'>Init</a> : Void ( sprite:Sprite, duration:Float, ease:EaseFunction, repeats:Int=1, actionId:Int=0 )</li>
+						<li><a href='Modules_congo.action_Action.html#Init'>Init</a> : Void ( item:DisplayItem, duration:Float, ease:EaseFunction, repeats:Int=1, actionId:Int=0 )</li>
 					
 						<li><a href='Modules_congo.action_Action.html#OnTimerComplete'>OnTimerComplete</a> : Void ()</li>
 					
-						<li><a href='Modules_congo.action_Action.html#ResetSpriteData'>ResetSpriteData</a> : Void ()</li>
+						<li><a href='Modules_congo.action_Action.html#ResetItemData'>ResetItemData</a> : Void ()</li>
 					
 						<li><a href='Modules_congo.action_Action.html#Update'>Update</a> : Void ( dT:Float )</li>
 					
@@ -132,7 +132,7 @@
 		
 			<div class="item">
 				<a name='Init'></a>
-				<div class="well well-small name"><b>Method Init : Void ( sprite:<a href="Modules_congo.sprite_Sprite.html">Sprite</a>, duration:Float, ease:<a href="Modules_congo.easefunction_EaseFunction.html">EaseFunction</a>, repeats:Int=1, actionId:Int=0 )</b></div>
+				<div class="well well-small name"><b>Method Init : Void ( item:<a href="Modules_congo.displayitem_DisplayItem.html">DisplayItem</a>, duration:Float, ease:<a href="Modules_congo.easefunction_EaseFunction.html">EaseFunction</a>, repeats:Int=1, actionId:Int=0 )</b></div>
 				<div class="description">
 					<p>	Initialises data common to all actions. Derived classes call this in their constr.</p>
 					
@@ -152,11 +152,11 @@
 			</div>
 		
 			<div class="item">
-				<a name='ResetSpriteData'></a>
-				<div class="well well-small name"><b>Method ResetSpriteData : Void ()</b></div>
+				<a name='ResetItemData'></a>
+				<div class="well well-small name"><b>Method ResetItemData : Void ()</b></div>
 				<div class="description">
-					<p>	Derived actions must implement this. Takes the current sprite data and stores it.
-	e.g. ActionMoveTo will store the current Sprite position.</p>
+					<p>	Derived actions must implement this. Takes the current item/sprite data and stores it.
+	e.g. ActionMoveTo will store the current item/sprite position.</p>
 					
 					
 				</div>
