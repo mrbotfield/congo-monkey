@@ -16,13 +16,12 @@ Function Main:Int()
 	CONGO_HD_SUFFIX = ""
 	CONGO_XHD_SUFFIX = ""
 	
-	' To support Android better we enable HD resources on devices that are fairly close to 2x res, e.g. 800x480.
-	' (allow for losing pixels to the software buttons -- DisplayWidth/Height don't include these in the size).
-	'
-	' Similarly, for XHD we enable these for ~1200 size tablets, which are much closer to 4x than 2x.
-	' Its not perfect -- we could enable an intermediate x1.5 size perhaps, rather than just use 1x, 2x, 4x.
-	CONGO_HD_DEVICE_WIDTHREQ = 440 ' default is 640, e.g. iPhone retina.
-	CONGO_XHD_DEVICE_WIDTHREQ = 1100 ' default is 1280, e.g. iPad retina.
+	' Android note: it is possible to lower the HD and XHD thresholds below the defaults in order to
+	' show higher quality assets on displays which are 'close' to 2x or 4x size respectively. 
+	' However, on low-end android devices especially, the heap allocation size can be very small and may not
+	' be enough to load 2048x2048 textures. If in doubt, use the defaults and/or disable modes for android.
+	CONGO_HD_DEVICE_WIDTHREQ = 440 ' default is 640, e.g. iPhone retina. Or try ~440 to enable on more devices.
+	CONGO_XHD_DEVICE_WIDTHREQ = 1100 ' default is 1280, e.g. iPad retina.  Or try ~1100 to enable on more devices.
 	CONGO_ENABLE_HD_IMAGES  = True 
 	CONGO_ENABLE_XHD_IMAGES = True
 	
