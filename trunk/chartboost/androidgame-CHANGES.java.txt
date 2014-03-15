@@ -3,7 +3,7 @@
 
 // [CONGO] The flagged lines/functions below need to be added to the end of
 // the androidgame.java template file in <MonkeyDir>/targets/android/modules/native.
-// Or, create a new target to avoid changing the original files.
+// Or, create a new android target to avoid changing the original files.
 
 // ** The default template could, of course, change between versions of Monkey, so
 // take care when doing this! **
