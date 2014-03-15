@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.monkeycoder.monkeygame"
-	android:versionCode="1"
-	android:versionName="1.0"
+	package="${ANDROID_APP_PACKAGE}"
+	android:versionCode="${ANDROID_VERSION_CODE}"
+	android:versionName="${ANDROID_VERSION_NAME}"
 	android:installLocation="auto">
+
+	<supports-screens android:smallScreens="true" 
+                  android:normalScreens="true" 
+                  android:largeScreens="true" 
+                  android:xlargeScreens="true"
+                  android:anyDensity="true"
+                  />
 	
-	<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="13" />
+	<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="16" />
 	
 	<uses-feature android:glEsVersion="0x00010001" />
 
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="com.android.vending.BILLING" />
 
-	
+	${ANDROID_MANIFEST_MAIN}
 		
-	<application android:label="Monkey Game" android:icon="@drawable/icon">
+	<application android:label="${ANDROID_APP_LABEL}" android:icon="@drawable/icon">
 	
 		<activity 
 			android:name="MonkeyGame"
-			android:label="Monkey Game"
-			android:screenOrientation="user"
+			android:label="${ANDROID_APP_LABEL}"
+			android:screenOrientation="${ANDROID_SCREEN_ORIENTATION}"
 			android:configChanges="keyboardHidden|orientation|screenSize"
 			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
 			android:launchMode="singleTop">
@@ -38,8 +44,8 @@
 		<activity android:name="com.chartboost.sdk.CBImpressionActivity"
     			android:excludeFromRecents="true"
     			android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-		
-		
+
+		${ANDROID_MANIFEST_APPLICATION}
 		
 	</application>
 </manifest> 
