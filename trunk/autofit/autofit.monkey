@@ -173,6 +173,11 @@ Function UpdateVirtualDisplay:Int ( zoomborders:Bool = True, keepborders:Bool = 
 	Return 0
 End
 
+' [CONGO] added to allow setting of border/scissor color.
+Function  SetAutofitBorderColor:Void( r:Float, g:Float, b:Float )
+		VirtualDisplay.Display.SetBorderColor( r, g, b )
+End
+
 ' -----------------------------------------------------------------------------
 ' Misc functions: Call in OnUpdate (optionally)...
 ' -----------------------------------------------------------------------------
@@ -260,6 +265,7 @@ Class VirtualDisplay
 	Field sy:Float						' Scissor area
 	Field sw:Float						' Scissor area
 	Field sh:Float						' Scissor area
+	Field borderColor:Float[] = [ 0.0, 0.0, 0.0 ] ' [CONGO] added to allow change to border colour.
 
 	Field realx:Float						' Width of SCALED virtual display (real pixels)
 	Field realy:Float						' Height of SCALED virtual display (real pixels)
@@ -314,6 +320,11 @@ Class VirtualDisplay
 		vzoom = vzoom + amount
 		If vzoom < 0.0 Then vzoom = 0.0
 		Return 0
+	End
+	
+	' [CONGO] added to allow setting of border/scissor color.
+	Method  SetBorderColor:Void( r:Float, g:Float, b:Float )
+		borderColor = [ r, g, b ]
 	End
 	
 	Method VMouseX:Float (limit:Bool)
@@ -655,7 +666,8 @@ Class VirtualDisplay
 		If Not CONGO_AUTOFIT_NOBORDERS ' [CONGO] added our setting
 			
 			SetScissor 0, 0, DeviceWidth (), DeviceHeight ()
-			Cls 0, 0, 0
+			' Cls 0, 0, 0
+			Cls( borderColor[0], borderColor[1], borderColor[2] )
 		
 			' ---------------------------------------------------------------------
 			' Draw inner area...
