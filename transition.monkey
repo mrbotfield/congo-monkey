@@ -59,7 +59,6 @@ Public
 	#End
 	Field easefn:EaseFunction = Null 
 	
-Private
 	#Rem monkeydoc
 	If no ease if specified, linear is used. Not all transitions support an ease function (e.g. fade is linear).
 	Use the 'reverse' option to reverse the timeline of an effect. Similarly, not all effects have a reverse.

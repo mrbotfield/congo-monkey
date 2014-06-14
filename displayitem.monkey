@@ -652,36 +652,6 @@ Public
 		End
 			
 	End
-
-	
-' Private methods
-
-Private	
-
-	#Rem monkeydoc
-  	Insertion sort for children Z-ordering. See http://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort
-
-	See also http://www.monkeycoder.co.nz/Community/posts.php?topic=2034 User:impixi code sample.
-	This is reasonably fast if the list is short and/or there are few changes to the order each step.
-	See also UseLazySort for a faster sort.
-	#End
-	Method FullSortZOrder:Void()
-	
-		'Local moves:Int = 0 ' for debugging
-		For Local i:Int = 1 Until Children.Length
-			Local spr:DisplayItem = Children[i]
-			Local j:Int = i - 1
-			While ((j >= 0) And (Children[j].ZOrder > spr.ZOrder))
-				Children[j + 1] = Children[j]
-				j -= 1
-				' For debugging:
-				'	moves += 1 
-				'	CongoLog( "sorted " + j+1 + " to " + j )
-			Wend
-			Children[j+1] = spr
-		Next
-		' CongoLog( "Sort done in " + moves + " moves" )
-	End
 	
 	#Rem monkeydoc
 	Gets called when an Action finishes. Cleans-up finished Actions from our list.
@@ -716,4 +686,34 @@ Private
 
 	End
 	
+' Private methods
+
+Private	
+
+	#Rem monkeydoc
+  	Insertion sort for children Z-ordering. See http://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort
+
+	See also http://www.monkeycoder.co.nz/Community/posts.php?topic=2034 User:impixi code sample.
+	This is reasonably fast if the list is short and/or there are few changes to the order each step.
+	See also UseLazySort for a faster sort.
+	#End
+	Method FullSortZOrder:Void()
+	
+		'Local moves:Int = 0 ' for debugging
+		For Local i:Int = 1 Until Children.Length
+			Local spr:DisplayItem = Children[i]
+			Local j:Int = i - 1
+			While ((j >= 0) And (Children[j].ZOrder > spr.ZOrder))
+				Children[j + 1] = Children[j]
+				j -= 1
+				' For debugging:
+				'	moves += 1 
+				'	CongoLog( "sorted " + j+1 + " to " + j )
+			Wend
+			Children[j+1] = spr
+		Next
+		' CongoLog( "Sort done in " + moves + " moves" )
+	End
+	
+
 End

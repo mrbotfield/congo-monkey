@@ -25,9 +25,11 @@ Private
 	Field layerWidth:Int
 	Field layerHeight:Int
 	
-Private
+Public
 	Method New()
 		' here to prevent Monkey allowing direct use of default constr.
+		Error( CONGO_ERROR_STRING + "dont use the default constr for layer." )
+			Throw New Throwable()
 		' (see http://www.monkeycoder.co.nz/Community/posts.php?topic=834 )
 	End
 
