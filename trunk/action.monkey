@@ -456,6 +456,7 @@ Class ActionSequence Extends Action
 	Field m_actions:Action[]
 	Field m_curIndex:Int = 0
 	
+	Public
 	Method New( actions:Action[], item:DisplayItem, repeats:Int = 1, actionId:Int = 0 )
 
 		Super.Init( item, -1.0, Null, repeats, actionId )

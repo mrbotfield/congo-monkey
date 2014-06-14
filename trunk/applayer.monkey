@@ -17,11 +17,11 @@ Typically, you will want to derive from AppLayer to create your game/menu layers
 #End
 Class AppLayer Extends Layer
 	
-Private	
+Public
 
 	Method New()
-		' here to prevent Monkey allowing direct use of a default constr.
-		' (see http://www.monkeycoder.co.nz/Community/posts.php?topic=834 )
+		Error( CONGO_ERROR_STRING + "dont use the default constr for applayer." )
+			Throw New Throwable()
 	End
 
 Public
