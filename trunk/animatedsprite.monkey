@@ -30,14 +30,15 @@ Private
 	Field animHideOnComplete:Bool = False ' defaults to retaining the final frame image.
 	Field animPaused:Bool = True			' start paused
 
+Public
+
 	#Rem monkeydoc
 	Default constr. No images are added, see SetupImageSheet(), or use the other constr. 
 	#End
 	Method New()
 		'(nothing to do here)
 	End
-
-Public	
+	
 	#Rem monkeydoc
 	Main constr. Sets up array of images from the provided atlas. Use StartAnim() afterwards to begin the animation.
 	If you don't provide frame sizes or initial offset it will simply divide up the atlas evenly based on number of rows and columns.
