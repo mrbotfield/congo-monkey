@@ -17,6 +17,10 @@ Function Main:Int()
 	CONGO_ENABLE_HD_IMAGES = True 
 	CONGO_ENABLE_XHD_IMAGES = True
 	
+	#If TARGET="android"
+	CONGO_ENABLE_XHD_IMAGES = False ' disabled for now - in case we cant support it.
+	#End
+	
 	New MyApp
 	Return 0
 	
