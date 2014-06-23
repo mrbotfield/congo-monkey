@@ -110,7 +110,7 @@ Public
 		Local wid:Int = Min( DeviceWidth(), DeviceHeight() ) ' note - pixel units.
 		Local hgt:Int = Max( DeviceWidth(), DeviceHeight() )
 		Local bg:Sprite = Null
-		If (wid = 768 And hgt = 1024) Or ( wid = 1536 And hgt = 2045 ) Then
+		If (wid = 768 And hgt = 1024) Or ( wid = 1536 And hgt = 2048 ) Then
 			bg = New Sprite( CongoResourceLoader( "bgipad.png", Image.MidHandle ) )
 			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
 			CongoLog( "** Using IPAD bg")
@@ -288,7 +288,7 @@ Public
 		If risespeed < 2.5 risespeed += 0.0001 * dT*(60.0/1000.0)
 	   	
 		If VMouseX() > 0 crosshair.SetPosition( VMouseX(), VMouseY() ) ' (virtual coords)		  
-	   	Local touch:Touch = tman.GetTouch()
+	   	Local touch:Touch = tman.GetTouch() ' NB single touch, not multi.
 	   	If touch
 	   		If  canshoot And touch.touchState = TouchState.CONGO_TOUCHSTATE_DOWN Then 
 	   			Shoot()

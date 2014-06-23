@@ -49,7 +49,7 @@ Class MyApp Extends CongoApp
 		Local wid:Int = Min( DeviceWidth(), DeviceHeight() ) ' note - pixel units.
 		Local hgt:Int = Max( DeviceWidth(), DeviceHeight() )
 		Local bg:Sprite = Null
-		If (wid = 768 And hgt = 1024) Or ( wid = 1536 And hgt = 2045 ) Then
+		If (wid = 768 And hgt = 1024) Or ( wid = 1536 And hgt = 2048 ) Then
 			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
 		Else If (wid = 320 And hgt = 568) Or (wid = 640 And hgt = 1136) Then
 			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
