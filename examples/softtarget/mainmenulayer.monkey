@@ -45,6 +45,10 @@ Public
 		' add a sheep - just for fun. Rotate and enlarge - a good test...
 		Local sheep:Sprite = New Sprite( atlas1, "sheet1tp", "sheep.png" )
 		sheep.SetPosition( -5, 260 ) ' off left side
+		' tweak for wide iphone 5 :
+		Local wid:Int = Min( DeviceWidth(), DeviceHeight() ) ' note - pixel units.
+		Local hgt:Int = Max( DeviceWidth(), DeviceHeight() )
+		If (wid = 320 And hgt = 568) Or (wid = 640 And hgt = 1136) sheep.SetPosition( -25, 260 )
 		sheep.SetAngle( -60 )
 		sheep.SetScale( 1.3 ) 
 		AddChild( sheep )
@@ -77,11 +81,11 @@ Public
 		moregames = New Button( upimg, downimg, ButtonType.CONGO_BUTTONTYPE_CLICKER, "moregames" )
 		moregames.SetActivateSound( clickfx )
 		AddChild( moregames )
-		moregames.SetPosition( 240, 350 )
+		moregames.SetPosition( 240, 360 )
 		moregames.SetScale( 0.5 )
 		Local delayb:Action = New ActionDelay( moregames, 2000 ) ' wait
-		Local reveal:Action = New ActionMoveBy( moregames, 0.0, -45.0, 250, New EaseInQuad() )
-		Local butact:Action = New ActionSequence( [ delayb, reveal ], eyelids )
+		Local reveal:Action = New ActionMoveBy( moregames, 0.0, -55.0, 250, New EaseInQuad() )
+		Local butact:Action = New ActionSequence( [ delayb, reveal ], moregames )
 		moregames.RunAction( butact )
 		
 		RestoreMouseCursor() ' since we hide it during game.

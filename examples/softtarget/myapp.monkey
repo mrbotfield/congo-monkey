@@ -45,8 +45,21 @@ Class MyApp Extends CongoApp
 			CongoLog( "Is using regular SD resources" )
 		End
 		
+		' We check for tablet/ipad (sd and retina), iphone5 wide, we can disable borders for these [could use aspect ratio]
+		Local wid:Int = Min( DeviceWidth(), DeviceHeight() ) ' note - pixel units.
+		Local hgt:Int = Max( DeviceWidth(), DeviceHeight() )
+		Local bg:Sprite = Null
+		If (wid = 768 And hgt = 1024) Or ( wid = 1536 And hgt = 2045 ) Then
+			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
+		Else If (wid = 320 And hgt = 568) Or (wid = 640 And hgt = 1136) Then
+			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
+		Else
+			' Regular bg and autofit area.
+			 CONGO_AUTOFIT_NOBORDERS = False
+		End
+		
 	    ' create and set our starting layer
-	    CongoApp.SetScreenColor( 0, 0, 0 ) 
+ 	    CongoApp.SetScreenColor( 0, 0, 0 ) 
 		Local al:AppLayer = New MainMenuLayer( VDeviceWidth(), VDeviceHeight() )
 	  	CongoApp.SetCurrentLayer( al )
 	    

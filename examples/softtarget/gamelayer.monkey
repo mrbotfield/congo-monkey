@@ -114,7 +114,7 @@ Public
 			bg = New Sprite( CongoResourceLoader( "bgipad.png", Image.MidHandle ) )
 			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
 			CongoLog( "** Using IPAD bg")
-		Else If (wid = 640 And hgt = 1136) Then
+		Else If (wid = 320 And hgt = 568) Or (wid = 640 And hgt = 1136) Then
 			bg = New Sprite( CongoResourceLoader( "bgiphone5w.png", Image.MidHandle ) )
 			CONGO_AUTOFIT_NOBORDERS = True ' we can fill the screen.
 			CongoLog( "** Using IPHONE5 bg")
