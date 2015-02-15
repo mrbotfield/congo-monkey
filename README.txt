@@ -1,13 +1,13 @@
 
 'Congo' is a lightweight, easy-to-use game framework for the Monkey programming language (http://www.monkey-x.com/ or http://www.monkeycoder.co.nz/).
 
-Currently the module is tested against Monkey Pro version 79d -- other versions may work but have not been tested, and may require changes. 
+Currently the module is tested against Monkey Pro version 82b -- other versions may work but have not been tested, and may require changes. 
 
 Usage: copy the 'congo' folder into <monkey>/modules. To use the physics classes, you will also need to copy the 'box2d' folder into <monkey>/module (or download the box2d classes separately). To test the module, try running the applications in the Examples folder.
 
 Use of some features depends on 3rd party libraries, e.g. Mochi, Chartboost, etc.
 
-Copyright (c) 2012-2014 Barry R Smith. 
+Copyright (c) 2012-2015 Barry R Smith. 
 
 This software is provided 'as is', without warranty. See LICENSE.txt for more information. 
 
