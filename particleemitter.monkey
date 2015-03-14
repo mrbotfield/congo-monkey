@@ -164,6 +164,9 @@ Public
 	'Field bounceFloor:Bool = False ' TODO not impl yet (see Update() )
 	'Field floorBounceY:Float = 300.0
 	'Field bounciness:Float = 0.3
+	
+	' 2015! made public
+	Field timer:Timer = New Timer( 5 * 1000 ) ' emitter duration in ms
 
 Private 
 	#Rem monkeydoc
@@ -174,7 +177,7 @@ Private
 	#Rem monkeydoc
 	Main timer for the particle system.
 	#End
-	Field timer:Timer = New Timer( 5 * 1000 ) ' emitter duration in ms
+' 2015!!!!	Field timer:Timer = New Timer( 5 * 1000 ) ' emitter duration in ms
 	Field timeSinceEmit:Int = 9999 ' used for contiunous emitter
 	#Rem monkeydoc
 	Stores all our particles.
