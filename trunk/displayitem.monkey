@@ -452,6 +452,10 @@ Public
 		Return useLazySort
 	End
 	
+	Method UseLazySort:Void( state:Bool) Property
+		useLazySort = state
+	End
+	
 	#Rem monkeydoc
 	Runs an Action (or ActionSequence) on the item.
 
